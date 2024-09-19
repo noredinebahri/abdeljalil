@@ -1,0 +1,56 @@
+
+<div class="container ">
+  <div  class="bg  rounded">
+    <div class="page-header d-flex justify-content-between align-items-center mt-4">
+      <div class="title d-flex align-items-center">
+        <h2  class="mb-4 fw-bold">{{'agentPayeur.title' | translate}} RR/20082004</h2>
+        <span class="badge-custom ms-3" [ngClass]="getBadgeReclamation(StatusReclamation.OUVERTE)">{{  StatusReclamation.OUVERTE | translate }}</span>
+      </div>
+      <div class="header-right">
+        <button class="btn btn-link text-decoration-none " (click)="goBack()">
+          <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> Retour à la liste
+        </button>
+      </div>
+    </div>
+    <ul  class="nav nav-tabs fw-bold">
+      <li class="nav-item">
+        <a class="nav-link nav-link-first" (click)="showTab = 'reclamation'" [ngClass]="{'active': showTab == 'reclamation'}" aria-current="page">{{'agentPayeur.tabs.reclamation' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="showTab = 'info-deposant'" [ngClass]="{'active': showTab == 'info-deposant'}" >{{'agentPayeur.tabs.informationsDeposant' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="showTab = 'detail-indemnisation'" [ngClass]="{'active': showTab == 'detail-indemnisation'}" >{{'agentPayeur.tabs.detailsIndemnisation' | translate}}</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link"  (click)="showTab = 'representants'" [ngClass]="{'active': showTab == 'representants'}" >{{'agentPayeur.tabs.representantsLegaux' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="showTab = 'heritiers'" [ngClass]="{'active': showTab == 'heritiers'}" >{{'agentPayeur.tabs.heritiers' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="showTab = 'comptes-bancaires'" [ngClass]="{'active': showTab == 'comptes-bancaires'}" >{{'agentPayeur.tabs.comptesBancaires' | translate}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="outlet-container">
+  <ng-container *ngIf="showTab == 'reclamation'">
+    <app-info-reclamation></app-info-reclamation>
+  </ng-container>
+  <ng-container *ngIf="showTab == 'info-deposant'">
+    <app-info-deposant></app-info-deposant>
+  </ng-container>
+  <ng-container *ngIf="showTab == 'detail-indemnisation'">
+    <app-info-indemnisation></app-info-indemnisation>
+  </ng-container>
+  <ng-container *ngIf="showTab == 'representants'">
+    <app-representants></app-representants>
+  </ng-container>
+  <ng-container *ngIf="showTab == 'heritiers'">
+    <app-heritiers></app-heritiers>
+  </ng-container>
+  <ng-container *ngIf="showTab == 'comptes-bancaires'">
+    <app-comptes-bancaires></app-comptes-bancaires>
+  </ng-container>
+</div>

@@ -1,0 +1,97 @@
+<div [ngClass]="{'container': !showClosSidebar}">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'inline-space': showClosSidebar}" [class.show-user-dropdown]="showUserDropdown">
+    <div class="container-fluid navbar-wrapper">
+      <a *ngIf="showClosSidebar" class="me-3" (click)="onCloseSidebar()"><img src="assets/images/icone/close-sidebar.svg" class="w-100" /></a>
+      <img src="assets/images/svg/sgfg-logo.svg" alt="Logo" class="navbar-logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"  (click)="toggleNavbar()">
+        <span [ngClass]="{'custom-toggler-icon': isCollapsed, 'custom-toggler-icon-expanded': !isCollapsed}"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.show]="!isCollapsed">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <div class="navbar">
+            <li *ngFor="let item of navItems; let i = index" [class.has-dropdown]="item.subItems?.length"
+                class="nav-item mx-0">
+              <button  (click)="toggleDropdown(i, $event, item); ; $event.stopPropagation()"  >
+                <img *ngIf="item.icon" [src]="item.icon" alt="{{ item.label | translate }}">
+                {{ item.label  | translate }}
+                <img id="arrow{{i}}" class="arraw-list" *ngIf="item.subItems?.length || item.subItemsNotif?.length"
+                     src="assets/images/icone/drop-down.svg" alt="Expand" [class.hide-in-mobile]="isMobile && item.type === 'notification'" >
+              </button>
+              <ul class="dropdown" aria-labelledby="navbarDropdown" *ngIf="openIndex === i" [ngStyle]="dropdownStyles">
+                <li *ngFor="let subItem of item.subItems">
+                  <button (click)="handleClick(subItem.action, $event);  $event.stopPropagation()">
+                    <img *ngIf="subItem.icon" [src]="subItem.icon" alt="{{ subItem.label | translate }}"  >
+                    {{ subItem.label  | translate }}
+                  </button>
+                </li>
+              </ul>
+              <ul *ngIf="openIndex === i && item.type === 'notification'" class="notification">
+                <div class="notif-header">
+                  <span class="bold-text"  >{{ 'menu.notification.title' | translate }}</span>
+                  <button class="notif-button"  (click)="voirTous()">{{ 'menu.notification.voirTout' | translate }}</button>
+                </div>
+                <li *ngFor="let notifItem of item.subItemsNotif ; let i = index"
+                    [ngClass]="{'styleNonLus': !notifItem.lus}" class="notification-item" [attr.lus]="notifItem.lus">
+                  <div class="globale">
+                    <div class="div1"></div>
+                    <div class="div2">
+                      <img *ngIf="notifItem.iconNotif" [src]="notifItem.iconNotif" alt="Notification Icon"
+                           class="notification-icon">
+                      <span>{{ 'menu.notification.vousAverRecu' | translate }} <span class="bold-text">{{ notifItem.titleNotif }}
+                    </span></span>
+                    </div>
+                    <!--                  <div class="div3">-->
+                    <!--                    <button class="more-button ">-->
+                    <!--                      <img src="assets/images/icone/more-button.svg" (click)="toggleMoreDropdown(i, $event)">-->
+                    <!--                    </button>-->
+                    <!--                  </div>-->
+                    <!--                  <div *ngIf="openMoreDropdownIndex === i" class="small-dropdown">-->
+                    <!--                    <li>-->
+                    <!--                      <button class="full-width-button">-->
+                    <!--                        <img src="assets/images/icone/lus-icone.svg" alt="Lus">-->
+                    <!--                        <span>{{ 'menu.notification.marquerCommeLue' | translate }}</span>-->
+                    <!--                      </button>-->
+                    <!--                    </li>-->
+                    <!--                    <li>-->
+                    <!--                      <button class="full-width-button">-->
+                    <!--                        <img src="assets/images/icone/supprimer.svg" alt="Supprimer">-->
+                    <!--                        <span>{{ 'menu.notification.supprimer' | translate }}</span>-->
+                    <!--                      </button>-->
+                    <!--                    </li>-->
+                    <!--                  </div>-->
+                    <br>
+                  </div>
+                  <span class="notification-date">{{ notifItem.date }}</span> <br>
+                  <button *ngIf="!notifItem.lus" (click)="notifItem.action?.(); $event.stopPropagation()"
+                          class="consulter-button">
+                    {{ 'menu.notification.consulter' | translate }}
+                  </button>
+                  <span *ngIf="notifItem.lus " class="notification-text">
+                    {{ notifItem.notifText }}
+                  </span>
+                </li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+        <div class="static-button" id="static">
+          <button class="profile-button" (click)="toggleProfileDropdown($event)">
+            <img class="profile-button-icone" src="assets/images/icone/profile-button.svg" alt="Profile">
+            {{ username  |  translate | truncate: 15 }}
+            <img id="arrow{{navItems.length}}" class="arraw-list" src="assets/images/icone/drop-down.svg" alt="Expand">
+          </button>
+          <ul *ngIf="showUserDropdown" class="user-dropdown">
+            <li *ngFor="let item of userDropdownItems">
+              <button (click)="handleClick(item.action)">
+                <img *ngIf="item.icon" [src]="item.icon" alt="{{ item.label | translate }}">
+                {{ item.label | translate }}
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="navbar-separator"></div>

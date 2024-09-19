@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h5 class="modal-title mt-4">{{ 'deposant.reclamation.declarationReclamation.title' | translate }}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<hr class="card-separator" />
+<div class="modal-body">
+  <form [formGroup]="reclamationForm">
+    <div class="mb-3">
+      <div class="form-floating">
+        <ng-select
+          [items]="natureReclamationOptions"
+          bindLabel="libelle"
+          bindValue="code"
+          placeholder="Nature du réclamation"
+          formControlName="nature"
+          id="floatingSelect"
+          class="form-control"
+          [class.is-invalid]="isInvalid('nature')">
+        </ng-select>
+        <div *ngIf="isInvalid('nature')" class="invalid-feedback">
+          {{ 'Ce champ est obligatoire' | translate }}
+        </div>
+        <label class="floatingSelect">{{ 'deposant.reclamation.declarationReclamation.natureReclamation' | translate }}</label>
+      </div>
+    </div>
+    <div class="row mb-3 mt-5">
+      <div class="form-floating">
+        <textarea [class.is-invalid]="isInvalid('message')" class="text-aria" type="text" [placeholder]="'message'" class="form-control" formControlName="message"></textarea>
+        <label [class.disabled-label]="true" class="ms-2">{{ 'deposant.reclamation.declarationReclamation.message' | translate }}</label>
+        <div *ngIf="isInvalid('message')" class="invalid-feedback">
+          {{ 'Ce champ est obligatoire' | translate }}
+        </div>
+      </div>
+    </div>
+    @defer (when showDeposantLayout ){
+    <hr class="card-separator mt-5" />
+    <div class="mt-5">
+      <label class="form-label">{{ 'deposant.reclamation.declarationReclamation.pieceJointeName' | translate }}</label>
+      <app-file-upload   (change)="handleFile($event)" ></app-file-upload>
+    </div>
+    }
+  </form>
+</div>
+<hr class="separator" />
+<div class="modal-footer">
+  @defer (when showDeposantLayout ){
+  <app-button type="primary" [outlined]="true" text="{{ 'deposant.reclamation.declarationReclamation.saveButton' | translate }}" (click)="saveDraft()"></app-button>
+  }
+  @defer (when !showDeposantLayout ){
+  <app-button type="primary" [outlined]="true" text="Annuler" (click)="close()"></app-button>
+  }
+  <app-button type="primary" text="{{ 'deposant.reclamation.declarationReclamation.envoyer' | translate }}" [selected]="true" (click)="declare()"></app-button>
+</div>

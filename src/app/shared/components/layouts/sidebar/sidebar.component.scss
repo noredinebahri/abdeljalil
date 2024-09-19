@@ -1,0 +1,17 @@
+.sidebar-nav {
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  a.nav-link {
+    font-weight: 400;
+  }
+  .inStyle {
+    max-height: 1000px;
+    transition: 500ms ease-in-out;
+  }
+  .outStyle {
+    display: none;
+  }
+}

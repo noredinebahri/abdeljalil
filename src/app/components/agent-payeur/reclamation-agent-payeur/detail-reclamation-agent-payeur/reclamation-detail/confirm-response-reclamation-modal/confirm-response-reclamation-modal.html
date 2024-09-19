@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <div class="modal-title-container">
+    <img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon">
+    <h5 class="modal-title">{{ 'reclamation.confirm.title'  | translate}}</h5>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div class="modal-body">
+  <hr class="card-separator" />
+  <div class="depot-details">
+    <div class="detail-row">
+      <div class="detail-column">
+        <div class="detail-label">{{'reclamation.confirm.response' | translate}}</div>
+        <div class="detail-value">{{ responseReclamation?.message }}</div>
+      </div>
+    </div>
+  </div>
+    <hr class="card-separator" />
+  <div class="depot-details">
+    <div class="detail-row" *ngIf="responseReclamation?.pieceJointe">
+      <div class="detail-label">{{'reclamation.confirm.pieceJointe' | translate}}</div>
+      <div class="file-details mt-4">
+        <div class="name-and-size">
+          <img src="assets/images/svg/document.svg" alt="Document Icon" class="document-icon">
+          <div class="file-name">{{ responseReclamation?.pieceJointe }}
+            <span  class="middle-dot">•</span>
+            <button   class="consult-btn">{{'reclamation.confirm.consulter' | translate}}</button>
+          </div>
+          <div class="file-size">1 MB</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="card-separator" />
+<div class="modal-footer">
+  <app-button type="primary" text="{{'reclamation.confirm.retour' | translate}}" (click)="back()" [outlined]="true" ></app-button>
+  <app-button type="primary" text="{{'reclamation.confirm.confirmer' | translate}}" (click)="confirm()" [selected]="true"></app-button>
+</div>

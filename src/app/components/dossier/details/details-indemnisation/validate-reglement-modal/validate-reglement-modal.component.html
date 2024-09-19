@@ -1,0 +1,269 @@
+<div class="modal-header d-flex align-items-center justify-content-between">
+  <ul class="nav nav-tabs w-100 h-100 border-0">
+    <li class="nav-item w-50">
+      <a class="nav-link text-center nav-item-left" [class.active]="currentStep === 1"
+         [ngClass]="{'confirmed-header': currentStep != 1}"><img *ngIf="currentStep != 1"
+                                                                 src="assets/images/svg/checked-circle.svg"
+                                                                 class="me-2">{{ 'deposant.details.validateReglement.tabs.coordonnePaiement' | translate }}</a>
+    </li>
+    <li class="nav-item w-50">
+      <a class="nav-link text-center nav-item-right"
+         [class.active]="currentStep === 2">{{ 'deposant.details.validateReglement.tabs.recaptiulatif' | translate }}</a>
+    </li>
+  </ul>
+  <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"
+          (click)="close()"></button>
+</div>
+
+<div class="modal-body">
+  <div *ngIf="content === 'virement'">
+    <div *ngIf="currentStep === 1">
+      <div class="modal-title">
+        <h5>{{ 'deposant.details.validateReglement.virementBancaire.step1.title' | translate }}</h5>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-middle-body">
+        <p class="text-muted">{{ 'deposant.details.validateReglement.virementBancaire.step1.text' | translate }}</p>
+        <form class="mt-3">
+          <div class="row mb-3">
+            <div class="col-md-4">
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-floating">
+              <input type="text" id="nomBanque"
+                     [formControlName]="'deposant.details.validateReglement.virementBancaire.step1.rib' | translate"
+                     class="form-control">
+              <label
+                for="nomBanque">{{ 'deposant.details.validateReglement.virementBancaire.step1.rib' | translate }}</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div *ngIf="currentStep === 2">
+      <div class="modal-title">
+        <h5 class="mt-4">{{ 'deposant.details.validateReglement.virementBancaire.step2.title' | translate }}</h5>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-middle-body">
+        <div class="recapitulatif-section">
+          <div class="indemnity-amount-section">
+            <p
+              class="label">{{ 'deposant.details.validateReglement.virementBancaire.step2.montantTitle' | translate }}</p>
+            <p class="amount">2 000 MAD</p>
+          </div>
+          <div class="contact-details">
+            <h6>{{ 'deposant.details.validateReglement.virementBancaire.step2.coordonneContact' | translate }}</h6>
+            <table>
+              <tbody>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.nomComplet' | translate }}
+                </td>
+                <td class="td-text">Benbrahim Mohammed</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.mobile' | translate }}
+                </td>
+                <td class="td-text">00212612345678</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.fixe' | translate }}
+                </td>
+                <td class="td-text">00212522123456</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.email' | translate }}
+                </td>
+                <td class="td-text"></td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.adressePostale' | translate }}
+                </td>
+                <td class="td-text">Bd de La Mecque Résidence Porte Californie 5ème étage App. 34 20000 Casablanca
+                  Maroc
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="payment-details">
+            <h6>{{ 'deposant.details.validateReglement.virementBancaire.step2.coordonneReglement' | translate }}</h6>
+            <table>
+              <tbody>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.modeReglement' | translate }}
+                </td>
+                <td class="td-text">Virement bancaire</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.virementBancaire.step2.coordonnesBancaire' | translate }}
+                </td>
+                <td class="td-text">123 4567 12345678901234 89</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reglement" *ngIf="content === 'mise'">
+    <div *ngIf="currentStep === 1">
+      <div class="modal-title">
+        <h5>{{ 'deposant.details.validateReglement.miseDisposition.step1.title' | translate }}</h5>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-middle-body">
+        <p class="text-muted">{{ 'deposant.details.validateReglement.miseDisposition.step1.text' | translate }}</p>
+        <form>
+          <div class="mb-3">
+            <div class="form-floating mb-3">
+              <select class="form-select" id="agentPayeur">
+                <option>Agent payeur</option>
+                <!-- Add your options here -->
+              </select>
+              <label for="agentPayeur"
+                     class="input-label">{{ 'deposant.details.validateReglement.miseDisposition.step1.agentPayeur' | translate }}</label>
+            </div>
+            <!--          <label for="agentPayeur" class="form-label">Agent payeur</label>-->
+            <!--          <select id="agentPayeur" class="form-select">-->
+            <!--            <option>Agent payeur</option>-->
+            <!--            &lt;!&ndash; Add your options here &ndash;&gt;-->
+            <!--          </select>-->
+          </div>
+
+          <div class="mb-3">
+<!--            <div class="form-floating">-->
+<!--              <ng-select [items]="agentsPayeurs" id="agence" bindLabel="label" bindValue="value"-->
+<!--                         placeholder="Agent payeur"-->
+<!--                         [clearable]="false">-->
+<!--              </ng-select>-->
+<!--              <label for="agence"-->
+<!--                     class="input-label">{{ 'deposant.details.validateReglement.miseDisposition.step1.agence' | translate }}</label>-->
+<!--            </div>-->
+            <div class="form-floating mb-3">
+              <select class="form-select" id="agence">
+                <option>Banque Populaire Bd de la Mecque</option>
+                <!-- Add your options here -->
+              </select>
+              <label for="agentPayeur"
+                     class="input-label">{{ 'deposant.details.validateReglement.miseDisposition.step1.agence' | translate  | translate }}</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div *ngIf="currentStep === 2">
+      <div class="modal-title">
+        <h5 class="mt-4">{{ 'deposant.details.validateReglement.miseDisposition.step2.title' | translate }}</h5>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-middle-body">
+        <div class="recapitulatif-section">
+          <div class="indemnity-amount-section">
+            <p
+              class="label">{{ 'deposant.details.validateReglement.miseDisposition.step2.montantTitle' | translate }}</p>
+            <p class="amount">2 000 MAD</p>
+          </div>
+          <div class="contact-details">
+            <h6
+              class="my-5">{{ 'deposant.details.validateReglement.miseDisposition.step2.coordonneContact' | translate }}</h6>
+            <table>
+              <tbody>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.nomComplet' | translate }}
+                </td>
+                <td class="td-text">Benbrahim Mohammed</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.mobile' | translate }}
+                </td>
+                <td class="td-text">00212612345678</td>
+              </tr>
+              <tr>
+                <td class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.fixe' | translate }}
+                </td>
+                <td class="td-text">00212522123456</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.email' | translate }}
+                </td>
+                <td class="td-text">m.benbrahim&#64;mailto.ma</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.adressePostale' | translate }}
+                </td>
+                <td class="td-text">Bd de La Mecque Résidence Porte Californie 5ème étage App. 34 20000 Casablanca
+                  Maroc
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr class="modal-separator">
+          <div class="payment-details">
+            <h6>{{ 'deposant.details.validateReglement.miseDisposition.step2.coordonnesBancaire' | translate }}</h6>
+            <table>
+              <tbody>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.modeReglement' | translate }}
+                </td>
+                <td class="td-text">Mise à disposition</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.agentPayeur' | translate }}
+                </td>
+                <td class="td-text">Selected Agent</td>
+              </tr>
+              <tr>
+                <td
+                  class="td-label">{{ 'deposant.details.validateReglement.miseDisposition.step2.agence' | translate }}
+                </td>
+                <td class="td-text">Selected Agence</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="modal-separator">
+</div>
+<div class="modal-footer">
+  <div class="flex-left">
+    <app-button text="{{'deposant.details.validateReglement.annuler' | translate}}" type="primary" [outlined]="true"
+                (click)="close()" class="align-self-start"></app-button>
+  </div>
+  <div class="flex-right">
+    @if (currentStep === 1) {
+      <app-button text="{{'deposant.details.validateReglement.suivant' | translate}}" type="primary"
+                  (click)="currentStep = 2" class="mx-1"></app-button>
+    }
+    @if (currentStep === 2) {
+      <app-button text="{{'deposant.details.validateReglement.precedent' | translate}}" type="primary"
+                  (click)="currentStep = 1" class="mx-1" [outlined]="true"></app-button>
+    }
+    @if (currentStep === 2) {
+      <app-button text="{{'deposant.details.validateReglement.confirme' | translate}}" type="primary" class="mx-1"
+                  [selected]="true" (click)="close()"></app-button>
+    }
+  </div>
+</div>

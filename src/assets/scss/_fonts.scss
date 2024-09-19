@@ -1,0 +1,24 @@
+@font-face{
+  font-family: "Almarai";
+  src: url('../fonts/arab/almarai/Almarai-Regular.ttf')  format('truetype'),
+  url('../fonts/arab/almarai/Almarai-Light.ttf')  format('truetype'),
+  url('../fonts/arab/almarai/Almarai-ExtraBold.ttf')  format('truetype'),
+  url('../fonts/arab/almarai/Almarai-Bold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: "Frutiger LT Pro" ;
+  src: url('../fonts/fonnts.com-Frutiger_LT_Pro_55_Roman.ttf') format('truetype'),
+  url('../fonts/Linotype  FrutigerLTProCondensedIta.woff2') format('woff2');
+}
+
+
+
+/***** Arabic SCSS *****/
+:dir(rtl) {
+  font-family: "Almarai", sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+  direction: rtl !important;
+  unicode-bidi: embed;
+}
+

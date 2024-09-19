@@ -1,0 +1,25 @@
+<div class="modal-header row w-100">
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="depot-details">
+        MOTIF DE RÉACTIVATION
+      <div class="detail-row">
+        <div class="detail-column">
+          <textarea class="motif" [(ngModel)]="motif"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <hr class="card-separator"/>
+  <div class="modal-footer">
+    <app-button type="primary"
+                text="{{'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.retour' | translate}}"
+                (click)="back()" [outlined]="true"></app-button>
+    <app-button type="primary"
+                text="{{'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.confirme' | translate}}"
+                (click)="confirm()" [selected]="true"></app-button>
+  </div>
+  
+

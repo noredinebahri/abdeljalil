@@ -1,0 +1,91 @@
+.container {
+  padding: 26px 30px;
+}
+
+.modal-header {
+  padding: 0px 0px 25px 0px;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.btn-close {
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-body {
+  padding: 0px;
+  font-family: 'Frutiger LT Pro', sans-serif;
+}
+
+textarea {
+  min-height: 100px !important;
+}
+
+.modal-footer {
+  padding: 0px;
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control {
+  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 499;
+  border-radius: 6px !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #AC9961;
+  border-width: 1px;
+  box-shadow: none;
+  outline: 0;
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  background-color: white;
+  border-color: white;
+  background-image: none;
+}
+
+.form-floating {
+  margin-bottom: 2rem !important;
+  border-radius: 6px !important;
+}
+
+.form-floating>.form-control {
+  height: calc(3.9rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(3.5rem + calc(var(--bs-border-width) * 2));
+  line-height: 1.45;
+}
+
+label {
+  font-family: 'Frutiger LT Pro', sans-serif;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  background: #fff;
+  font-size: 16px;
+  color: #878e9f;
+  padding: 0 !important;
+  box-shadow: none;
+}
+
+::ng-deep .ng-select.ng-select-disabled > .ng-select-container,
+::ng-deep .ng-select.ng-select-focused > .ng-select-container {
+  background-color: white !important;
+  border: none !important;
+}
+
+::ng-deep .ng-arrow-wrapper,
+::ng-deep .ng-clear-wrapper,
+::ng-deep .ng-value-container {
+  margin-bottom: 20px !important;
+}

@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="modal-header" xmlns="http://www.w3.org/1999/html">
+    <h5 class="modal-title w-100" *ngIf="!isSubmitted">{{'back-office.suivi-reclamation.reponse.title' | translate}}</h5>
+    <div class="confirm-header"  *ngIf="isSubmitted">
+      <img src="../../../../../../assets/images/svg/confirm.svg" alt="Question Icon" class="icon">
+      <h5 class="modal-title">{{'back-office.suivi-reclamation.reponse.confirmationTitle' | translate}}</h5>
+    </div>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <div class="modal-body">
+
+      <form [formGroup]="reponseForm" novalidate>
+        <ng-container *ngIf="!isSubmitted">
+          <div class="col-md-12">
+            <div class="form-floating">
+          <textarea
+            [placeholder]="'back-office.suivi-reclamation.reponse.message' | translate"
+            class="form-control"
+            formControlName="message"
+            [class.is-invalid]="isInvalid('message')"
+          ></textarea>
+              <label>{{'back-office.suivi-reclamation.reponse.message' | translate}}</label>
+              <div *ngIf="isInvalid('message')" class="invalid-feedback">
+                {{ 'Ce champ est obligatoire' | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">{{'back-office.suivi-reclamation.reponse.pieceJointe' | translate}}</label>
+            <app-file-upload formControlName="pieceJointe" (fileSelected)="handleFileSelected($event)"></app-file-upload>
+          </div>
+         </ng-container>
+        <ng-container *ngIf="isSubmitted">
+          <hr class="card-separator" />
+          <div class="col-md-12">
+            <div class="form-disabled">
+              <label>{{'back-office.suivi-reclamation.reponse.message' | translate}}</label>
+              <textarea
+                readonly
+                class="form-control"
+                formControlName="message"
+              ></textarea>
+
+            </div>
+          </div>
+          <hr class="card-separator" />
+          <div class="col-md-12">
+            <div class="form-disabled">
+              <label>{{'back-office.suivi-reclamation.reponse.pieceJointe' | translate}}</label>
+              <app-file-upload formControlName="pieceJointe" [readonly]="true"></app-file-upload>
+            </div>
+          </div>
+        </ng-container>
+      </form>
+
+  </div>
+  <div class="modal-footer">
+    <ng-container *ngIf="!isSubmitted">
+      <app-button type="primary" [outlined]="true" text="{{'back-office.suivi-reclamation.reponse.cancelButton' | translate}}" (click)="close()"></app-button>
+      <app-button type="primary" text="{{'back-office.suivi-reclamation.reponse.envoyerButton' | translate}}" [selected]="true" (click)="confirmer()"></app-button>
+    </ng-container>
+    <ng-container *ngIf="isSubmitted">
+      <app-button type="primary" [outlined]="true" text="{{'back-office.suivi-reclamation.reponse.retourButton' | translate}}" (click)="retour()"></app-button>
+      <app-button type="primary" text="{{'back-office.suivi-reclamation.reponse.confirmButton' | translate}}" [selected]="true" (click)="save()"></app-button>
+    </ng-container>
+
+  </div>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="outer-card" [ngClass]="theme" [class.disabled]="disabled">
+  <div class="card-heade">
+    <span>{{header}}</span>
+  </div>
+  <div class="inner-card">
+    <div class="card-body">
+      <div class="bloc1">
+        <img src="{{iconPath}}" alt="Close icon">
+      </div>
+      <div class="bloc2">
+        <h4 class="title">{{title}}</h4>
+        <p>{{content}}</p>
+        <a class="document-link" href="{{link}}">{{linkText}}</a>
+      </div>
+    </div>
+
+    <p class="button-description" *ngIf="buttonText">{{buttonText}}</p>
+
+    <div class="custom-button" *ngIf="buttons && buttons.length">
+      <ng-container *ngFor="let button of buttons">
+        <app-button [text]="button.text" (click)="onButtonClick(button.action)" [outlined]="button.outlined" [buttonBolor]="this.color1"></app-button>
+      </ng-container>
+    </div>
+  </div>
+</div>

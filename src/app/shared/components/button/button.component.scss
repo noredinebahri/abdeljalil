@@ -1,0 +1,78 @@
+.button {
+  display: flex;
+  height: 56px;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1.5px solid var(--Royal-Purple-800, #683B8F);
+
+  // Default colors
+  &.primary, &.secondary {
+    background-color: var(--Royal-Purple-800, #683B8F);
+    color: white;
+  }
+
+  &.secondary {
+    background-color: var(--Royal-Purple-800, #683B8F);
+  }
+
+  &.outlined-primary {
+    background-color: transparent;
+    color: var(--Royal-Purple-800, #683B8F);
+    border: 2px solid var(--Royal-Purple-800, #683B8F);
+  }
+
+  &.outlined-secondary {
+    background-color: transparent;
+    color: var(--Royal-Purple-800, #683B8F);
+    border: 2px solid var(--Royal-Purple-800, #683B8F);
+  }
+
+  &.disabled {
+    background-color: #E6E6E6;
+    color: #FFFFFF;
+    border-color: #E6E6E6;
+    cursor: not-allowed;
+  }
+
+  &.selected {
+    border: 2px solid white;
+  }
+
+  &:not(.disabled).no-color-hover:hover {
+    background-color: darken($color: purple, $amount: 10);
+    color: white;
+  }
+
+  &:not(.disabled).color-hover:hover {
+    background-color: white;
+    color: var(--Royal-Purple-800, #683B8F);
+  }
+
+  &.outlined-primary:not(.disabled).no-color-hover:hover {
+    color: #683B8F;
+    background: #FAF7FD;
+  }
+
+  &.outlined-primary:not(.disabled).color-hover:hover {
+    color: white;
+    background: var(--Royal-Purple-800, #683B8F);
+  }
+
+  &.outlined-secondary:not(.disabled).no-color-hover:hover {
+    color: #683B8F;
+    background: #FAF7FD;
+  }
+
+  &.outlined-secondary:not(.disabled).color-hover:hover {
+    color: white;
+    background: var(--Royal-Purple-800, #683B8F);
+  }
+
+  .checkmark-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}

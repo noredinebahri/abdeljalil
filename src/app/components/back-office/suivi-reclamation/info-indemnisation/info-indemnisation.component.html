@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div style="margin-bottom: 22px">
+        <app-form [formItems]="informationsGeneralItems" ></app-form>
+      </div>
+      <div>
+        <app-form [formItems]="modeReglementItems"></app-form>
+      </div>
+      <div class="pt-4">
+        <app-releve-indemnite-table title="Relevé d'indemnité" [accountData]="accountData" [settlementData]="settlementData" [isSuiviReclamation]="true"></app-releve-indemnite-table>
+      </div>
+    </div>
+  </div>
+</div>

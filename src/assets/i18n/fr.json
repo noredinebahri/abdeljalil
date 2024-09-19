@@ -1,0 +1,1299 @@
+
+{
+  "navbar": {
+    "home": "Accueil",
+    "language": "Language",
+    "account": {
+      "title": "Compte",
+      "logout": "Déconnexion",
+      "login": "Se connecter"
+    }
+  },
+  "tools": {
+    "card":{
+      "title": "Menu principal"
+    },
+    "currency": {
+      "mad": "MAD"
+    },
+    "fileupload": {
+      "title": "Glisser et déposer",
+      "condition": "JPG ou PDF, taille de fichier ne dépassant pas 10 Mo.",
+      "buttonTitle": "Sélectionner les fichiers",
+      "error": "Le fichier dépasse la taille maximale autorisée",
+      "consulter": "Consulter"
+    },
+    "table": {
+      "ndossier": "Numéro de dossier",
+      "reclamation": "Numéro de réclamation",
+      "nature": "Nature",
+      "provenance": "Provenance",
+      "creationDate": "Date de création",
+      "Statuts": "Statut",
+      "criticality": "Criticité",
+      "noDataFoundMessage": "Aucune donnée trouvée",
+      "action": "Action",
+      "actionx": "Actions",
+      "actions": {
+        "delete": "Supprimer",
+        "edit": "Modifier",
+        "consult": "Consulter",
+        "cloturer": "Clôturer",
+        "modifier": "Modifier",
+        "desactiver": "Désactiver",
+        "activer": "Activer",
+        "addNew": "Nouvelle valeur",
+        "reactiver" : "Réactiver",
+        "reinitialiserMotDePasse" : "Réinitialiser le mot de passe",
+        "valider" : "Valider",
+        "annuler" : "Annuler",
+        "telecharger": "Télécharger",
+        "affecter" : "Affecter",
+        "repondre" : "Répondre"
+      }
+    },
+    "forminput": {
+      "ribSGFG":"RIB SGFG",
+      "role": "Role",
+      "provenanceReclamation":"Provenance de réclamation",
+      "natureDepotEaceptionnelsTitle": "Nature des dépôts exceptionnels",
+      "sigle": "Sigle",
+      "code":"Code",
+      "natureIdentifiantDeposantTitle":"Nature de l’identifiant du déposant",
+      "referentiel":"Référentiel",
+      "plafond": "Plafond (MAD)",
+      "commentaires":"Commentaire",
+      "upload":"Pièces jointes",
+      "libelleArabe": "Libellé VA",
+      "nomAdherent":"Nom adhèrent",
+      "nCampagne":"N° campagne",
+      "dateDebut":"Date début",
+      "dateFin":"Date fin",
+      "natureCampagne":"Nature campagne",
+      "libelle": "Libellé",
+      "entitie": "Entité",
+      "typeEntitie": "type entitié",
+      "adresseLigne1": "Adresse Ligne 1",
+      "adressePostale": "Adresse Postale ",
+      "adresseLigne2": "Adresse Ligne 2",
+      "codePostale": "Code postal",
+      "ville": "Ville",
+      "pays": "Pays",
+      "nom": "Nom",
+      "statutVieDeposant":"Statut de vie du déposant",
+      "codeRole": "Code rôle",
+      "nfraude":"N° fraude",
+      "dateIndentificationFraude":"Date d'identification de la fraude",
+      "montantTotalIndemnisation":"Montant total de l'indemnisation (MAD)",
+      "montantVerseEnAvance":"Montant versé en avance (MAD)",
+      "montantQuiRestVerse":"Montant qui reste à verser (MAD)",
+      "nomRole": "Nom rôle",
+      "prenom": "Prénom",
+      "dateNaissance": "Date de naissance",
+      "nationalite": "Nationalité",
+      "nIdentification": "N°d'identification",
+      "motPasse": "Mot de passe",
+      "fixe": "Fixe",
+      "mobile": "Mobile",
+      "email": "Email",
+      "adresse1": "Adresse (Ligne 1)",
+      "adresse2": "Adresse (Ligne 2)",
+      "modeDeReglement":"Mode de règlement",
+      "indicatif": "Indicatif",
+      "nDepot" : "Numéro de dépot",
+      "natureDepot" : "Nature de dépot",
+      "natureReclamation": "Nature de la réclamation",
+      "montant" : "Montant (MAD)",
+      "dateSurverance" : "Date de surverance",
+      "dateDepot" : "Date du dépôt",
+      "dateDeclaration" : "Date de déclaration",
+      "montantDepot" : "Montant du dépôt (MAD)",
+      "montantReclame" : "Montant réclamé (MAD)",
+      "pieceJointe" : "Pièce jointe",
+      "pieceJointes" : "Pièces jointes",
+      "natureIdDeposant" : "Nature ID déposant",
+      "partHeritage" : "Part héritage",
+      "nId" : "N° ID",
+      "NomComercialCompte" : "Nom commercial du compte",
+      "rib" : "RIB",
+      "pcec" : "PCEC",
+      "devise" : "Devise",
+      "natureCompte" : "Nature compte",
+      "nbrContitulaires" : "Nombre de cotitulaires",
+      "statusCompte" : "Status compte",
+      "motifNstp" : "Motif NSTP",
+      "soldeMad" : "Solde (MAD)",
+      "idScv" : "ID SCV",
+      "typeDeposant" : "Type de déposant",
+      "nombreHeritiers" : "Nombre héritiers",
+      "statusVieDeposant" : "Statut de vie du déposant",
+      "cin" : "CIN",
+      "nDossier" : "Nº dossier",
+      "mntIndemnite" : "Montant de l'indemnité (MAD)",
+      "modeReglement" : "Mode de paiement",
+      "criticite": "Criticité",
+      "provenance": "Provenance",
+      "message": "Message",
+      "Ndossier" : "N°dossier",
+      "montantIndemnite" : "Mode de l'indemnité (MAD)",
+      "numeroReclamation" : "Numéro de réclamation",
+      "canalEnvoie" : "Canal d'envoi",
+      "compteBancaire" : "Compte bancaire",
+      "coordoneeqBancaires" : "Coordonnées bancaires",
+      "statutCompte" : "Statut compte",
+      "idElement" : "ID de l’élément",
+      "element" : "Élément",
+      "typeOperation" : "Type opération",
+      "dateOperation" : "Effectué le",
+      "responsableOperation" : "Effectué par",
+      "numeroDossier" : "N° dossier",
+      "numeroInstruction" : "N° instruction",
+      "numeroReference" : "N° référence",
+      "buttons": {
+        "enregistrer": "enregistrer",
+        "annuler": "annuler"
+      },
+      "errors": {
+        "required": "Veuillez remplir ce champ requis.",
+        "minLength": "longueur minimum",
+        "maxLength": "longueur  maximum",
+        "invalidPhoneNumber": "Veuillez saisir un numéro de téléphone valide.",
+        "email": "Veuillez entrer une adresse email valide."
+      },
+      "reponse": "Réponse"
+    }
+  },
+  "sidebar": {
+    "menus": {
+      "title": "Menu Principale",
+      "referentiel": {
+        "title": "Référentiel",
+        "marque": "Marque"
+      },
+      "administration": {
+        "title": "Administration"
+      },
+      "required": "Veuillez remplir ce champ requis.",
+      "minLength": "La longueur minimale requise n'est pas atteinte.",
+      "maxLength": "La longueur maximale autorisée est dépassée.",
+      "invalidPhoneNumber": "Veuillez entrer un numéro de téléphone valide."
+
+    }
+  },
+  "global": {
+    "title": "SGFG",
+    "action": {
+      "edit": "Modifier",
+      "view": "Consulter",
+      "delete": "Supprimer",
+      "add": "Ajouter",
+      "cancel": "Annuler",
+      "save": "Enregister",
+      "valid": "Valider",
+      "back": "Retour",
+      "actions": "Actions",
+      "loading": "Chargement"
+    },
+    "item-count": "{{first}} - {{second}} sur {{total}}",
+    "validators": {
+      "required": "Champ obligatoire",
+      "maxLength": "Champ ne doit pas dépassé {{max}} caractères",
+      "edit": "Modifier",
+      "consult": "Consulter"
+
+    },
+    "messages": {
+      "noDataFound": "Aucune donnée trouvée",
+      "desactiverSuccess": "Valeur désactivée avec succès.",
+      "activerSuccess": "Valeur activer avec succès.",
+      "addSuccess": "Valeur ajoutée avec succès.",
+      "updateSuccess":"Valeur modifier avec succès."
+    },
+    "errors": {
+      "ENTITY_ALREADY_EXISTS_CODE":"le code est déjà prise,veuillez saisir une autre code",
+      "INTERNAL_SERVER_ERROR": "Erreur inattendue, veuillez réessayer plus tard",
+      "ENTITY_NOT_FOUND_CODE": "L'entité demandée est introuvable. Veuillez vérifier l'identifiant et réessayer.",
+      "ERROR_CHANGING_STATUS": "Erreur lors de la bascule du statut actif",
+      "ERROR_SAVING_OR_UPDATING": "Erreur lors de l'enregistrement ou de la mise à jour de l'entité!"
+    }
+  },
+  "demarrage": {
+    "vosDossier": {
+      "title": "VOS DOSSIERS",
+      "text": "Sélectionnez un dossier pour accéder à l'espace souhaité.",
+      "precedentButton": "Précédent",
+      "continuerButton": "Continuer"
+    }
+  },
+  "trace" : {
+    "title":"Détails de la trace",
+    "precedent": "Retour à la liste"
+
+  },
+
+  "fraude":{
+    "detail":{
+      "title":"mode de réglement"
+    },
+    "modal":{
+      "title":"ÊTES-VOUS SÛR(E) DE VOULOIR VALIDER VOTRE DÉCISION DE NON-FRAUDE POUR LE DOSSIER N° 1234500001 ?",
+      "qualificationDeNonFraude": "QUALIFICATION DE NON FRAUDE"
+
+    }
+
+  },
+  "utilisateur": {
+    "user": "Utilisateur",
+    "title": "VOTRE COMPTE",
+    "text": "Gérez les paramètres de votre compte.",
+    "precedent": "Précédent",
+    "infoPerson": {
+      "title": "Information Personnelles"
+    },
+    "parametreConnexion": {
+      "title": "Paramètres de connextion",
+      "changerMdpButton": "Changer mon mot de passe",
+      "updatePasswordPopup": {
+        "title": "CHANGER LE MOT DE PASSE",
+        "text": "Votre mot de passe doit contenir au moins 6 caractères ainsi qu’une combinaison de chiffres, de lettres et de caractères spéciaux.",
+        "currentPassword": "Mot de passe actuel",
+        "newPassword": "Nouveau mot de passe",
+        "confirmePassword": "Confirmez le nouveau mot de passe",
+        "currentPasswrodRequired": "Mot de passe actuel est requis.",
+        "newPasswordRequired": "Nouveau mot de passe est requis.",
+        "minLengthPassword": "Mot de passe doit avoir au moins 6 caractères.",
+        "passwordPatternRequired": "Le mot de passe doit contenir au moins un caractère spécial (par exemple : @, #, $, %, &).",
+        "confirmationNewPassRequired": "Confirmation de mot de passe est requise.",
+        "passwordsNotMatched":"Les mots de passe ne correspondent pas.",
+        "forgetPassword": "Mot de passe oublié ?",
+        "buttons": {
+          "enregistrer": "Enregistrer",
+          "annuler": "Annuler"
+        }
+      }
+    },
+    "coordonnee": {
+      "title": "Coordonnées de contact",
+      "updateCoordonneeButton": "Mettre à jour mes coordonnées de contact"
+    },
+    "adressePostal": {
+      "title": "Adresse postale",
+      "updatePasswordButton": "Mettre à jour mon adresse postale"
+    }
+
+  },
+  "menu": {
+    "reclamations": "Réclamations",
+    "depotExceptionnels": "Dépôts exceptionnels",
+    "compteRendu": "C.R.",
+    "accueil": "Accueil",
+    "notification": {
+      "title": "Notifications",
+      "marquerCommeLue": "Marquer comme lue",
+      "supprimer": "Supprimer cette notification",
+      "consulter": "Consulter",
+      "vousAverRecu": "Vous avez reçu un",
+      "voirTout": "Voir tout"
+    },
+    "compte": {
+      "username": "El Ayachi Mohamed",
+      "votreCompte": "Votre compte",
+      "vosDossier": "Vos dossies",
+      "seDeconnecter": "Se déconnecter"
+    }
+  },
+  "deposant": {
+    "depotExceptionnel": {
+      "nature": "Nature de dépot",
+      "montant": "Montant (MAD)",
+      "dateSurverance": "Date de surverance"
+    },
+    "reclamation": {
+      "nature": "Nature de réclamation",
+      "dateCreation": "Date de création",
+      "confirmationReclamation": {
+        "messageConfirmationDraft": "Êtes-vous sûr(e) de vouloir enregistrer votre réclamation comme brouillon ? ?",
+        "messageConfirmatinNotDraft": "Êtes-vous sûr(e) de vouloir enregistrer votre réclamation ?",
+        "explication": "Si vous confirmez, votre dépôt exceptionnel sera",
+        "explicationofSave": "enregistré comme brouillon afin que vous puissiez le revoir ou le modifier plus tard.",
+        "explicationofEnvoyer": "envoyé pour traitement.",
+        "natureReclamation": "Nature de la réclamation",
+        "message": "Message",
+        "piecesJointes": "Pièces jointes",
+        "consulter": "Consulter",
+        "retour": "Retour",
+        "confirme": "Je confirme"
+      },
+      "detail": {
+        "title": "DÉTAILS DE VOTRE RÉCLAMATION",
+        "precedent": "Précédent",
+        "infoGeneral": {
+          "title": "Informations générales",
+          "numReclamation": "Numéro de réclamation",
+          "canalEnvoi": "Canal d'envoi",
+          "modifierButton": "Modifier",
+          "envoyerButton": "Envoyer",
+          "cloturerButton": "Clôturer la réclamation"
+        },
+        "votreReclamation": {
+          "title": "Votre réclamation",
+          "natureReclamation": "Nature de la réclamation",
+          "message": "Message",
+          "pieceJointe": "Pièces jointes",
+          "consulter": "Consulter"
+        },
+        "etatExecptionnel": {
+          "title": "État de votre dépôt exceptionnel",
+          "dossierCree": "Dossier créé.",
+          "enAttenteInfo": "En attente des informations de règlement.",
+          "indemnisationCalculee": "Indemnisation calculée.",
+          "reglementEncours": "Règlement en cours de traitement."
+        },
+        "cloturer": {
+          "title": "Êtes-vous sûr(e) de vouloir Clôturer votre réclamation ?",
+          "text": "Si vous confirmez, votre réclamation sera clôturer et considérée comme résolue.",
+          "confirmButton": "Je confirme",
+          "cancelButton": "Annuler"
+        }
+      }
+    }
+  },
+  "centreAppele":{
+    "title": "DOSSIER DU DÉPOSANT",
+    "tabs": {
+      "infosDeposant": "Infos déposant",
+      "detailIndemnisation": "Détails indemnisation",
+      "reclamation": "Réclamations",
+      "suiviDossier": "Suivi dossier"
+    },
+    "identifierDeposant" :{
+      "title": "IDENTIFIER UN DÉPOSANT"
+    }
+  },
+
+  "login": {
+    "title": "Login"
+  },
+  "referentiel": {
+    "marque": {
+      "titles": {
+        "list": "Liste des marques",
+        "detail": "Détail d'une marque",
+        "delete": "Confirmation de suppression",
+        "add": "Ajout d'une marque",
+        "update": "Modification d'une marque"
+      },
+      "messages": {
+        "created": "Une nouvelle marque a été créé",
+        "updated": "La marque a été mis à jour",
+        "deleted": "La marque a été supprimé"
+      },
+      "questions": {
+        "delete": "Êtes-vous sûr de vouloir supprimer la marque {{libelle}}?"
+      },
+      "fields": {
+        "id": "ID",
+        "code": "Code",
+        "libelle": "Libellé"
+      }
+    },
+    "title": "Ajouter une nouvelle valeur",
+    "referentiel": "Référentiel",
+    "libelleArabeRequired":"Merci de saisir ce champ en arabe",
+    "comptesNSTPTitle": "Comptes NSTP",
+    "ribSGFG":"RIB SGFG",
+    "natureDepotEaceptionnelsTitle": "Nature des dépôts exceptionnels",
+    "nationaliteTitle": "Nationalité / Pays de naissance",
+    "formeJuridiqueTitle": "Forme juridique",
+    "natureIdentifiantDeposantPhysiqueTitle": "Nature de l’identifiant du déposant physique",
+    "natureIdentifiantDeposantTitle": "Nature de l’identifiant du déposant",
+    "libellePCECTitle": "Libellé PCEC",
+    "deviseTitle": "Devise",
+    "etablissementsAdherentsTitle": "Établissements adhérents",
+    "detectionFraudeTitle": "Detection Fraude",
+    "paysTitle": "Pays",
+    "villeTitle": "Ville",
+    "agentPayeurTitle":"Agent payeur",
+    "provenanceReclamationTitle":"Provenance de réclamation",
+    "criticiteReclamationTitle":"Criticité de réclamation",
+    "agenceTitle":"Agence",
+    "confirmationTitle": "ÊTES-VOUS SÛR(E) DE VOULOIR AJOUTER UNE NOUVELLE VALEUR AU RÉFÉRENTIEL",
+    "updateConfirmationTitle":"Êtes-vous sûr(e) de vouloir modifier cette valeur ?",
+    "code": "Code",
+    "libelle": "Libellé",
+    "libelleArabe": "Libellé VA",
+    "active": "Statut",
+    "plafond": "Plafond (MAD)",
+    "nationalite": "Nationalite",
+    "sigle": "Sigle",
+    "modifier": "Modifier",
+    "desactiver": "Désactiver",
+    "addNew": "Nouvelle valeur",
+    "cancel": "Annuler",
+    "confirmer": "Confirmer",
+    "retour": "Retour",
+    "save":"Enregistrer",
+    "required": "Ce champ est obligatoire.",
+    "desactiverMessage":"Êtes-vous sûr(e) de vouloir désactiver la valeur",
+    "activerMessage":"Êtes-vous sûr(e) de vouloir activer la valeur",
+    "ndossier": "Nº dossier",
+    "numReclamation": "Nº réclamation",
+    "nature": "Nature",
+    "dateCreation": "Date de création",
+    "dateAffectation": "Date d'affectation",
+    "uniteOrganisationnelle": "Unité organisationnelle",
+    "status": "Statut",
+    "criticality": "Criticité",
+    "motifRejetInstructionPaiement" : "Motif de rejet de l'instruction de paiement"
+  },
+  "indemnisation":{
+    "title": "Ajouter une nouvelle Campagne idemnisation",
+    "confirmationTitle":"Êtes-vous sûr(e) de vouloir ajouter une compaigne d'indemnisation",
+    "supressionTitle":"Êtes-vous sûr(e) de vouloir supprimer la compaigne N°",
+    "commentaite":"Commentaire",
+    "updateTitle":"Êtes-vous sûr(e) de vouloir modifier une compaigne d'indemnisation"
+  },
+
+  "enum": {
+    "statutDossier": {
+      "EN_COURS": "En cours",
+      "NOUVELLE_DEMANDE": "Nouvelle demande",
+      "EN_ATTENTE_DE_COMPLEMENT": "En attente de complément",
+      "TRAITEE": "Traitée",
+      "APPROUVE": "Approuvé",
+      "VALIDE_PAR_SGFG": "Validé par la SGFG",
+      "REJETE_PAR_SGFG": "Rejeté par la SGFG ",
+      "CLOTUREE": "Clôturée",
+      "BROUILLON": "Brouillon",
+      "REJECTEE": "Rejetée",
+      "INITIALE": "Initiale",
+      "EXECUTEE": "Exécutée",
+      "ANUULER": "Annulé",
+      "VALIDER": "Validé",
+      "EN_ATTENTE_DE_VALIDATION": "En attente de validation",
+      "ACTIVER": "Activé",
+      "DESACTIVER": "Désactivé"
+    },
+    "criticite": {
+      "CRITIQUE": "Critique",
+      "ELEVEE": "Elevée",
+      "FAIBLE": "Faible"
+    },
+    "natureDepot": {
+      "ASSURANCE_VIE": "Assurance vie",
+      "ASSURANCE_RETRAITE": "Assurance retraite",
+      "VENTE_BIEN_IMMOBILIER": "Vente d'un bien immobilier"
+    },
+    "compteBancaire": {
+      "ASSURANCE_VIE": "Assurance vie",
+      "ASSURANCE_RETRAITE": "Assurance retraite",
+      "VENTE_BIEN_IMMOBILIER": "Vente d'un bien immobilier"
+    },
+    "natureReclamation": {
+      "SOLDE_COMPTE_INCORRECTE": "Solde de compte incorrect",
+      "MNT_INDEM_INCORRECTE": "Montant d’indemnisation incorrect ",
+      "DEPASSEMENT_DELAI_TRAITEMENT": "Dépassement de délai de traitement",
+      "DEPOT_EXCEP": "Dépôts exceptionnels",
+      "QUALITE_RELATION_CLIENT": "Qualité de la relation clientèle ",
+      "AUTRE": "Autre"
+    },
+    "statutCompte": {
+      "STP": "STP",
+      "NSTP": "NSTP"
+    },
+    "statutReclamation": {
+      "OUVERTE": "Ouverte"
+    },
+    "referentiel": {
+      "true": "Activée",
+      "false": "Désactivée"
+    },
+    "roleStatut": {
+      "Activée": "Activée",
+      "Désactiver": "Désactivé"
+    },
+    "uniteOrganisationelle": {
+      "SGFG": "SGFG",
+      "AGENT_PAYEUR": "Agent payeur",
+      "ADHERENT": "Adhérent",
+      "CENTRE_APPEL": "Centre d'appel"
+    }
+  },
+  "deposant": {
+    "role":{
+      "title":"Suivi du rôle "
+    },
+    "title": "VOTRE DOSSIER D'INDEMNISATION",
+    "tabs": {
+      "detailsIndemnisation": "Détails de l'indemnisation",
+      "depotsExceptionnels": "Dépôts exceptionnels",
+      "reclamation": "Réclamations",
+      "representantsLegaux": "Représentants légaux",
+      "heritiers": " Héritiers",
+      "comptesBancaires": "Comptes bancaires"
+    },
+      "depotExceptionnel": {
+      "title": "Les déclarations de dépôts exceptionnels",
+      "text": "Vous avez reçu des fonds de votre assurance, vendu un bien, ou toute autre entrée de revenu ? Signalez-les pour une évaluation précise de votre indemnisation.",
+      "nature": "Nature du dépôt",
+      "montant": "Montant (MAD)",
+      "dateSurverance": "Date d'échéance",
+      "declarerButton": "Déclarer un dépôt exceptionnel",
+      "table": {
+        "ndepot": "Nº du dépôt",
+        "nature": "Nature dépôt",
+        "montant": "Montant (MAD)",
+        "dateDeclaration": "Date déclaration",
+        "status": "Statut",
+        "pieceJointeName": "Pièces jointes"
+      },
+      "declarationExceptionnel": {
+        "title": "DÉCLARER UN DÉPÔT EXCEPTIONNEL",
+        "natureDepot": "Nature du dépôt ",
+        "montant": "Montant (MAD)",
+        "montantDepot": "Montant du dépôt (MAD) ",
+        "montantReclame": "Montant réclamé (MAD) ",
+        "NatureDpot": "Nature du dépôt ",
+        "compteBancaire": "Compte bancaire ",
+        "dateSurverance": "Date d'échéance",
+        "pieceJointeName": "Pièces jointes",
+        "declarerButton": "Déclarer",
+        "saveButton": "Enregistrer comme brouillon",
+        "dateDepot": "Date du dépôt"
+      }
+    },
+    "reclamation": {
+      "confirmationReclamation": {
+        "messageConfirmationDraft": "Êtes-vous sûr(e) de vouloir enregistrer votre réclamation comme brouillon ? ?",
+        "messageConfirmatinNotDraft": "Êtes-vous sûr(e) de vouloir enregistrer votre réclamation ?",
+        "explication": "Si vous confirmez, votre réclamation sera",
+        "explicationofSave": "enregistré comme brouillon afin que vous puissiez le revoir ou le modifier plus tard.",
+        "explicationofEnvoyer": "envoyée pour traitement.",
+        "natureReclamation": "Nature de la réclamation",
+        "message": "Message",
+        "piecesJointes": "Pièces jointes",
+        "consulter": "Consulter",
+        "retour": "Retour",
+        "confirme": "Je confirme"
+      },
+      "title": "Les réclamations",
+      "text": "Si vous avez des réserves concernant le montant de votre indemnisation ou si vous rencontrez un problème, n'hésitez pas à nous faire part de vos préoccupations en rédigeant une réclamation.",
+      "nature": "Nature de la réclamation",
+      "dateCreation": "Date de création",
+      "redigerReclamationButton": "Déclarer une réclamation",
+      "table": {
+        "numReclamation": "Numéro de réclamation",
+        "nature": "Nature de la réclamation",
+        "createdAt": "Date de création",
+        "status": "Statut",
+        "pieceJointeName": "Pièce jointe"
+      },
+      "detail": {
+        "title": "DÉTAILS DE VOTRE RÉCLAMATION",
+        "precedent": "Précédent",
+        "infoGeneral": {
+          "title": "Informations générales",
+          "numReclamation": "Numéro de réclamation",
+          "canalEnvoi": "Canal d'envoi",
+          "modifierButton": "Modifier",
+          "envoyerButton": "Envoyer",
+          "cloturerButton": "Clôturer la réclamation"
+        },
+        "votreReclamation": {
+          "title": "Votre réclamation",
+          "natureReclamation": "Nature de la réclamation",
+          "message": "Message",
+          "pieceJointe": "Pièces jointes",
+          "consulter": "Consulter"
+        },
+        "etatExecptionnel": {
+          "title": "État de votre dépôt exceptionnel",
+          "dossierCree": "Dossier créé.",
+          "enAttenteInfo": "En attente des informations de règlement.",
+          "indemnisationCalculee": "Indemnisation calculée.",
+          "reglementEncours": "Règlement en cours de traitement."
+        },
+        "cloturer": {
+          "title": "Êtes-vous sûr(e) de vouloir Clôturer votre réclamation ?",
+          "text": "Si vous confirmez, votre réclamation sera clôturer et considérée comme résolue.",
+          "confirmButton": "Je confirme",
+          "cancelButton": "Annuler"
+        }
+      },
+      "declarationReclamation": {
+        "title": "Rédiger une réclamation",
+        "natureReclamation": "Nature de la réclamation",
+        "message": "Message",
+        "pieceJointeName": "Pièces jointes (facultatif)",
+        "envoyer": "Envoyer",
+        "saveButton": "Enregistrer en tant que brouillon"
+      }
+    },
+    "representantsLegaux": {
+      "title": "Liste des représentants légaux",
+      "table": {
+
+        "idScv": "ID SCV",
+        "email": "Email",
+        "mobile": "Mobile",
+        "natureIdDeposant": "Nature ID",
+        "nId": "N° ID",
+        "nomAndPrenom": "Nom & prénom",
+        "nationalite": "Nationalité",
+        "noDataFoundMessage": "Aucune donnée trouvée",
+        "action": "Actions",
+        "actions": {
+          "delete": "Supprimer",
+          "edit": "Modifier",
+          "consult": "Consulter",
+          "cloturer": "Clôturer"
+        }
+      }
+    },
+    "heritier": {
+      "title": "Liste des héritiers",
+      "table": {
+        "idScv": "ID SCV",
+        "natureId": "Nature ID",
+        "montantIndem": "Montant d'indem. (MAD)",
+        "natureIdDeposantHeritiers": "Nature ID héritiers",
+        "nId": "N° ID",
+        "nomAndPrenom": "Nom & prénom",
+        "nationalite": "Nationalité",
+        "noDataFoundMessage": "Aucune donnée trouvée",
+        "action": "Actions",
+        "actions": {
+          "delete": "Supprimer",
+          "edit": "Modifier",
+          "consult": "Consulter",
+          "cloturer": "Clôturer"
+        }
+      }
+    },
+  "gestionUtilisateur":{
+    "user": "Utilisateurs",
+    "title":"GESTION DES UTILISATEURS",
+    "table":{
+      "login": "login",
+      "fullname":"Nom & Prénom",
+      "prenom":"Prénom",
+      "email":"Email",
+      "typeEntite":"Unité Org.",
+      "entite":"Service/ Banque",
+      "statut":"Statut"
+    }
+  },
+  "gestionTrace" : {
+    "title":"GESTION DES TRACES",
+    "table":{
+      "typeOperation":"Type opération",
+      "element":"Elément",
+      "dateOperation":"Effectué le",
+      "responsableOperation":"Effectué par",
+      "details":{
+        "champ":"Champ",
+        "ancienneValeur":"Ancienne valeur",
+        "nouvelleValeur":"Nouvelle valeur"
+      }
+    }
+  },
+  "nouveauUtilisateur":{
+    "title":"Nouveau utilisateur"
+
+  },
+    "reference":{
+      "title":"Référentiels",
+      "table":{
+        "N°reference":"N° référentiel",
+        "Reference":"Référentiel"
+      }
+
+    },
+    "gestionRoles":{
+      "title":"GESTION DES RÔLES",
+      "table":{
+        "codeRole":"Code rôle",
+        "nomRole":"Nom rôle",
+        "statut":"Statut"
+      },
+      "confirmeAjouterRole" :"Êtes-vous sûr(e) de vouloir AJOUTER UN NOUVEAU RÔLE ?"
+    },
+    "nouveauRole":{
+      "title":"NOUVEAU RÔLE"
+
+    },
+    "compte": {
+      "title": "Liste des comptes bancaires",
+      "table": {
+        "pcec": "PCEC",
+        "natureCompte": "Nature compte",
+        "rib": "RIB",
+        "statusCompte": "Statut compte",
+        "nationalite": "Nationalité",
+        "noDataFoundMessage": "Aucune donnée trouvée",
+        "action": "Action",
+        "actions": {
+          "delete": "Supprimer",
+          "edit": "Modifier",
+          "consult": "Consulter",
+          "cloturer": "Clôturer"
+        }
+      },
+      "detail": {
+        "listeContitulaires": {
+          "title": "Liste des cotitulaires",
+          "precedent": "Précédent",
+          "status": {
+            "reglementEncours": "Règlement en cours de traitement.",
+            "enAttenteInfoReglement": "En attente des informations de règlement.",
+            "indemnisationCalculee": "Indemnisation calculée.",
+            "dossierCree":"Dossier créé."
+          }
+
+        },
+        "listeCarteBancaires": {
+          "title" : "Liste des cartes bancaires"
+        },
+        "prelevement": {
+          "title" : "Prélèvements"
+        },
+        "montantIndemnite": "Montant de l'indemnité",
+        "consulterIndemniteButton": "Consulter votre indemnité",
+        "plusDetailsButton": "Plus de détails",
+        "etatDossier": "État de votre dossier",
+        "modeReglements": {
+          "title": "Mode de paiement",
+          "virementBancaire": {
+            "title": "Virement bancaire",
+            "text": "Recevez votre indemnité directement sur votre compte bancaire."
+          },
+          "miseDisposition": {
+            "title": "Mise à disposition",
+            "text": "Retirez votre indemnité au guichet automatique (GAB) de votre banque ou au point de service de transfert d'argent de votre choix."
+          },
+          "saveButton": "Finaliser le mode de paiement"
+        },
+        "validateReglement": {
+          "tabs": {
+            "coordonnePaiement": "Coordonnées de paiement",
+            "recaptiulatif": "Récapitulatif"
+          },
+          "virementBancaire": {
+            "step1": {
+              "title": "Saisir les coordonnées de votre compte bancaire",
+              "text": "Vos coordonnées bancaires seront traitées en toute confidentialité.",
+              "codeBanque": "Code banque",
+              "codeGuichet": "Code guichet",
+              "numeroCompte": "Numéro de compte",
+              "nomBanque": "Nom de la banque"
+            },
+            "step2": {
+              "title": "Confirmer le récapitulatif",
+              "montantTitle": "Montant de l'indemnité",
+              "montant": "Montant",
+              "coordonneContact": "Coordonnées de contact",
+              "nomComplet": "Nom complet",
+              "mobile": "Mobile",
+              "fixe": "Téléphone Fixe",
+              "email": "Email",
+              "adressePostale": "Adresse postale",
+              "coordonneReglement": "Coordonnées de règlement",
+              "coordonnePaiement": "Coordonnées de paiement",
+              "modeReglement": "Mode de paiement ",
+              "coordonnesBancaire": "Coordonnées bancaires",
+              "banque": "Banque",
+              "codeBanque": "Code banque",
+              "codeGuichet": "Code guichet",
+              "numeroCompte": "Numéro de compte",
+              "nomBanque": "Nom de la banque"
+            }
+          },
+          "miseDisposition": {
+            "step1": {
+              "title": "Choisir un agent payeur",
+              "text": "Commencez par sélectionner un agent payeur, puis choisissez l'agence associée.",
+              "agentPayeur": "Agent payeur",
+              "agence": "Agence"
+            },
+            "step2": {
+              "title": "Confirmer le récapitulatif",
+              "montantTitle": "Montant de l'indemnité",
+              "montant": "Montant",
+              "coordonneContact": "Coordonnées de contact",
+              "nomComplet": "Nom complet",
+              "mobile": "Mobile",
+              "fixe": "Téléphone Fixe",
+              "email": "Email",
+              "adressePostale": "Adresse postale",
+              "coordonneReglement": "Coordonnées de règlement",
+              "coordonnePaiement": "Coordonnées de paiement",
+              "modeReglement": "Mode de paiement ",
+              "agentPayeur": "Agent payeur",
+              "agence": "Agence"
+            }
+          },
+          "suivant": "Suivant",
+          "precedent": "Précédent",
+          "confirme": "Confirmer"
+        },
+        "releveIndemnite": {
+          "title": "Relevé d'indemnité",
+          "precedentButton": "Précédent",
+          "calculBaseIndemnisation": "Calcul de la base d'indemnisation: comptes et opérations traités",
+          "libelleCompte": "Libellé du compte ou type d'opération",
+          "numeroCompte": "Numéro de compte",
+          "soldeCompte": "Solde du compte ou montant de l'opération en cas d'échec (MAD)",
+          "baseIndemnisation": "Base d'indemnisation (MAD)"
+        },
+        "indemnisation": {
+          "title": "Calcul de l'indemnisation et règlement",
+          "montant": "Montant (MAD)",
+          "indemnisation": "Indemnisation (MAD)"
+        }
+      }
+    },
+    "suiviDossier": {
+      "title": "Suivi du dossier"
+    },
+    "details": {
+      "etatAvancementDossier": {
+        "title": "ÉTAT DE VOTRE DOSSIER",
+        "precedent": "Précédent",
+        "status": {
+          "reglementEncours": "Règlement en cours de traitement.",
+          "enAttenteInfoReglement": "En attente des informations de règlement.",
+          "indemnisationCalculee": "Indemnisation calculée.",
+          "dossierCree":"Dossier créé.",
+          "enAttenteModeReglement": "En attente du mode de paiement",
+          "3emeEtapSure7Completee": "3ème étape sur 7 complétée"
+        }
+      },
+      "montantIndemnite": "Montant de l'indemnité",
+      "consulterIndemniteButton": "Consulter votre relevé d’indemnité ",
+      "plusDetailsButton": "Plus de détails",
+      "etatDossier": "État de votre dossier",
+      "modeReglements": {
+        "title": "Mode de paiement",
+        "virementBancaire": {
+          "title": "Virement bancaire",
+          "text": "Recevez votre indemnité directement sur votre compte bancaire."
+        },
+        "miseDisposition": {
+          "title": "Mise à disposition",
+          "text": "Retirez votre indemnité au guichet automatique (GAB) de votre banque ou au point de service de transfert d'argent de votre choix."
+        },
+        "saveButton": "Finaliser le mode de paiement"
+      },
+      "validateReglement": {
+        "tabs": {
+          "coordonneReglement": "Coordonnées de règlement",
+          "coordonnePaiement": "Coordonnées de paiement",
+          "recaptiulatif": "Récapitulatif"
+        },
+        "annuler": "Annuler",
+        "virementBancaire": {
+          "step1": {
+            "title": "Saisir les coordonnées de votre compte bancaire",
+            "text": "Vos coordonnées bancaires seront traitées en toute confidentialité.",
+            "codeBanque": "Code banque",
+            "codeGuichet": "Code guichet",
+            "numeroCompte": "Numéro de compte",
+            "nomBanque": "Nom de la banque",
+            "rib": "RIB"
+          },
+          "step2": {
+            "title": "Confirmer le récapitulatif",
+            "montantTitle": "Montant de l'indemnité",
+            "montant": "Montant",
+            "coordonneContact": "Coordonnées de contact",
+            "nomComplet": "Nom complet",
+            "mobile": "Mobile",
+            "fixe": "Fixe",
+            "email": "Email",
+            "adressePostale": "Adresse postale",
+            "coordonneReglement": "Coordonnées de paiement",
+            "modeReglement": "Mode de paiement ",
+            "coordonnesBancaire": "Coordonnées bancaires",
+            "banque": "Banque",
+            "codeBanque": "Code banque",
+            "codeGuichet": "Code guichet",
+            "numeroCompte": "Numéro de compte",
+            "nomBanque": "Nom de la banque"
+          }
+        },
+        "miseDisposition": {
+          "step1": {
+            "title": "Choisir un agent payeur",
+            "text": "Commencez par sélectionner un agent payeur, puis choisissez l'agence associée.",
+            "agentPayeur": "Agent payeur",
+            "agence": "Agence"
+          },
+          "step2": {
+            "title": "Confirmer le récapitulatif",
+            "montantTitle": "Montant de l'indemnité",
+            "montant": "Montant",
+            "coordonneContact": "Coordonnées de contact",
+            "coordonnesBancaire": "Coordonnées bancaires",
+            "nomComplet": "Nom complet",
+            "mobile": "Mobile",
+            "fixe": "Fixe",
+            "email": "Email",
+            "adressePostale": "Adresse postale",
+            "coordonneReglement": "Coordonnées de règlement",
+            "modeReglement": "Mode de paiement ",
+            "agentPayeur": "Agent payeur",
+            "agence": "Agence"
+          }
+        },
+        "suivant": "Suivant",
+        "precedent": "Précédent",
+        "confirme": "Confirmer"
+      },
+      "releveIndemnite": {
+        "title": "Relevé d'indemnité",
+        "precedentButton": "Précédent",
+        "retourToList": "Retour à la liste",
+        "calculBaseIndemnisation": "Calcul de la base d'indemnisation: comptes et opérations traités",
+        "libelleCompte": "Libellé du compte ou type d'opération",
+        "numeroCompte": "Numéro de compte",
+        "soldeCompte": "Solde du compte ou montant de l'opération en cas défaillance (MAD)",
+        "baseIndemnisation": "Base d'indemnisation (MAD)"
+      },
+      "indemnisation": {
+        "title": "Calcul de l'indemnisation et règlement",
+        "montant": "Montant (MAD)",
+        "indemnisation": "Indemnisation (MAD)"
+      }
+    }
+      },
+  "adherent": {
+  "reclamation": {},
+  "depotExceptionnel": {
+    "details": {
+      "title": "Détails du dépôt exceptionnel temporaire",
+      "tabs": {
+        "depotTemporaire": {
+          "title": "Dépôt exceptionnel temporaire",
+          "infoGenerales": {
+            "title": "Informations générales",
+            "numDepot": "Nº du dépôt",
+            "natureDepot": "Nature du dépôt",
+            "montant": "Montant (MAD)",
+            "dateDeclaration": "Date de la déclaration",
+            "dateSurvenance": "Date de survenance",
+            "piecesJointes": "Pièces jointes",
+            "cin": "CIN",
+            "prenom": "Prénom",
+            "nationalite": "Nationalité",
+            "buttons": {
+              "rejeter": "Rejeter",
+              "approuver": "Approuver"
+            }
+          },
+          "StatutDeclaration": {
+            "title": "Statut de la déclaration du dépôt exceptionnel",
+            "enCours": "Dépôt exceptionnel en cours de traitement.",
+            "declare": "Dépôt exceptionnel déclaré."
+          },
+          "popup": {
+            "approbation&Rejet": "Motif d’approbation / de rejet",
+            "confirmationApprovation": "Êtes-vous sûr(e) de vouloir approuver le dépôt exceptionnel temporaire NºDDI/01062020/AV ?",
+            "confirmationRejet": "Êtes-vous sûr(e) de vouloir rejeter le dépôt exceptionnel temporaire NºDDI/01062020/AV ?",
+            "decision": "Décision",
+            "pieceJointe": "Pièces jointes (facultatif)",
+            "buttons": {
+              "envoyer": "Envoyer",
+              "annuler": "Annuler",
+              "confirme": "Je confirme",
+              "retour": "Retour",
+              "consulter": "Consulter"
+            }
+          }
+        },
+        "infosDeposant": {
+          "title": "Infos déposant",
+          "infoGenerales": {
+            "title": "Informations générales",
+            "numDossier": "N° dossier",
+            "statutDeposant": "Statut de vie du déposant",
+            "typeDeposant": "Type de déposant",
+            "cin": "CIN",
+            "nom": "Nom",
+            "prenom": "Prénom",
+            "dateNaissance": "Date de naissance",
+            "nationalite": "Nationalité",
+            "nombreHeritiers": "Nombre héritiers"
+          }
+        },
+        "detailsIndemnisation": {
+          "title": "Détails indemnisation",
+          "infoGenerales": {
+            "title": "Informations générales",
+            "numDepot": "Nº dépôt",
+            "numDossier": "Nº dossier",
+            "montant": "Montant de l'indemnité (MAD)"
+          },
+          "modeReglement": {
+            "title": "Mode de paiement ",
+            "modeReglement": "Mode de paiement ",
+            "rib": "RIB"
+          }
+        },
+        "representantsLegaux": {
+          "title": "Représentants légaux"
+        },
+        "heritiers": {
+          "title": "Héritiers"
+        },
+        "comptesBancaires": {
+          "title": "Comptes bancaires"
+        }
+      }
+    }
+  },
+  "details": {
+    "etatAvancementDossier": {
+      "title": "ÉTAT DE VOTRE DOSSIER",
+      "precedent": "Précédent",
+      "status": {
+        "reglementEncours": "Règlement en cours de traitement.",
+        "enAttenteInfoReglement": "En attente des informations de règlement.",
+        "indemnisationCalculee": "Indemnisation calculée.",
+        "dossierCree": "Dossier créé."
+      }
+    },
+    "montantIndemnite": "Montant de l'indemnité",
+    "consulterIndemniteButton": "Consulter votre indemnité",
+    "plusDetailsButton": "Plus de détails",
+    "etatDossier": "État de votre dossier",
+    "modeReglements": {
+      "title": "Mode de paiement",
+      "virementBancaire": {
+        "title": "Virement bancaire",
+        "text": "Recevez votre indemnité directement sur votre compte bancaire."
+      },
+      "miseDisposition": {
+        "title": "Mise à disposition",
+        "text": "Retirez votre indemnité au guichet automatique (GAB) de votre banque ou au point de service de transfert d'argent de votre choix."
+      },
+      "saveButton": "Finaliser le mode de paiement"
+    },
+    "validateReglement": {
+      "tabs": {
+        "coordonneReglement": "Coordonnées de règlement",
+        "recaptiulatif": "Récapitulatif"
+      },
+      "virementBancaire": {
+        "step1": {
+          "title": "Saisir les coordonnées de votre compte bancaire",
+          "text": "Vos coordonnées bancaires seront traitées en toute confidentialité.",
+          "codeBanque": "Code banque",
+          "codeGuichet": "Code guichet",
+          "numeroCompte": "Numéro de compte",
+          "nomBanque": "Nom de la banque"
+        },
+        "step2": {
+          "title": "Confirmer le récapitulatif",
+          "montantTitle": "Montant de l'indemnité",
+          "montant": "Montant",
+          "coordonneContact": "Coordonnées de contact",
+          "nomComplet": "Nom complet",
+          "mobile": "Mobile",
+          "fixe": "Téléphone Fixe",
+          "email": "Email",
+          "adressePostale": "Adresse postale",
+          "coordonneReglement": "Coordonnées de règlement",
+          "modeReglement": "Mode de paiement ",
+          "coordonnesBancaire": "Coordonnées bancaires",
+          "banque": "Banque",
+          "codeBanque": "Code banque",
+          "codeGuichet": "Code guichet",
+          "numeroCompte": "Numéro de compte",
+          "nomBanque": "Nom de la banque"
+        }
+      },
+      "miseDisposition": {
+        "step1": {
+          "title": "Choisir un agent payeur",
+          "text": "Commencez par sélectionner un agent payeur, puis choisissez l'agence associée.",
+          "agentPayeur": "Agent payeur",
+          "agence": "Agence"
+        },
+        "step2": {
+          "title": "Confirmer le récapitulatif",
+          "montantTitle": "Montant de l'indemnité",
+          "montant": "Montant",
+          "coordonneContact": "Coordonnées de contact",
+          "nomComplet": "Nom complet",
+          "mobile": "Mobile",
+          "fixe": "Téléphone Fixe",
+          "email": "Email",
+          "adressePostale": "Adresse postale",
+          "coordonneReglement": "Coordonnées de règlement",
+          "modeReglement": "Mode de paiement ",
+          "agentPayeur": "Agent payeur",
+          "agence": "Agence"
+        }
+      },
+      "suivant": "Suivant",
+      "precedent": "Précédent",
+      "confirme": "Confirmer"
+    },
+    "releveIndemnite": {
+      "title": "Relevé d'indemnité",
+      "precedentButton": "Précédent",
+      "calculBaseIndemnisation": "Calcul de la base d'indemnisation: comptes et opérations traités",
+      "libelleCompte": "Libellé du compte ou type d'opération",
+      "numeroCompte": "Numéro de compte",
+      "soldeCompte": "Solde du compte ou montant de l'opération en cas d'échec (MAD)",
+      "baseIndemnisation": "Base d'indemnisation (MAD)"
+    },
+    "indemnisation": {
+      "title": "Calcul de l'indemnisation et règlement",
+      "montant": "Montant (MAD)",
+      "indemnisation": "Indemnisation (MAD)"
+    }
+  }
+},
+  "back-office": {
+    "title": "RÔLE",
+    "tabs": {
+      "donnesRole": "Données du rôle",
+      "suiviActivites": "Suivi d'activités",
+      "suiviDossiers": "Suivi dossiers",
+      "infosDeposant": "Infos déposant",
+      "detailsIndemnisation": "Détails de l'indemnisation"
+    },
+    "disableRole": "Êtes-vous sûr(e) de vouloir désactiver le rôle",
+    "reactivateRole": "Êtes-vous sûr(e) de vouloir réactiveenumr le rôle",
+    "motifDisable" : "MOTIF DE DÉSACTIVATION ",
+    "motifReactivate" : "MOTIF DE RÉACTIVATION ",
+    "motif" : "MOTIF",
+    "role": {
+      "INFOS_DEPOSANT": "Dossiers déposant"
+    },
+    "suivi-reclamation": {
+      "title": "LES RÉCLAMATIONS",
+
+      "affectation": {
+        "title": "AFFECTER À",
+        "unitOrganisationelle": "Unité organisationnelle",
+        "commentaire": "Commentaire (facultatif)",
+        "cancelButton": "Annuler",
+        "confirmButton": "Confirmer"
+      },
+      "reponse": {
+        "title": "RÉPONSE",
+        "confirmationTitle": "ÊTES-VOUS SÛR(E) DE VOULOIR ENVOYER VOTRE RÉPONSE ?",
+        "message": "Message",
+        "pieceJointe": "Pièces jointes (facultatif)",
+        "cancelButton": "Annuler",
+        "retourButton": "Retour",
+        "confirmButton": "Confirmer",
+        "envoyerButton": "Envoyer"
+      }
+    }
+  },
+  "dossier": {
+    "reclamation": {
+      "reponse": {
+        "title": "Réponse à la réclamation NºRR/20082004",
+        "reponse": "Réponse",
+        "piecesJointe": "Pièces jointes",
+        "modalTitle": "Êtes-vous sûr(e) de vouloir envoyer votre réponse ?",
+        "buttons": {
+          "repondre": "Répondre",
+          "confirmer": "Confirmer",
+          "annuler": "Annuler",
+          "consulter":"Consulter"
+        }
+      }
+    }
+  },
+  "agentPayeur" :
+  {
+    "title": "Réclamation N° ",
+    "tabs": {
+      "detailsIndemnisation": "Détails de l'indemnisation",
+      "informationsDeposant": "Informations du déposant",
+      "reclamation": "Réclamation",
+      "representantsLegaux": "Représentants légaux",
+      "heritiers": " Héritiers",
+      "comptesBancaires": "Comptes bancaires"
+    },
+    "reclamation":
+    {
+      "detail":
+      {
+        "timeline":
+        {
+          "title": "Statut de la réclamation"
+        }
+      }
+    }
+  },
+  "reclamation":
+  {
+    "responseTitle": "RÉPONDRE À LA RÉCLAMATION N°",
+    "tile": "Titre",
+    "pieceJointe": "Pièce jointe",
+    "message" : "Message",
+    "send" : "Envoyer",
+    "cancel": "Annuler",
+    "confirm" :
+    {
+      "title" : "ÊTES-VOUS SÛR(E) DE VOULOIR ENVOYER VOTRE RÉPONSE ?",
+      "response": "Réponse",
+      "pieceJointe": "Pièces jointes",
+      "confirmer": "Confirmer",
+      "retour": "Retour",
+      "consulter": "Consulter"
+    }
+  },
+  "instructionPaiment":
+  {
+    "title" : "INSTRUCTIONS DE PAIEMENT",
+    "tabs":{
+      "suiviInstructionPaiment" : "Suivi d’instructions de paiement",
+      "suiviBlocInstructionPaiment" : "Suivi des blocs d’instructions de paiement"
+    },
+    "table": {
+      "numeroDossier": "Nº dossier",
+      "numeroInstruction": "Nº instr",
+      "numeroReference": "N° référence",
+      "modeReglement": "Mode de paiement",
+      "dateGeneration": "Date génération",
+      "dateEnvoi": "Date envoi",
+      "dateExecution": "Date exéc",
+      "status": "Statut",
+      "motif": "Motif ",
+      "numeroBloc": "N° bloc",
+      "montant": "Montant (MAD)"
+    },
+    "details" : {
+      "numero" : "INSTRUCTION N°",
+      "precedent": "Retour a la liste"
+
+    },
+    "popup" : {
+      "buttons" : {
+        "annuler" : "Annuler",
+        "confirme" :"Confirmer"
+      }
+    }
+  }, 
+  "parametrage" : {
+    "updateParametrage": {
+      "title" : "PARAMÈTRE",
+      "commentaire": "Commentaires",
+      "valeur": "Valeur",
+      "pieceJointeName": "Pièces jointes",
+      "parametre": "Paramètre",
+      "buttons": {
+        "annuler" : "Annuler",
+        "enregistrer" : "Enregistrer"
+      }
+    }
+  }
+}
+

@@ -1,0 +1,166 @@
+/* General input group styles */
+.input-group {
+  width: 100%;
+}
+
+.form-control {
+  padding-right: 2.5rem; /* Space for the button inside input */
+  padding-left: 1rem; /* Space for the label */
+  height: calc(3.9rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(2.5rem + calc(var(--bs-border-width) * 2));
+  line-height: 1.45;
+  padding-top: 1rem;
+  border-radius: 6px !important;
+}
+
+/* Styles for the floating label */
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 1.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.1s ease;
+  background-color: white; /* Match the background color of the input */
+  padding: 0 0.25rem; /* Add some padding to the label */
+  font-size: 16px;
+  font-weight: 400;
+  transform-origin: left top;
+}
+
+.form-control:focus + .floating-label,
+.form-control:not(:placeholder-shown) + .floating-label {
+  top: 1.9rem;
+  z-index: 20;
+  left: 1.4rem;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--Storm-Dust-500, #6D6D6D);
+  padding: 0 0.25rem;
+  background: white;
+  transform: translateY(-100%) scale(0.90);
+}
+
+.form-control:focus {
+  padding-top: 1.5rem;
+  box-shadow: none;
+  outline: 0;
+  border: 1px solid #AC9961;
+
+}
+
+/* Button styles */
+.btn-calendar {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: none;
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  background-image: url('/assets/images/icone/calendar.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styles for the modal, datepicker, and form select elements */
+::ng-deep .modal-body[_ngcontent-ng-c1647809493] {
+  overflow: visible !important;
+}
+
+::ng-deep .ngb-dp-header,
+::ng-deep .ngb-dp-month,
+::ng-deep .ngb-dp-weekday,
+::ng-deep .ngb-dp-weekdays {
+  background-color: #FFFFFF !important;
+}
+
+::ng-deep .ngb-dp-weekdays {
+  border: none !important;
+  margin-bottom: 1.2rem;
+}
+
+::ng-deep .ngb-dp-arrow-btn {
+  display: none;
+}
+
+::ng-deep ngb-datepicker .ngb-dp-weekday {
+  color: #888888;
+  font-style: normal;
+  width: 3rem;
+}
+
+::ng-deep .ngb-dp-day {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+::ng-deep .bg-primary {
+  --bs-bg-opacity: 1;
+  background-color: rgb(104 59 143) !important;
+}
+
+::ng-deep .form-select {
+  margin-left: 10px;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 499;
+}
+
+::ng-deep .form-select:disabled {
+  background-color: white;
+  border-color: white;
+  background-image: none;
+}
+
+::ng-deep .form-floating {
+  margin-bottom: 2rem !important;
+}
+
+::ng-deep .form-control[_ngcontent-ng-c3862493063]:focus {
+  border-color: #AC9961;
+  border-width: 1px;
+  box-shadow: none;
+  outline: 0;
+}
+
+::ng-deep .form-floating>:disabled ~ label:after,
+::ng-deep .form-floating>.form-control:disabled ~ label:after {
+  background-color: white;
+}
+
+::ng-deep .form-select {
+  height: calc(3.9rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(2.5rem + calc(var(--bs-border-width) * 2));
+  line-height: 1.45;
+}
+
+::ng-deep .ngb-datepicker-navigation {
+  display: block !important;
+}
+
+::ng-deep .dropdown-menu {
+  box-shadow: var(--bs-box-shadow-lg) !important;
+  border: 2px solid white;
+  border-radius: 8px 8px 8px 8px !important;
+}
+
+:host {
+  display: block;
+  width: 100%;
+
+  .input-group {
+    width: 100%;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+}

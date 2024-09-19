@@ -1,0 +1,26 @@
+<div class="card w-100" [ngClass]="{'dark': selected, 'light': !selected, 'selected': selected}" (click)="onCardClick()">
+
+  <div class="header">
+    <img [src]="imagePath" alt="icon" class="icon">
+  </div>
+  <div class="header-content">
+    <h2 class="custom-title mb-3">{{ title }}</h2>
+    <div class="description">
+      <p class="mb-3">{{ description }}</p>
+      <hr>
+    </div>
+  </div>
+  <div class="content">
+    <div class="text-personne">
+      <img [src]="iconPath" alt="Icon" class="content-icon">
+      {{ content }}
+    </div>
+    <div class="text-block" [ngClass]="{
+      'bg-type1': backgroundTypPersonne === 'type1',
+      'bg-type2': backgroundTypPersonne === 'type2',
+      'bg-type3': backgroundTypPersonne === 'type3',
+      'bg-default': !backgroundTypPersonne}">
+      {{ typePersonne }}
+    </div>
+  </div>
+</div>

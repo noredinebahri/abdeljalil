@@ -1,0 +1,200 @@
+<form [formGroup]="form">
+  <div class="form-wrapper">
+    <div class="form-title">
+      @if(formTitle){
+        <h2 >{{ formTitle | translate }}</h2>
+      }
+    </div>
+    <div class="container">
+      <div class="row form-body">
+        @if(showSeparators){
+        <hr class="card-separator">
+        }
+        <ng-container>
+          @for(item of formItems;  track item){
+          <ng-container>
+            @if(item.itemType === 'message'){
+            <div class="col-12 mb-1">
+              <div *ngIf="form.get(item.placeholder!)?.invalid && form.get(item.placeholder!)?.touched" class="text-danger">
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['required']">{{ 'tools.forminput.errors.required' | translate }}</small>
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['minlength']">{{ 'tools.forminput.errors.minLength' | translate }}</small>
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['maxlength']">{{ 'tools.forminput.errors.maxLength' | translate }}</small>
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['pattern']">{{ 'tools.forminput.errors.pattern' | translate }}</small>
+              </div>
+            </div>
+            }
+          </ng-container>
+          <ng-container>
+            @if(item.type === 'badge'){
+            <div class="col-12 mb-1">
+              <label class="form-label d-block">{{ 'tools.forminput.' + item.placeholder | translate }}</label>
+              <span class="badge-custom" *ngIf="isStringOrNumber(item.value)" [ngClass]="getBadgeClass(item.value)">{{ item.value }}</span>
+            </div>
+            }
+          </ng-container>
+          <ng-container>
+            @if (item.itemType === 'file'){
+            <div class="col-12 mb-4">
+              <div class="detail-row">
+                <div class="detail-label">{{ 'tools.forminput.' + item.placeholder | translate }}</div>
+                @for (file of getFiles(item?.value);track file){
+                <div class="file-details mt-4" >
+                  <div class="name-and-size">
+                    <img src="assets/images/svg/document.svg" alt="Document Icon" class="document-icon">
+                    <div class="file-name">{{ file.name }}
+                      <span class="middle-dot">•</span>
+                      <button class="consult-btn" (click)="onConsultFile(file)">Consulter</button>
+                    </div>
+                  </div>
+                </div>
+                }
+              </div>
+            </div>
+            }
+          </ng-container>
+          <ng-container>
+            @if (item.type === 'mobile'){
+            <div class="mb-1 d-flex" [ngClass]="item.fullWidth ? 'col-md-12' : 'col-md-6'">
+              <div class="form-floating me-2 flex-grow-2" *ngIf="!form.get(item.placeholder + '_countryCode')?.disabled">
+                <select class="form-select" [formControlName]="item.placeholder + '_countryCode'">
+                  @for (code of countryCodes; track countryCodes){
+                  <option  [value]="code.dialCode">{{ code.countryCode }} ({{ code.dialCode }})
+                  </option>
+                  }
+                </select>
+                <label></label>
+              </div>
+              <div class="form-floating flex-grow-1">
+                <input type="text" [formControlName]="item.placeholder + '_phoneNumber'" class="form-control">
+                <label>{{ 'tools.forminput.' + item.placeholder | translate }}</label>
+                <div  class="text-danger">
+                  @if (form.get(item.placeholder + '_phoneNumber')?.invalid && form.get(item.placeholder + '_phoneNumber')?.touched){
+                    @if (form.get(item.placeholder + '_phoneNumber')?.errors?.['required']){
+                     <small>{{ 'tools.forminput.errors.required' | translate }}</small>
+                      }
+                    @else if (form.get(item.placeholder + '_phoneNumber')?.errors?.['invalidPhoneNumber']){
+                  <small>{{ 'tools.forminput.errors.invalidPhoneNumber' | translate }}</small>
+                  }
+                  }
+                </div>
+              </div>
+            </div>
+            }
+          </ng-container>
+          <ng-container>
+            @if(item.itemType === 'textarea' && item.type !== 'mobile'){
+              <div class="form-floating">
+                <textarea [placeholder]="'tools.forminput.'+item.placeholder | translate"
+                          class="form-control custom-textarea"
+                          [formControlName]="item.placeholder!"></textarea>
+                <label >{{ 'Commentaire'  }}</label>
+              </div>
+            }
+          </ng-container>
+          <ng-container>
+            @if(item.itemType === 'dropfile' && item.type !== 'mobile'){
+            <a>Pièces jointes</a>
+            <app-file-upload (change)="handleFile($event)" [theme]="'dark'"></app-file-upload>
+            <br>
+            }
+          </ng-container>
+          <ng-container>
+            @if(item.itemType === 'field' && item.type !== 'mobile'){
+            <div class="mb-1" [ngClass]="item.fullWidth ? 'col-md-12' : 'col-md-6'">
+              <div class="form-floating">
+                <input [type]="item.type" [placeholder]="'tools.forminput.'+item.placeholder | translate" class="form-control" [formControlName]="item.placeholder!">
+                <label [class.disabled-label]="item.disabled">{{ 'tools.forminput.' + item.placeholder | translate }}</label>
+              </div>
+              <div *ngIf="form.get(item.placeholder!)?.invalid && form.get(item.placeholder!)?.touched" class="text-danger">
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['required']">{{ 'tools.forminput.errors.required' | translate }}</small>
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['minlength']">{{ 'tools.forminput.errors.minLength' | translate }}</small>
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['maxlength']">{{ 'tools.forminput.errors.maxLength' | translate }}</small>
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['pattern']">{{ 'tools.forminput.errors.email' | translate }}</small>
+              </div>
+            </div>
+            }
+          </ng-container>
+          <ng-container>
+            @if(item.itemType === 'responsive-textarea'){
+          <div class="mb-1" [ngClass]="item.fullWidth ? 'col-md-12' : 'col-md-6'">
+            <div class="form-floating">
+              <textarea #displayTextarea [placeholder]="'tools.forminput.'+item.placeholder | translate" class="form-control resizable" [formControlName]="item.placeholder!"></textarea>
+              <label [class.disabled-label]="item.disabled">{{ 'tools.forminput.'+item.placeholder | translate }}</label>
+            </div>
+            <div *ngIf="form.get(item.placeholder!)?.invalid && form.get(item.placeholder!)?.touched" class="text-danger">
+              <small *ngIf="form.get(item.placeholder!)?.errors?.['required']">{{ 'tools.forminput.errors.required' | translate }}</small>
+              <small *ngIf="form.get(item.placeholder!)?.errors?.['minlength']">{{ 'tools.forminput.errors.minLength' | translate }}</small>
+              <small *ngIf="form.get(item.placeholder!)?.errors?.['maxlength']">{{ 'tools.forminput.errors.maxLength' | translate }}</small>
+              <small *ngIf="form.get(item.placeholder!)?.errors?.['pattern']">{{ 'tools.forminput.errors.email' | translate }}</small>
+            </div>
+          </div>
+          }
+          </ng-container>
+          <ng-container>
+            @if (item.itemType === 'dropdown'){
+            <div class="mb-1" [ngClass]="item.fullWidth ? 'col-md-12' : 'col-md-6'">
+              <div class="form-floating">
+                <ng-select [items]="getOptions(item.options)"
+                           bindLabel="label"
+                           bindValue="value"
+                           [formControlName]="item.placeholder!"
+                           [clearable]="true"
+                           appendTo="body"
+                           id="floatingSelect"
+                           class="form-control">
+                </ng-select>
+                <label for="floatingSelect" class="input-label">{{ 'tools.forminput.'+item.placeholder | translate }}</label>
+              </div>
+              <div class="text-danger">
+                @if (form.get(item.placeholder!)?.invalid && form.get(item.placeholder!)?.touched){
+                <small *ngIf="form.get(item.placeholder!)?.errors?.['required']">{{ 'tools.forminput.errors.required' | translate }}</small>
+                }
+              </div>
+            </div>
+            }
+          </ng-container>
+          }
+        </ng-container>
+      </div>
+    </div>
+
+    <ng-container>
+      @if(hasButtons()){
+        @if(showSeparators){
+          <hr class="card-separator bottom">
+        }
+      <div class="row justify-content-between">
+        <div class="col-md-6 mb-1">
+          <div class="form-footer">
+            <ng-container>
+              @for (item of formItems; track item){
+              <ng-container>
+                @if(item.itemType === 'button' && (item.alignment !== 'right')){
+                <div class="button-wrapper">
+                  <app-button class="right-button" [outlined]="item.outlined" [text]="item.text! | translate" [selected]="item.selected" (click)="handleButtonAction(item.action)"></app-button>
+                </div>
+                }
+              </ng-container>
+              }
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-md-6 mb-1 ">
+          <div class="form-footer d-flex justify-content-end">
+            <ng-container >
+              @for (item of formItems; track item){
+              <ng-container>
+                @if (item.itemType === 'button' && (item.alignment === 'right')){
+                <app-button  [outlined]="item.outlined" [text]="item.text! | translate"  [selected]="item.selected"  class="ml-3 custom-margin" (click)="handleButtonAction(item.action)"></app-button>
+              }
+
+              </ng-container>
+              }
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      }
+    </ng-container>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card card-margin-bottom" >
+        <div class="card-body">
+            <h5 class="card-title">{{ 'deposant.compte.title' | translate }}</h5>
+            <hr class="title-separator mt-4">
+<!--          <p class="card-text mt-4">{{ 'deposant.compte.text' | translate }}</p> -->
+          <div>
+            <app-table
+                    [columns]="columns"
+                    [data]="translatedComptesBancaires"
+                    [filter]="true"
+                    [filterFields]="filterFields"
+                    [actions]="actions"
+                    [pagination]="true"
+                    (actionClick)="onActionClick($event)"
+                    [titleTotalItems]="totalItemsTitle"
+                    [totalItems]="totalItems"
+                    [backgroundFilter]="true"
+                    >
+            </app-table>
+          </div>
+        </div>
+    </div>
+</div>

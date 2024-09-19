@@ -1,0 +1,28 @@
+<input
+  type="text"
+  id="simpleCalendarTimeUpRight"
+  class="form-control"
+  [placeholder]="placeholder || 'Date de création'"
+  style="box-shadow: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"
+  readonly
+  ngxDaterangepickerBootstrap
+  [(ngModel)]="selectedSimpleCalendarTimeUpRight"
+  [drops]="dropsDown"
+  [opens]="opens"
+  [locale]="localeTime"
+  [timePicker]="false"
+  [timePickerSeconds]="false"
+  [timePicker24Hour]="false"
+  [showCancel]="true"
+  [linkedCalendars]="true"
+  [alwaysShowCalendars]="false"
+  [showRangeLabelOnInput]="true"
+  [keepCalendarOpeningWithRange]="false"
+  [isTooltipDate]="isTooltipDate"
+  [isCustomDate]="isCustomDate"
+  [isInvalidDate]="isInvalidDate"
+  (datesUpdated)="datesUpdatedRange($event)"
+  [showDropdowns]="true"
+  aria-describedby="simpleCalendarTimeUpRightDesc"
+  (click)="adjustPickerPosition($event)"
+/>

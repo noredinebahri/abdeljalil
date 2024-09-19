@@ -1,0 +1,233 @@
+<div *ngIf="!isFieldsAvance" class="page-header" [ngClass]="{'remove-section': !filter}">
+  <div  class="table-title d-flex justify-content-between align-items-center" [ngClass]="{'remove-section': !titlePage, 'remove-padding-inline': !isFieldsAvance}">
+    <h1 *ngIf="titlePage && titlePage.length > 0">{{ titlePage }}</h1>
+    <button *ngIf="newRecordBtnLink" type="button" (click)="newRecordBtnLink()"
+      class="btn btn-primary filter-btn">Nouvel utilisateur</button>
+  </div>
+  <div class="total-items d-flex justify-content-between align-items-center">
+    <p *ngIf="filter && titleTotalItems && titleTotalItems.length>0">{{ totalItems }} {{ titleTotalItems }}</p>
+    <button *ngIf="filter" class="btn btn-link text-decoration-none" [ngClass]="{'remove-padding': newRecordBtnLink}">
+      <img src="assets/images/icone/refresh.svg" alt="refresh"> Réinitialiser le filtre
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isFieldsAvance" class="page-header" [ngClass]="{'remove-section': !filter}">
+  <div class="table-title d-flex justify-content-between align-items-center" [ngClass]="{'remove-section': !titlePage}">
+    <h1 *ngIf="titlePage && titlePage.length > 0">{{ titlePage }}</h1>
+    <button *ngIf="canBackToList" class="btn btn-link text-decoration-none" (click)="goBack()">
+      <img src="assets/images/icone/back-arraw.svg" alt="refresh"> Retour à la liste
+    </button>
+  </div>
+  <div class="total-items d-flex justify-content-between align-items-center">
+    <p *ngIf="filter && titleTotalItems && titleTotalItems.length>0 && !newRecordBtnLink">{{ totalItems }} {{
+      titleTotalItems }}</p>
+    <button *ngIf="filter" class="btn btn-link text-decoration-none" [ngClass]="{'remove-padding': newRecordBtnLink}"
+      (click)="onResetFilter()" type="button">
+      <img src="assets/images/icone/refresh.svg" alt="refresh"> Réinitialiser le filtre
+    </button>
+    <button *ngIf="newRecordBtnLink" type="button" (click)="newRecordBtnLink()"
+      class="btn btn-primary filter-btn">{{ newValeurButton ? newValeurButton : 'Nouvelle valeur' }}
+    </button>
+  </div>
+</div>
+
+<div class="filter-container" [ngClass]="{'background-filter': backgroundFilter}" *ngIf="filter">
+  <form [formGroup]="filterForm!" (ngSubmit)="onFilter()">
+    <div class="flex-filter">
+      <div class="flex-filter-item" *ngFor="let field of filterFields" style="{{field.style}}">
+        <ng-container [ngSwitch]="field.type">
+          <div *ngSwitchCase="'text'" class="form-floating">
+            <input type="text" class="form-control" [placeholder]="field.placeholder | translate"
+              formControlName="{{field.name}}">
+            <label>{{ field.placeholder | translate }}</label>
+          </div>
+          <div *ngSwitchCase="'number'" class="form-floating">
+            <input type="number" class="form-control" [placeholder]="field.placeholder | translate"
+              formControlName="{{field.name}}">
+            <label>{{ field.placeholder | translate }}</label>
+          </div>
+          <div *ngSwitchCase="'select'" class="form-floating">
+            <label class="form-label-centered">{{ field.placeholder | translate }}</label>
+            <ng-select [items]="getOptions(field.options)" bindLabel="label" bindValue="value"
+              [formControlName]="field.name" [clearable]="true" appendTo="body" id="floatingSelect"
+              class="form-control">
+            </ng-select>
+          </div>
+
+
+          <div *ngSwitchCase="'date'">
+            <app-date-picker [placeholder]="field.placeholder | translate" formControlName="{{ field.name }}">
+            </app-date-picker>
+          </div>
+
+          <div *ngSwitchCase="'date-range'">
+            <app-date-range-picker [placeholder]="field.placeholder | translate">
+            </app-date-range-picker>
+          </div>
+
+
+
+        </ng-container>
+      </div>
+      <div class="">
+        <button type="submit" class="btn btn-primary filter-btn">Filtrer</button>
+      </div>
+      <div  *ngIf="!isFieldsAvance" class="">
+        <div class="dropdown">
+          <app-button data-bs-toggle="dropdown" aria-expanded="false" type="primary" [outlined]="true"
+            text=" Plus de filters"></app-button>
+          <ul class="dropdown-menu">
+            <div class="filter-container" *ngIf="filter">
+              <form [formGroup]="filterForm!" (ngSubmit)="applyFilter()">
+                <div class="flex-filter">
+                  <div class="flex-filter-item" *ngFor="let field of filterFieldsAvance" style="{{field.style}}">
+                    <ng-container [ngSwitch]="field.type">
+                      <div *ngSwitchCase="'text'" class="form-floating">
+                        <input type="text" class="form-control" [placeholder]="field.placeholder | translate"
+                          formControlName="{{field.name}}">
+                        <label>{{ field.placeholder | translate }}</label>
+                      </div>
+
+                      <div *ngSwitchCase="'select'" class="form-floating">
+                        <ng-select [items]="getOptions(field.options)" bindLabel="label" bindValue="value"
+                          [formControlName]="field.name" [clearable]="true" appendTo="body" id="floatingSelect"
+                          class="form-control">
+                        </ng-select>
+                        <label>{{ field.placeholder | translate }}</label>
+                      </div>
+
+                      <div *ngSwitchCase="'date-range'">
+                        <app-date-range-picker [placeholder]="field.placeholder | translate">
+                        </app-date-range-picker>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="col d-flex align-items-start justify-content-start">
+                    <app-button type="primary" [outlined]="true" text="{{ 'referentiel.cancel' | translate }}"></app-button>
+                  </div>
+                  <div class="col d-flex align-items-end justify-content-end">
+                    <app-button type="primary" [outlined]="false" text="Appliquer filtres"></app-button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="table-responsive">
+  <table class="table" aria-describedby="page-heading">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns" style="{{col.style}}">{{ col.header | translate }}</th>
+        <th *ngIf="actions.length > 0" class="th-action">
+          @if (actions.length > 1){{{ 'tools.table.actionx' | translate }}
+          } @else{
+          {{ 'tools.table.action' | translate }}
+          }
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="data.length; else noDataTemplate">
+        <tr *ngFor="let item of data; let i = index">
+          <td *ngFor="let col of columns">
+            <ng-container [ngSwitch]="col.type" class="text-center">
+              <span *ngSwitchCase="'badge'" class="badge-custom" [ngClass]="getBadgeClass(item[col.field])">
+                {{ getTranslationKey(item[col.field]) + item[col.field] | translate }}
+              </span>
+              <span *ngSwitchCase="'boolean'" class="badge-custom" [ngClass]="getBadgeClass(item[col.field])">
+                {{ getTranslationKey(item[col.field]) + item[col.field] | translate }}
+              </span>
+            <span *ngSwitchCase="'link'" class="text-primary" style="cursor:pointer;">
+                {{ item[col.field] }}
+              </span>
+              <span *ngSwitchCase="'file'" class="fileLength" style="cursor:pointer;">
+                <img src="assets/images/svg/document.svg" alt="Document Icon" class="file-icon"> {{ item[col.field] }}
+              </span>
+              <span *ngSwitchCase="'decimal'" class="align-right">
+                {{ item[col.field] }}
+              </span>
+              <span *ngSwitchCase="'date'">
+            {{ item[col.field] | date: 'dd/MM/yyyy HH:mm' }}
+              </span>
+              <span *ngSwitchDefault>
+                {{ item[col.field] }}
+              </span>
+            </ng-container>
+          </td>
+          <td *ngIf="actions.length > 1">
+            <div class="dropdown text-center">
+              <button class="btn btn-default dropdown-toggle customBtn" type="button" id="actionDropdown{{ i }}"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-three-dots" viewBox="0 0 16 16">
+                  <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
+              </button>
+              <ul class="dropdown-menu custom-dropdown-menu" [attr.aria-labelledby]="'actionDropdown' + i">
+                <ng-container *ngFor="let action of actions">
+                  @if(action.fieldCondition ){
+                  @if( item[action.fieldCondition] === action.condition){
+                  <li>
+                    <a class="dropdown-item" (click)="handleAction(action, item)">
+                      <img alt="img" src="{{action.icon}}" class="me-2" /> {{ 'tools.table.actions.' + action.label |
+                      translate }}
+                    </a>
+                  </li>
+                  }
+                  }@else{
+                  <li>
+                    <a class="dropdown-item" (click)="handleAction(action, item)">
+                      <img alt="img" src="{{action.icon}}" class="me-2" /> {{ 'tools.table.actions.' + action.label |
+                      translate }}
+                    </a>
+                  </li>
+                  }
+                </ng-container>
+
+              </ul>
+            </div>
+          </td>
+          <td *ngIf="actions.length == 1">
+            <div class="dropdown text-center">
+              <a class="dropdown-item " (click)="handleAction(actions[0], item)" style="cursor: pointer">
+                <img alt="img" src="{{actions[0].icon}}" class="me-2" />
+              </a>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<ng-template #noDataTemplate>
+  <tr>
+    <td colspan="100%">{{ noDataFoundMessage! | translate }}</td>
+  </tr>
+</ng-template>
+
+<!-- Pagination -->
+@if (pagination) {
+<div class="row justify-content-end align-items-center item-count-pagination">
+  <div class="col-auto d-flex align-items-center">
+    <app-item-count class="total-items-title"
+      [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></app-item-count>
+  </div>
+  <div class="col-auto d-flex align-items-center">
+    <ngb-pagination class="custom-pagination" [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage"
+      [maxSize]="1" [rotate]="true" [boundaryLinks]="true" [ellipses]="false" (pageChange)="handlePageChange($event)">
+    </ngb-pagination>
+  </div>
+</div>
+}

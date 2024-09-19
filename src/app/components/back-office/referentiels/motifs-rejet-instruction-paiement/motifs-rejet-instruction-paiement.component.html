@@ -1,0 +1,17 @@
+<div class="container px-5">
+  <app-table
+    [titlePage]="'referentiel.motifRejetInstructionPaiement' | translate"
+    [columns]="columns"
+    [actions]="actions"
+    [data]="tableData"
+    [filter]="true"
+    [filterFields]="filterFields"
+    [pagination]="true"
+    [titleTotalItems]="'motifs'"
+    [totalItems]="totalItems"
+    (actionClick)="handleAction($event)"
+    [newRecordBtnLink]="createAction"
+    (pageChange)="onPageChange($event)"
+    [canBackToList]="true">
+  </app-table>
+</div>

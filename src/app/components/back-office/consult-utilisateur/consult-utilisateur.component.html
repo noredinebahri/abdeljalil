@@ -1,0 +1,25 @@
+<div>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="card-title mb-2">{{ 'utilisateur.user' | translate }}</h2>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-link text-decoration-none" (click)="goBack()" >
+          <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> {{ 'utilisateur.precedent' | translate }}
+        </button>
+      </div>
+    </div>
+    <div>
+      <div class="mb-4" >
+        <app-form [formItems]="infosPerso"></app-form>
+      </div>
+      <div class="mb-4" >
+        <app-form [formItems]="entityRole"></app-form>
+      </div>
+      <div class="mb-4">
+        <app-form [formItems]="parametreDacces"></app-form>
+      </div>
+    </div>
+    <app-suivi-activites></app-suivi-activites>
+  </div>

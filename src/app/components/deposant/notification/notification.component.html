@@ -1,0 +1,76 @@
+<div class="container mt-4 mb-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="card-title">{{ 'menu.notification.vosNotifications' | translate }}</h2>
+    <button class="btn btn-link text-decoration-none" (click)="goBack()">
+      <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon">{{ 'menu.notification.precedentButton' | translate }}
+    </button>
+  </div>
+  <div class="card p-4 rounded-custom">
+    <div *ngFor="let notifItem of pagedNotifications; let i = index" class="mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between position-relative">
+            <div class="d-flex align-items-center">
+              <img *ngIf="notifItem.iconNotif" [src]="notifItem.iconNotif" alt="Notification Icon" class="notification-icon me-3">
+              <div>
+                <span>{{ 'menu.notification.vousAverRecu' | translate }} <span class="fw-bold">{{ notifItem.titleNotif }}</span></span><br>
+                <span class="text-muted">{{ notifItem.date }}</span>
+              </div>
+            </div>
+            <div class="position-relative">
+<!--              <button class="btn btn-link p-0 more-button" (click)="toggleMoreDropdown(i)">-->
+<!--                <img src="assets/images/icone/more-button.svg" alt="More options">-->
+<!--              </button>-->
+<!--              <div *ngIf="openMoreDropdownIndex === i" class="small-dropdown">-->
+<!--                <li>-->
+<!--                  <button class="full-width-button" (click)="markAsRead(notifItem)">-->
+<!--                    <img src="assets/images/icone/lus-icone.svg" alt="Lus">-->
+<!--                    <span>{{ 'menu.notification.marquerCommeLue' | translate }}</span>-->
+<!--                  </button>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <button class="full-width-button" (click)="deleteNotification(notifItem)">-->
+<!--                    <img src="assets/images/icone/supprimer.svg" alt="Supprimer">-->
+<!--                    <span>{{ 'menu.notification.supprimer' | translate }}</span>-->
+<!--                  </button>-->
+<!--                </li>-->
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="mt-2">
+            <button *ngIf="!notifItem.lus" (click)="notifItem.action?.()" class="consulter-button">
+              {{ 'menu.notification.consulter' | translate }}
+            </button>
+            <p *ngIf="notifItem.lus" class="notification-text mt-3">
+              {{ notifItem.notifText }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-end align-items-center">
+    <div class="col-auto d-flex align-items-center">
+    </div>
+    <div class="col-auto d-flex align-items-center">
+      <div class="row justify-content-end align-items-center">
+       <!-- <div class="col-auto d-flex align-items-center">
+          <app-item-count [params]="{ page: currentPage, totalItems: notificationItems.length, itemsPerPage: itemsPerPage }"></app-item-count>
+        </div>-->
+        <div class="col-auto d-flex align-items-center mt-3">
+          <ngb-pagination
+                  class="custom-pagination"
+                  [collectionSize]="notificationItems.length"
+                  [(page)]="currentPage"
+                  [pageSize]="itemsPerPage"
+                  [maxSize]="5"
+                  [rotate]="true"
+                  [boundaryLinks]="true"
+                  [ellipses]="false"
+                  (pageChange)="handlePageChange($event)">
+          </ngb-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

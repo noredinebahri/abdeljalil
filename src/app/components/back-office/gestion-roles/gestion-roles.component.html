@@ -1,0 +1,18 @@
+<div class="container px-5">
+  <app-table
+    [titlePage]="'deposant.gestionRoles.title' | translate"
+    [columns]="columns"
+    [actions]="actions"
+    [data]="tableData"
+    [filter]="true"
+    [filterFields]="filterFields"
+    [pagination]="true"
+    [titleTotalItems]="totalItemsTitle"
+    [totalItems]="totalItems"
+    [backgroundFilter]="false"
+    (actionClick)="onActionClick($event)"
+    [newRecordBtnLink]="updateButtonAction"
+    [newValeurButton]="'Nouveau rôle'| translate"
+  >
+  </app-table>
+</div>

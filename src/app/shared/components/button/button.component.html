@@ -1,0 +1,20 @@
+<button class="button" 
+        [class.primary]="type === 'primary' && !outlined"
+        [class.secondary]="type === 'secondary' && !outlined"
+        [class.outlined-primary]="type === 'primary' && outlined && !buttonBolor"
+        [class.outlined-secondary]="type === 'secondary' && outlined"
+        [class.disabled]="disabled" 
+        [class.color-hover]="buttonBolor" 
+        [class.no-color-hover]="!buttonBolor" 
+        [ngClass]="class"
+        [ngStyle]="{
+          'background-color': buttonBolor && !outlined && !disabled ? buttonBolor : null,
+          'color': outlined && buttonBolor ? buttonBolor : null,
+          'border-color': buttonBolor ? buttonBolor : null
+        }"
+        [type]="typeButton">
+  <ng-container *ngIf="selected">
+    <img src="assets/images/icone/check.svg" alt="Selected" class="checkmark-icon">
+  </ng-container>
+  {{ text }}
+</button>

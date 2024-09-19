@@ -1,0 +1,21 @@
+<div class="container px-5">
+    <app-table       
+      [titlePage]="'campagnes d\'indemnisation' | translate"
+      [columns]="columns"
+      [actions]="actions"
+      [data]="tableData"
+      [filter]="true"
+      [filterFields]="filterFields"
+      [pagination]="true"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      (actionClick)="onActionClick($event)"
+      (pageChange)="onPageChange($event)"
+      [newRecordBtnLink]="newRecordAction"
+      [newValeurButton]="'Nouvelle campagne'| translate">     
+nslate">     
+    </app-table>
+   
+
+  </div>
+ 

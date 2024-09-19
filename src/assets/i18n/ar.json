@@ -1,0 +1,459 @@
+{
+  "navbar": {
+    "home": "الصفحة الرئيسية",
+    "language": "اللغة",
+    "account": {
+      "title": "حساب",
+      "logout": "تسجيل الخروج",
+      "login": "تسجيل الدخول"
+    }
+  },
+  "tools": {
+    "card":{
+      "title": "القائمة الرئيسية"
+    },
+    "fileupload": {
+      "title": "سحب وإدراج",
+      "condition": "JPG أو PDF، بحجم ملف لا يتجاوز 10 ميغابايت",
+      "buttonTitle": "اخترالملفات",
+      "error": "الملف يتجاوز الحد الأقصى المسموح به",
+      "consulter": "تصفح"
+    },
+    "table": {
+      "ndossier": "رقم الملف",
+      "reclamation": "رقم الشكاية",
+      "nature": "النوع",
+      "provenance": "المصدر",
+      "creationDate": "تاريخ الإنشاء",
+      "Statuts": "الحالة",
+      "criticality": "الحرجية",
+      "noDataFoundMessage": "لم يتم العثور على بيانات",
+      "action": "الإجراء",
+      "actions": {
+        "delete": "حذف",
+        "edit": "تعديل"
+
+      }
+    },
+    "forminput": {
+      "adresseLigne1": "عنوان الخط 1",
+      "adressePostale": "العنوان البريدي",
+      "adresseLigne2": "عنوان الخط 2",
+      "indicatif": "الصيغة الدولية",
+      "codePostale": "الرمز البريدي",
+      "ville": "المدينة",
+      "pays": "البلد",
+      "nom": "الاسم",
+      "prenom": "الاسم الأول",
+      "dateNaissance": "تاريخ الميلاد",
+      "nationalite": "الجنسية",
+      "nIdentification": "رقم التعريف",
+      "motPasse": "كلمة المرور",
+      "fixe": "الهاتف الثابت",
+      "mobile": "الجوال",
+      "email": "البريد الإلكتروني",
+      "adresse1": "العنوان (السطر 1)",
+      "adresse2": "العنوان (السطر 2)",
+      "buttons": {
+        "enregistrer": "حفظ",
+        "annuler": "إلغاء"
+      },
+      "errors": {
+        "required": "هذا الحقل مطلوب",
+        "minLength": "لم يتم تحقيق الطول الأدنى",
+        "maxLength": "تجاوز الحد الأقصى للطول"
+      }
+    },
+    "currency": {
+      "mad": "درهم"
+    }
+  },
+  "demarrage": {
+    "vosDossier": {
+      "title": "ملفاتك",
+      "text": "اختر ملفًا للوصول إلى المساحة المطلوبة.",
+      "precedentButton": "السابق",
+      "continuerButton": "متابعة"
+    }
+  },
+  "utilisateur": {
+    "title": "حسابك",
+    "text": "إدارة إعدادات حسابك.",
+    "precedent": "السابق",
+    "infoPerson": {
+      "title": "المعلومات الشخصية"
+    },
+    "parametreConnexion": {
+      "title": "إعدادات الاتصال",
+      "changerMdpButton": "تغيير كلمة المرور الخاصة بي",
+      "updatePasswordPopup": {
+        "title": "تغيير كلمة المرور",
+        "text": "يجب أن تحتوي كلمة المرور الخاصة بك على 6 أحرف على الأقل بالإضافة إلى مزيج من الأرقام والحروف والرموز الخاصة.",
+        "currentPassword": "كلمة المرور الحالية",
+        "newPassword": "كلمة المرور الجديدة",
+        "confirmePassword": "تأكيد كلمة المرور الجديدة",
+        "currentPasswrodRequired": "كلمة المرور الحالية مطلوبة.",
+        "newPasswordRequired": "كلمة المرور الجديدة مطلوبة.",
+        "minLengthPassword": "يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.",
+        "confirmationNewPassRequired": "تأكيد كلمة المرور مطلوب.",
+        "passwordsNotMatched": "كلمات المرور غير متطابقة.",
+        "forgetPassword": "هل نسيت كلمة المرور؟",
+        "buttons": {
+          "enregistrer": "حفظ",
+          "annuler": "إلغاء"
+        }
+      }
+    },
+    "coordonnee": {
+      "title": "بيانات الاتصال",
+      "updateCoordonneeButton": "تحديث بيانات الاتصال الخاصة بي"
+    },
+    "adressePostal": {
+      "title": "العنوان البريدي",
+      "updatePasswordButton": "تحديث عنواني البريدي",
+      "buttons": {
+        "enregistrer": "حفظ",
+        "annuler": "إلغاء"
+      }
+    }
+  },
+  "menu": {
+    "accueil": "الرئيسية",
+    "notification": {
+      "title": "الإشعارات",
+      "vosNotifications": "إشعاراتك",
+      "marquerCommeLue": "تمييز كمقروءة",
+      "supprimer": "حذف هذا الإشعار",
+      "consulter": "الاطلاع",
+      "vousAverRecu": "لقد تلقيت",
+      "voirTout": "عرض الكل",
+      "precedentButton": "السابق"
+    },
+    "compte": {
+      "username": "العياشي محمد",
+      "votreCompte": "حسابك",
+      "vosDossier": "ملفاتك",
+      "seDeconnecter": "تسجيل الخروج"
+    }
+  },
+  "deposant" :
+  {
+    "title": "ملف التعويض الخاص بك",
+    "tabs": {
+      "detailsIndemnisation": "تفاصيل التعويض",
+      "depotsExceptionnels": "إيداعات استثنائية",
+      "reclamation": "الشكاية"
+    },
+    "depotExceptionnel" :
+    {
+      "title": "تصريحات الإيداعات الاستثنائية",
+      "text": "هل تلقيت أموالاً من تأمينك، بعت ممتلكات، أو أي دخل آخر؟ قم بالإبلاغ عنها لتقييم دقيق لتعويضك.",
+      "nature" : "طبيعة الإيداع",
+      "montant" : "المبلغ (درهم مغربي)",
+      "dateSurverance" : "تاريخ الاستحقاق",
+      "declarerButton": "الإبلاغ عن إيداع استثنائي",
+      "table": {
+        "ndepot": "رقم الإيداع",
+        "nature": "طبيعة الإيداع",
+        "montant": "المبلغ (درهم مغربي)",
+        "dateDeclaration": "تاريخ التصريح",
+        "status": "الحالة",
+        "pieceJointeName": "المرفق"
+      },
+      "declarationExceptionnel": {
+        "title": "الإبلاغ عن إيداع استثنائي",
+        "natureDepot": "طبيعة الإيداع",
+        "montant": "المبلغ (درهم مغربي)",
+        "dateSurverance": "تاريخ الاستحقاق",
+        "pieceJointeName": "المرفقات (اختياري)",
+        "declarerButton": "الإبلاغ",
+        "saveButton": "حفظ كمسودة"
+      }
+
+    },
+    "reclamation" :
+    {
+      "title": "الشكايات",
+      "text": "إذا كانت لديك تحفظات بشأن المبلغ المحتسب لتعويضك أو إذا واجهت أي مشكلة، فلا تتردد في إخبارنا بمخاوفك عن طريق كتابة الشكاية.",
+      "nature" : "طبيعة الشكاية",
+      "dateCreation" : "تاريخ الإنشاء",
+      "redigerReclamationButton": "الإبلاغ عن الشكاية",
+      "table": {
+        "numReclamation": "رقم الشكاية",
+        "nature": "طبيعة الشكاية",
+        "createdAt": "تاريخ الإنشاء",
+        "status": "الحالة",
+        "pieceJointeName": "المرفق"
+      },
+      "declarationReclamation": {
+        "title": "كتابة الشكاية",
+        "natureReclamation": "طبيعة الشكوى",
+        "message": "الرسالة",
+        "pieceJointeName": "المرفقات (اختياري)",
+        "envoyer": "إرسال",
+        "saveButton": "حفظ كمسودة"
+      },
+      "confirmationReclamation": {
+        "messageConfirmationDraft": "هل أنت متأكد من رغبتك في حفظ شكواك كمسودة؟",
+        "messageConfirmatinNotDraft": "هل أنت متأكد من رغبتك في حفظ شكواك؟",
+        "explication": "إذا قمت بالتأكيد، سيتم",
+        "explicationofSave": "حفظ إيداعك الاستثنائي كمسودة حتى تتمكن من مراجعته أو تعديله لاحقًا.",
+        "explicationofEnvoyer": "إرساله للمعالجة.",
+        "natureReclamation": "طبيعة الشكاية",
+        "message": "الرسالة",
+        "piecesJointes": "المرفقات",
+        "consulter": "الاطلاع",
+        "retour": "عودة",
+        "confirme": "أؤكد"
+      },
+      "detail": {
+        "title": "تفاصيل شكواك",
+        "precedent": "السابق",
+        "status": {
+          "enAttenteModeREglement": "في انتظار وضع طريقة السداد",
+          "3emeEtapSure7Completee": "تم إكمال المرحلة 3 من 7."
+        },
+
+        "infoGeneral": {
+          "title": "المعلومات العامة",
+          "numReclamation": "رقم الشكوى",
+          "canalEnvoi": "قناة الإرسال",
+          "modifierButton": "تعديل",
+          "envoyerButton": "إرسال",
+          "cloturerButton": "إغلاق الشكوى"
+        },
+        "votreReclamation": {
+          "title": "شكواك",
+          "natureReclamation": "طبيعة الشكوى",
+          "message": "الرسالة",
+          "pieceJointe": "المرفقات",
+          "consulter": "الاطلاع"
+        },
+        "etatExecptionnel": {
+          "title": "حالة إيداعك الاستثنائي",
+          "dossierCree": "تم إنشاء الملف.",
+          "enAttenteInfo": "في انتظار معلومات التسوية.",
+          "indemnisationCalculee": "تم حساب التعويض.",
+          "reglementEncours": "التسوية قيد المعالجة."
+        },
+        "cloturer": {
+          "title": "هل أنت متأكد من رغبتك في إغلاق شكواك؟",
+          "text": "إذا قمت بالتأكيد، سيتم إغلاق شكواك واعتبارها محلولة.",
+          "confirmButton": "أؤكد",
+          "cancelButton": "إلغاء"
+        }
+      }
+
+    },
+    "details": {
+      "montantIndemnite": "مبلغ التعويض",
+      "consulterIndemniteButton": "اطلع على تعويضك",
+      "plusDetailsButton": "المزيد من التفاصيل",
+      "etatDossier": "حالة ملفك",
+      "status": {
+        "enAttenteModeREglement": "في انتظار وضع طريقة السداد",
+        "3emeEtapSure7Completee": "تم إكمال المرحلة 3 من 7."
+      },
+      "etatAvancementDossier": {
+        "title": "حالة ملفك",
+        "precedent": "السابق",
+        "status": {
+          "reglementEncours": "التسوية قيد المعالجة.",
+          "enAttenteInfoReglement": "في انتظار معلومات التسوية.",
+          "indemnisationCalculee": "تم حساب التعويض.",
+          "dossierCree": "تم إنشاء الملف."
+        }
+      },
+      "modeReglements": {
+        "title": "طريقة الدفع",
+        "virementBancaire": {
+          "title":"تحويل بنكي",
+          "text": "استلم تعويضك مباشرة على حسابك البنكي."
+        },
+        "miseDisposition": {
+          "title":"توفير",
+          "text": "اسحب تعويضك من جهاز الصراف الآلي (GAB) في أحد البنوك أو من نقطة خدمة تحويل الأموال التي تختارها."
+        },
+        "saveButton": "إنهاء طريقة الدفع"
+      },
+      "validateReglement": {
+        "tabs": {
+          "coordonneReglement": "بيانات التسوية",
+          "recaptiulatif": "الملخص"
+        },
+        "virementBancaire": {
+          "step1": {
+            "title": "أدخل بيانات حسابك البنكي",
+            "text": "سيتم معالجة بيانات حسابك المصرفي بسرية تامة.",
+            "codeBanque": "رمز البنك",
+            "codeGuichet": "رمز الوكالة",
+            "numeroCompte": "رمز الوكالة",
+            "nomBanque": "اسم البنك"
+          },
+          "step2": {
+            "title": "تأكيد الملخص",
+            "montantTitle": "مبلغ التعويض",
+            "montant": "المبلغ",
+            "coordonneContact": "بيانات الاتصال",
+            "nomComplet": "الاسم الكامل",
+            "mobile": "الجوال",
+            "fixe": "الهاتف الثابت",
+            "email": "البريد الإلكتروني",
+            "adressePostale": "العنوان البريدي",
+            "coordonneReglement": "بيانات التسوية",
+            "modeReglement": "طريقة التسوية",
+            "coordonnesBancaire": "بيانات الحساب البنكي",
+            "banque": "البنك",
+            "codeBanque": "رمز البنك",
+            "codeGuichet": "رمز الوكالة",
+            "numeroCompte": "رمز الوكالة",
+            "nomBanque": "اسم البنك"
+          }
+        },
+        "miseDisposition": {
+          "step1": {
+            "title": "اختر وكيل الدفع",
+            "text": "ابدأ بتحديد وكيل الدفع، ثم اختر الوكالة المرتبطة به.",
+            "agentPayeur": "وكيل الدفع",
+            "agence": "الوكالة"
+          },
+          "step2": {
+            "title": "تأكيد الملخص",
+            "montantTitle": "مبلغ التعويض",
+            "montant": "المبلغ",
+            "coordonneContact": "بيانات الاتصال",
+            "nomComplet": "الاسم الكامل",
+            "mobile": "الجوال",
+            "fixe": "الهاتف الثابت",
+            "email": "البريد الإلكتروني",
+            "adressePostale": "العنوان البريدي",
+            "coordonneReglement": "بيانات التسوية",
+            "modeReglement": "طريقة التسوية",
+            "coordonnesBancaire": "بيانات الحساب البنكي",
+            "modeReglement": "طريقة التسوية",
+            "agentPayeur": "وكيل الدفع",
+            "agence": "الوكالة"
+          }
+        },
+        "suivant": "التالي",
+        "precedent": "السابق",
+        "confirme": "تأكيد",
+        "annuler": "إلغاء"
+      },
+      "releveIndemnite": {
+        "title": "كشف التعويض",
+        "precedentButton": "السابق",
+        "calculBaseIndemnisation": "حساب أساس التعويض: الحسابات والعمليات المعالجة",
+        "libelleCompte": "اسم الحساب أو نوع العملية",
+        "numeroCompte": "رقم الحساب",
+        "soldeCompte": "رصيد الحساب أو مبلغ العملية عند الفشل (درهم مغربي)",
+        "baseIndemnisation": "أساس التعويض (درهم مغربي)"
+      },
+      "indemnisation": {
+        "title": "حساب التعويض والتسوية",
+        "montant": "المبلغ (درهم مغربي)",
+        "indemnisation": "التعويض (درهم مغربي)"
+      }
+
+
+    }
+
+  },
+
+  "sidebar": {
+    "menus": {
+      "title": "القائمة الرئيسية",
+      "referentiel": {
+        "title": "المرجع",
+        "marque": "علامة تجارية"
+      },
+      "administration": {
+        "title": "إدارة"
+      }
+    }
+  },
+  "global": {
+    "title": "SGFG",
+    "action": {
+      "edit": "تعديل",
+      "view": "عرض",
+      "delete": "حذف",
+      "add": "إضافة",
+      "cancel": "إلغاء",
+      "save": "حفظ",
+      "valid": "تحقق",
+      "back": "رجوع",
+      "actions": "إجراءات",
+      "loading": "جار التحميل"
+    },
+    "item-count": "{{first}} - {{second}} من {{total}}",
+    "validators": {
+      "required": "حقل مطلوب",
+      "maxLength": "يجب ألا يتجاوز الحقل {{max}} حرفًا"
+    },
+    "messages": {
+      "noDataFound": "لم يتم العثور على بيانات"
+    },
+    "errors": {
+      "INTERNAL_SERVER_ERROR": "خطأ غير متوقع، يرجى المحاولة لاحقًا"
+    }
+  },
+  "login": {
+    "title": "تسجيل الدخول"
+  },
+  "referentiel": {
+    "marque": {
+      "titles": {
+        "list": "قائمة العلامات التجارية",
+        "detail": "تفاصيل العلامة التجارية",
+        "delete": "تأكيد الحذف",
+        "add": "إضافة علامة تجارية",
+        "update": "تعديل علامة تجارية"
+      },
+      "messages": {
+        "created": "تم إنشاء علامة تجارية جديدة",
+        "updated": "تم تحديث العلامة التجارية",
+        "deleted": "تم حذف العلامة التجارية"
+      },
+      "questions": {
+        "delete": "هل أنت متأكد من أنك تريد حذف العلامة التجارية {{libelle}}؟"
+      },
+      "fields": {
+        "id": "معرف",
+        "code": "رمز",
+        "libelle": "تسمية"
+      }
+    }
+  },
+  "enum": {
+    "statutDossier": {
+      "EN_COURS": "قيد التنفيذ",
+      "NOUVELLE_DEMANDE": "طلب جديد",
+      "EN_ATTENTE_DE_COMPLEMENT": "بانتظار التكميل",
+      "TRAITEE": "تم المعالجة",
+      "VALIDE_PAR_SGFG": "موافق عليها من قبل SGFG",
+      "REJETE_PAR_SGFG": "مرفوض من قبل SGFG",
+      "CLOTUREE": "مغلقة",
+      "BROUILLON": "مسودة"
+    },
+    "criticite": {
+      "CRITIQUE": "حرجة",
+      "ELEVEE": "مرتفعة",
+      "FAIBLE": "ضعيفة"
+    },
+    "natureDepot": {
+      "ASSURANCE_VIE": "تأمين الحياة",
+      "ASSURANCE_RETRAIRE": "تأمين التقاعد",
+      "VENTE_BIEN_IMMOBILIER": "بيع عقار"
+    },
+    "natureReclamation": {
+      "SOLDE_COMPTE_INCORRECTE": "رصيد الحساب غير صحيح",
+      "MNT_INDEM_INCORRECTE": "مبلغ التعويض غير صحيح",
+      "DEPASSEMENT_DELAI_TRAITEMENT": "تجاوز مدة معالجة",
+      "DEPOT_EXCEP": "إيداعات استثنائية",
+      "QUALITE_RELATION_CLIENT": "جودة علاقة العملاء",
+      "AUTRE": "أخرى"
+    }
+  }
+
+}

@@ -1,0 +1,55 @@
+<div class="modal-header row w-100">
+  <div class="col-12"><img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon"></div>
+  <div class="col-12">
+    @if (isRejeter) {
+      <h5
+        class="modal-title">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.confirmationRejet' | translate }}</h5>
+    } @else {
+      <h5
+        class="modal-title">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.confirmationApprovation' | translate }}</h5>
+    }
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="separator-section"><hr class="card-separator"/></div>
+<div class="modal-body">
+  <div class="depot-details">
+    <div class="detail-row">
+      <div class="detail-column">
+        <div
+          class="detail-label">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.decision' | translate }}
+        </div>
+        <div class="detail-value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator-section"><hr class="card-separator"/></div>
+  <div class="depot-details">
+    <div class="detail-row">
+      <div
+        class="detail-label">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.pieceJointe' | translate }}
+      </div>
+      <div class="file-details mt-4">
+        <div class="name-and-size">
+          <img src="assets/images/svg/document.svg" alt="Document Icon" class="document-icon">
+          <div class="file-name">document.png
+            <span class="middle-dot">•</span>
+            <button
+              class="consult-btn">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.consulter' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="card-separator"/>
+<div class="modal-footer">
+  <app-button type="primary"
+              text="{{'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.retour' | translate}}"
+              (click)="back()" [outlined]="true"></app-button>
+  <app-button type="primary"
+              text="{{'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.confirme' | translate}}"
+              (click)="confirm()" [selected]="true"></app-button>
+</div>

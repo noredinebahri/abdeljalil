@@ -1,0 +1,29 @@
+<div class="test-div">
+  <app-responsive-navbar [showClosSidebar]="true" [username]="usernameAdherent" [userDropdownItems]="customUserDropdownItemsBackoffice"></app-responsive-navbar>
+</div>
+<div class="back-office">
+  <div class="sidebar-container" [ngClass]="{'reset-sidebar-width': !isSidebarOpen}">
+    <ul class="sidebar">
+      <li class="sidebar-item" *ngFor="let item of sidebarElements">
+        <a [ngClass]="{'show': !isSidebarOpen}" class="w-100" (click)="item.action ? item.action() : null">
+          <img src="{{item.icon}}" class="icon" />
+          <ng-container *ngIf="!item.items">
+            <span class="label" *ngIf="isSidebarOpen">{{ item.label }}</span>
+          </ng-container>
+          <ng-container *ngIf="item.items">
+            <span class="label"  *ngIf="isSidebarOpen" id="colaps-label" (click)="colapsOpen = !colapsOpen; $event.stopPropagation()">
+              {{ item.label }}
+              <img src="assets/images/icone/arrow.svg" class="colaps-icon float-end mt-1" [ngClass]="{'fleep': !colapsOpen}" alt="">
+              <div *ngIf="colapsOpen" class="colaps-content">
+                <p class="colaps-item" *ngFor="let subitem of item.items" (click)="subitem.action ? subitem.action() : null; $event.stopPropagation()">{{subitem.label}}</p>
+              </div>
+            </span>
+          </ng-container>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content" [ngClass]="{'reset-content-width': !isSidebarOpen}">
+    <router-outlet></router-outlet>
+  </div>
+</div>

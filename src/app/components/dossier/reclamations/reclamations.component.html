@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card card-margin-bottom" >
+    <div class="card-body">
+      <h5 class="card-title">{{ 'deposant.reclamation.title' | translate }}</h5>
+      <hr class="title-separator mt-4">
+      <p class="card-text mt-4">{{ 'deposant.reclamation.text' | translate }}</p>
+      <app-table
+        [columns]="columns"
+        [data]="translatedReclamations"
+        [actions]="actions"
+        (actionClick)="onActionClick($event)">
+      </app-table>
+      <hr class="title-separator">
+      <div class="d-grid gap-2 float-end">
+        <app-button text="{{ 'deposant.reclamation.redigerReclamationButton' | translate }}" type="primary" class="mt-2" (click)="openDeclareModal()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

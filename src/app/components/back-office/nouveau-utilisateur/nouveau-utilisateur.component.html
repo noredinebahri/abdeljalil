@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+    <div class="card mb-4" >
+      <div class="card-body">
+        <h5 class="card-title custom-padding">AJOUTER UN NOUVEL UTILISATEUR</h5>
+        <form [formGroup]="utilisateurForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="login" placeholder="Login" formControlName="login">
+                <label for="roleCode">Login</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <label>Role</label>
+                <select class="form-select" id="role" name="role" formControlName="role">
+                  <option value="0" selected>role 1</option>
+                  <option value="1">role 1</option>
+                  <option value="2">role 2</option>
+                  <option value="3">role 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+                <label for="roleCode">Nom</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="prenom" placeholder="Prénom" formControlName="prenom">
+                <label for="roleTitle">Prénom</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-floating mb-2">
+                <select class="form-select" id="role" name="role">
+                  <option selected>+212</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="telephone" placeholder="Téléphone" formControlName="telephone">
+                <label for="telephone">Téléphone</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+                <label for="role">Email</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <label>Unité organisationnelle</label>
+                <select class="form-select" id="role" name="role" formControlName="role">
+                  <option value="0" selected>Unité 1</option>
+                  <option value="1">Unité 2</option>
+                  <option value="2">Unité 3</option>
+                  <option value="3">Unité 4</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <label>Service</label>
+                <select class="form-select" id="role" name="role" formControlName="role">
+                  <option value="0" selected>Service 1</option>
+                  <option value="1">Service 2</option>
+                  <option value="2">Service 3</option>
+                  <option value="3">Service 4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <app-button type="primary" [outlined]="true" text="{{ 'referentiel.cancel' | translate }}"
+                        (click)="cancel()"></app-button>
+            <app-button type="primary" text="{{ 'referentiel.save' | translate }}" [selected]="true"
+                        (click)="saveUtilisateur()"></app-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <div class="modal-title-container">
+    <img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon">
+    <h5 class="modal-title">{{ isDraft ? 'deposant.reclamation.confirmationReclamation.messageConfirmationDraft' : 'deposant.reclamation.confirmationReclamation.messageConfirmatinNotDraft' | translate}}</h5>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div class="modal-body">
+  <p class="text-center">{{'deposant.reclamation.confirmationReclamation.explication' | translate}} {{ isDraft ? 'deposant.reclamation.confirmationReclamation.explicationofSave' : 'deposant.reclamation.confirmationReclamation.explicationofEnvoyer' | translate}}</p>
+  <hr class="card-separator" />
+  <div class="depot-details">
+    <div class="detail-row">
+      <div class="detail-label">{{'deposant.reclamation.confirmationReclamation.natureReclamation' | translate}}</div>
+      <div class="detail-value">{{ 'enum.natureReclamation.' + reclamationData?.nature | translate}}</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-column">
+        <div class="detail-label">{{'deposant.reclamation.confirmationReclamation.message' | translate}}</div>
+        <div class="detail-value">{{ reclamationData?.message }}</div>
+      </div>
+    </div>
+  </div>
+    <hr class="card-separator" />
+  <div class="depot-details">
+    <div class="detail-row" *ngIf="reclamationData?.pieceJointe">
+      <div class="detail-label">{{'deposant.reclamation.confirmationReclamation.piecesJointes' | translate}}</div>
+      <div class="file-details mt-4">
+        <div class="name-and-size">
+          <img src="assets/images/svg/document.svg" alt="Document Icon" class="document-icon">
+          <div class="file-name">{{ reclamationData?.pieceJointe }}
+            <span  class="middle-dot">•</span>
+            <button   class="consult-btn">{{'deposant.reclamation.confirmationReclamation.consulter' | translate}}</button>
+          </div>
+          <div class="file-size">1 MB</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="card-separator" />
+<div class="modal-footer">
+  <app-button type="primary" text="{{'deposant.reclamation.confirmationReclamation.retour' | translate}}" (click)="back()" [outlined]="true" ></app-button>
+  <app-button type="primary" text="{{'deposant.reclamation.confirmationReclamation.confirme' | translate}}" (click)="confirm()" [selected]="true"></app-button>
+</div>

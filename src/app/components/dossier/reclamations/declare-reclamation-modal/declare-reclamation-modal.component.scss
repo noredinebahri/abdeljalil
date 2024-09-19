@@ -1,0 +1,206 @@
+.modal-header {
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card-separator{
+  border-top: 2px solid #E7E7E7;
+  opacity: 60%;
+}
+
+.separator{
+  border-top: 2px solid #E7E7E7;
+  opacity: 60%;
+}
+
+
+.btn-close {
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-body {
+  padding: 1.5rem;
+
+  .form-label {
+    font-weight: 600;
+  }
+
+  .form-control {
+    border-radius: 0.375rem;
+    height: 58px;
+  }
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  .btn-outline-primary {
+    color: #6c63ff;
+    border: 1px solid #6c63ff;
+    &:hover {
+      background-color: #6c63ff;
+      color: #fff;
+    }
+  }
+
+  .btn-primary {
+    background-color: #6c63ff;
+    border: none;
+    &:hover {
+      background-color: #5753e8;
+    }
+  }
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+
+  i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .text-primary {
+    margin: 0 0.5rem;
+
+  }
+
+  .file-size {
+    color: #6c757d;
+  }
+
+  .separator {
+    border: none;
+    border-top: 2px solid #3f0a0a;
+    width: calc(100% + 40px);
+    position: relative;
+    left: -20px;
+  }
+}
+
+.form-control, .form-select {
+  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 499;
+}
+
+.form-wrapper {
+  background-color: #FFFFFF;
+  border: 1px solid #E7E7E7;
+  padding: 1.5rem 1rem 0.8rem 1rem;
+  border-radius: 8px;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  color: #262626;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 20px;
+  font-family: 'Frutiger LT Pro', sans-serif;
+}
+
+label {
+  font-family: 'Frutiger LT Pro', sans-serif;
+  color: #727578;
+  font-weight: 400;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #AC9961;
+  border-width: 1px;
+  box-shadow: none;
+  outline: 0;
+}
+.form-control{
+  border-radius: 6px;
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  background-color: white;
+  border-color: white;
+  background-image: none;
+}
+
+.form-floating{
+  margin-bottom: 2rem !important;
+}
+
+.form-floating>:disabled~label:after,
+.form-floating>.form-control:disabled~label:after {
+  background-color: white;
+
+}
+
+.form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+  height: calc(3.9rem + calc(var(--bs-border-width)* 2));
+  min-height: calc(3.5rem + calc(var(--bs-border-width)* 2));
+  line-height: 1.45;
+  height: 150%;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+::ng-deep .ng-select .ng-select-container {
+  background: #fff;
+  font-size: 16px;
+  color: #878e9f;
+  height: 8px;
+  padding: 0 !important;
+  box-shadow: none;
+}
+
+::ng-deep .ng-select.ng-select-disabled > .ng-select-container {
+  background-color: transparent !important;
+  border: none !important;
+}
+::ng-deep .ng-select.ng-select-focused > .ng-select-container {
+  background-color: white !important;
+  border: none !important;
+}
+
+::ng-deep .form-floating .ng-select.ng-select-focused > .ng-select-container {
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  border: none;
+}
+
+.form-floating .ng-select.ng-select-disabled {
+  border: none !important;
+  border-radius: 0.25rem !important;
+}
+::ng-deep .ng-select.ng-select-disabled .ng-arrow-wrapper {
+  display: none;
+}
+.form-floating[_ngcontent-ng-c3639181610] > .form-control[_ngcontent-ng-c3639181610], .form-floating[_ngcontent-ng-c3639181610] > .form-control-plaintext[_ngcontent-ng-c3639181610], .form-floating[_ngcontent-ng-c3639181610] > .form-select[_ngcontent-ng-c3639181610] {
+
+  min-height: calc(1.5rem + var(--bs-border-width)* 2);
+  line-height: 1.45;
+
+}
+//////////////////////////////////

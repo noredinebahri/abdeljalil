@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-link text-decoration-none" (click)="goBack()" >
+      <img src="assets/images/icone/back-arraw.svg" alt="refresh"> 
+      <span style="color: #683B8F;">Retour à la liste</span>
+
+    </button>
+  </div>
+    <div  class="bg  rounded">
+      <div class="title d-flex align-items-center mb-4" style="justify-content: flex-start;">
+        <h3 class="mb-0 mr-5 custom-title">DOSSIER N° 1234500001</h3>
+        <span class="badge-custom mb-0" [ngClass]="getBadgeClass('EN_ATTENTE_DE_QUALIFICATION')">
+          {{'EN_ATTENTE_DE_QUALIFICATION' | translate }}
+      </span>
+      </div>
+      <ul  class="nav nav-tabs fw-bold">
+        <li class="nav-item">
+          <a class="nav-link active nav-link-first"  routerLink="/back-office/donnees-fraudes/dossier-fraude" routerLinkActive="active">{{'back-office.tabs.suiviDossiers' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/back-office/donnees-fraudes/infos" routerLinkActive="active">{{'back-office.tabs.infosDeposant' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/back-office/donnees-fraudes/detail" routerLinkActive="active">{{'back-office.tabs.detailsIndemnisation' | translate}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="outlet-container">
+    <router-outlet></router-outlet>
+  </div>
+  

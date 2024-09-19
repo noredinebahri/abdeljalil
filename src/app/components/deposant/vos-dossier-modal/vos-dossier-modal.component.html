@@ -1,0 +1,26 @@
+<div class="modal-body">
+  <div class="card-body">
+    <p class="card-title">{{'demarrage.vosDossier.title' | translate}}</p>
+    <hr class="card-separator">
+    <p class="card-text">{{'demarrage.vosDossier.text' | translate}}</p>
+    <div class="row">
+      <div class="col-4 " *ngFor="let card of cardInfo">
+        <app-dossier-card
+          [title]="card.title"
+          [description]="card.description"
+          [imagePath]="card.imagePath"
+          [content]="card.content"
+          [iconPath]="card.iconPath"
+          [typePersonne]="card.typePersonne"
+          [backgroundTypPersonne]="card.backgroundTypPersonne"
+          [selected]="card === selectedCard">
+        </app-dossier-card>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="card-separator" />
+<div class="modal-footer">
+  <app-button type="primary" text="{{'deposant.reclamation.detail.cloturer.cancelButton' | translate}}" (click)="cancel()" [outlined]="true" ></app-button>
+  <app-button type="primary" text="{{'deposant.reclamation.detail.cloturer.confirmButton' | translate}}" (click)="acceder()" [selected]="true"></app-button>
+</div>

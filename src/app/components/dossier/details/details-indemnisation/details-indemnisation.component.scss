@@ -1,0 +1,289 @@
+.container {
+  background-color: #F6F6F6;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+  padding-top: 23px;
+
+  h4 {
+    color: var(--Storm-Dust-500, #6D6D6D);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .indemnity-amount-section{
+    border: 1px solid #E7E7E7;
+  }
+  .indemnity-amount-section, .payment-method-section, .indemnity-status-section {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    .montant-section{
+      padding:32px;
+    }
+    .indemnity-amount {
+      color: var(--Storm-Dust-950, #262626);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.64px;
+      text-transform: uppercase;
+      margin:0;
+    }
+
+    .separator {
+      border: none;
+      border-top: 2px solid #E7E7E7;
+      margin: 30px 0;
+      width: calc(100% + 40px);
+      position: relative;
+      left: -20px;
+      opacity: 60%;
+    }
+
+    app-button {
+      color: var(--Royal-Purple-800, #683B8F);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+  }
+
+  .status-card {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid #E7E7E7;
+    .card-title {
+      color: var(--Storm-Dust-950, #262626);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    .card-status-body{
+      padding: 30px;
+    }
+    .progress-circle {
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      position: relative;
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: conic-gradient(#683B8F 30%, #F6F6F6 0%);
+      }
+
+      .circle-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .progress-value {
+          font-size: 1.2rem;
+          color: #683B8F;
+        }
+      }
+    }
+
+    .status-text {
+      margin-top: 0;
+
+      .status-detail {
+        color: #683B8F;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .status-step {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    }
+
+    app-button {
+      width: 100%;
+      color: var(--Royal-Purple-800, #683B8F);
+      font-family: "Frutiger LT Pro", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      background-color: #007bff;
+      border-color: #007bff;
+      border-radius: 4px;
+    }
+
+  }
+
+}
+
+
+.modal-header {
+  background-color: #d4c295;
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #262626;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.nav-tabs {
+  border-bottom: none;
+
+  .nav-link {
+    border: none;
+    color: #6c757d;
+
+    &.active {
+      background-color: #d4c295;
+      color: #262626;
+      border: none;
+    }
+  }
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 1rem 2rem;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1;
+  color: #6c63ff;
+  border: 1px solid #6c63ff;
+
+  &:hover {
+    background-color: #d4c295;
+    border-color: #d4c295;
+  }
+}
+
+.btn-primary {
+  background-color: #6c63ff;
+  border: none;
+
+  &:hover {
+    background-color: #5753e8;
+  }
+}
+.toast{
+  /* Property 1=100% */
+  box-sizing: border-box;
+  /* Auto layout */
+  display: inline-block;
+  align-items: center;
+  padding: 16px 24px 16px 16px;
+  gap: 12px;
+  isolation: isolate;
+  position: absolute;
+  width: 60vw;
+  height: 76px;
+  right: 12%;
+  top: 22%;
+  background: #E0F8EA;
+  border: 1px solid #C2F0D6;
+  border-bottom: 5px solid #269357;
+  box-shadow: 0px 0.6px 1.8px rgba(0, 0, 0, 0.11), 0px 3.2px 7.2px rgba(0, 0, 0, 0.13);
+  border-radius: 8px;
+  .tost-body{
+    display: flex;
+    .icon-svg {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 10px;
+    }
+    .toast-icon{
+      width:5%;
+      text-align: center;
+    }
+    .toast-text{
+      width:90%;
+      font-weight: bold;
+    }
+    .toast-close{
+      text-align: end;
+      width:5%;
+    }
+  }
+
+}
+.card-separator {
+  margin:0 !important;
+  border: none;
+  border-top: 1px solid #E7E7E7;
+  position: relative;
+  width: 100%;
+  opacity: 60%;
+}
+.indemnity-amount-footer{
+  padding: 26px 30px !important;
+  display: flex;
+}
+.card-header{
+  padding: 26px 30px;
+  margin: 0 !important;
+  .card-title {
+    margin:0 !important;
+    letter-spacing: 1px;
+  }
+}
+.card-footer{
+  padding: 26px 30px;
+  margin:0 !important;
+}
+//----- overlay-effect-----//
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  overflow: hidden !important;
+}
+.progress-value{
+  letter-spacing: 5px;
+}
+/************* Arabic CSS **************/
+:dir(rtl){
+  .card-separator {
+    left: 0;
+    right: 0;
+  }
+  .status-text{
+    .status-detail{
+      font-weight: 700 !important;
+      font-size: 17px !important;
+    }
+  }
+}
+
+

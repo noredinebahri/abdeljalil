@@ -1,0 +1,19 @@
+<div class="container px-5">
+    <app-table
+      [titlePage]="'dossiers frauduleux' | translate"
+      [columns]="columns"
+      [data]="tableData"
+      [actions]="actions"
+      [filter]="true"
+      [filterFields]="filterFields"
+      [filterFieldsAvance]="filterFieldsAvance"
+      [pagination]="true"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      (actionClick)="handleAction($event)"
+      (pageChange)="handlePageChange($event)">     
+    </app-table>
+   
+
+  </div>
+ 

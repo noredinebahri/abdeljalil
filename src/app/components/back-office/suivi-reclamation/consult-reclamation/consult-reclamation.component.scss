@@ -1,0 +1,194 @@
+.container {
+  font-family: 'Frutiger LT Pro', sans-serif;
+  .bg {
+    background-color: #F6F6F6;
+    padding-left: 10px;
+    .title{
+      padding: 40px 0px 32px;
+      margin:0;
+    }
+    h2 {
+      color: #323232;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .nav-tabs {
+      border-bottom: 0;
+      .nav-item{
+        padding-inline: 1.5rem;
+      }
+      li:first-child{
+        padding-left: 0!important;
+      }
+      .nav-link {
+        margin-right: 10px;
+        padding-bottom: 0.5rem;
+        padding-inline:0;
+        margin-inline: 0;
+        font-size: 14px;
+        color: #6c757d;
+        border: none;
+
+        &:hover {
+          border: none;
+        }
+
+        &.active {
+          background-color:  #F6F6F6;
+          color: var(--Storm-Dust-950, #262626);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 19px;
+          border-bottom: 3px solid #683B8F;
+        }
+      }
+    }
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    .header-left {
+      display: flex;
+      align-items: center;
+
+      .page-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        background-color: #f3e8ff;
+        color: #6c63ff;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+
+    .header-right {
+      .btn-link {
+        color: var(--Royal-Purple-800, #683B8F);
+        text-decoration: none;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+
+        .img-icon
+        {
+          margin-right: 8px;
+        }
+
+        i {
+          margin-right: 8px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .badge-custom {
+    display: inline-block;
+    align-items: center;
+    padding: 7px 12px 7px 2.2em;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 12px;
+    color: black;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    &.Brouillon {
+      background-color: #E1EFFD;
+      &::before { background-color: #40A8F0; }
+    }
+
+    &.En-cours {
+      background-color: #F3ECFB;
+      &::before { background-color: #714696; }
+    }
+
+    &.Nouvelle-demande {
+      background-color: #FFEDD5;
+      &::before { background-color: #FA7B1F; }
+    }
+
+    &.Validée, &.Traitée {
+      background-color: #E0F8EA;
+      &::before { background-color: #269357; }
+    }
+
+    &.Rejetée {
+      background-color: #FFE3E1;
+      &::before { background-color: #E02B1D; }
+    }
+
+    &.Clôturée {
+      background-color: #EAE7D7;
+      &::before { background-color: #6D563B; }
+    }
+
+    &.En-attente {
+      background-color: #FFFAC2;
+      &::before { background-color: #FDCD12; }
+    }
+
+    &.Critique {
+      background-color: #FFE3E1;
+      &::before { background-color: #E02B1D; }
+    }
+
+    &.Élevée {
+      background-color: #FFEDD5;
+      &::before { background-color: #FA7B1F; }
+    }
+
+    &.Faible {
+      background-color: #E1EFFD;
+      &::before { background-color: #40A8F0; }
+      color: #212529;
+    }
+  }
+}
+:dir(rtl){
+  li:first-child{
+    padding-left: 1.5rem !important;
+    padding-right: 0!important;
+  }
+  .nav-link {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .nav-tabs{
+    padding-right: 8px;
+  }
+}
+
+.outlet-container{
+  margin-top: 25px;
+}

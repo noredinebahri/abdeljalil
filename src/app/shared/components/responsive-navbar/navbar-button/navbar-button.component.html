@@ -1,0 +1,13 @@
+<button class="navbar-button" [class.dropdown]="isDropdown" [style.background-color]="backgroundColor"
+        (click)="isDropdown && toggleDropdown()">
+  <img *ngIf="iconPath" [src]="iconPath" alt="Button Icon" class="button-icon">
+  {{ label }}
+  <img *ngIf="isDropdown" src="assets/svg/icone/drop-down.svg" alt="Dropdown Arrow" class="dropdown-icon">
+</button>
+<div *ngIf="isDropdown && isOpen" class="dropdown-content">
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>

@@ -1,0 +1,20 @@
+<div class="filter-container">
+  <div class="row g-2">
+    <ng-container *ngFor="let field of filterFields; let i = index">
+      <div class="col-md-3">
+        <ng-container [ngSwitch]="field.type">
+          <input *ngSwitchCase="'text'" type="text" class="form-control" [placeholder]="field.placeholder" [(ngModel)]="filters[field.name]">
+          <ng-select *ngSwitchCase="'select'" [items]="getOptions(field.options)" bindLabel="label" bindValue="value" [searchable]="true" [(ngModel)]="filters[field.name]" [placeholder]="field.placeholder"></ng-select>
+          <input *ngSwitchCase="'date'" type="date" class="form-control" [(ngModel)]="filters[field.name]" [placeholder]="field.placeholder">
+        </ng-container>
+      </div>
+      <div *ngIf="(i + 1) % 4 === 0" class="w-100"></div> <!-- Force new row after 4 items -->
+    </ng-container>
+    <div class="col-md-3 d-flex align-items-center justify-content-end">
+      <div class="d-flex w-100">
+      <app-button type="primary" class="me-2 w-100" text="Filtrer" (click)="applyFilter()"></app-button>
+      <app-button type="secondary" class="refresh-btn w-100" text="Rafraîchir" ></app-button>
+    </div>
+    </div>
+  </div>
+</div>

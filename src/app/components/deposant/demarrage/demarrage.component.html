@@ -1,0 +1,37 @@
+<app-responsive-navbar [navItems]="customNavItems" [username]="username"></app-responsive-navbar>
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light card-holder">
+  <ng-container *ngIf="currentStep === 1">
+    <div class="card shadow-lg p-2">
+      <div class="card-body">
+        <p class="card-title">LANGUE</p>
+        <hr class="card-separator">
+        <p class="card-text">Sélectionnez la langue que vous souhaitez utiliser.</p>
+        <p class="card-text arabic-text">.اختر اللغة التي تريد استخدامها</p>
+        <form [formGroup]="languageForm">
+          <div class="mb-4">
+            <div class="form-check form-check-inline custom-radio">
+              <input class="form-check-input" type="radio" formControlName="language" id="langFr" value="fr" />
+              <label class="form-check-label" for="langFr">Français</label>
+            </div>
+            <div class="form-check form-check-inline custom-radio">
+              <input class="form-check-input" type="radio" formControlName="language" id="langAr" value="ar" />
+              <label class="form-check-label" for="langAr">العربية</label>
+            </div>
+            <hr class="card-separator">
+          </div>
+          <div class="position-relative">
+            <div class="position-absolute top-50 start-50 translate-middle text-muted small-text">
+              <span>1 / 2</span>
+            </div>
+            <div class="d-flex justify-content-end">
+              <app-button   type="secondary" [outlined]="false" text="Continuer" [class]="'fw-bold'" (click)="goToNextStep()" ></app-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="currentStep === 2">
+    <app-vos-dossier [cardInfo]="cardInfo" [selectedCard]="selectedCard" (selectCard)="selectCard($event)" (goBack)="goToPreviousStep()" (submitForm)="handleSecondStepSubmit($event)" ></app-vos-dossier>
+  </ng-container>
+</div>

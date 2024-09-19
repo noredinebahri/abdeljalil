@@ -1,0 +1,49 @@
+<div class="modal-header row w-100">
+  <div class="col-12"><img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon"></div>
+  <div class="col-12">
+      <h5 class="modal-title">{{ 'dossier.reclamation.reponse.modalTitle' | translate }}</h5>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="separator-section"><hr class="card-separator"/></div>
+<div class="modal-body">
+  <div class="depot-details">
+    <div class="detail-row">
+      <div class="detail-column">
+        <div
+          class="detail-label">{{ 'dossier.reclamation.reponse.reponse' | translate }}
+        </div>
+        <div class="detail-value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator-section"><hr class="card-separator"/></div>
+  <div class="depot-details">
+    <div class="detail-row">
+      <div
+        class="detail-label">{{ 'dossier.reclamation.reponse.modalTitle' | translate }}
+      </div>
+      <div class="file-details mt-4">
+        <div class="name-and-size">
+          <img src="assets/images/svg/document.svg" alt="Document Icon" class="document-icon">
+          <div class="file-name">document.png
+            <span class="middle-dot">•</span>
+            <button
+              class="consult-btn">{{ 'dossier.reclamation.buttons.consulter' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="card-separator"/>
+<div class="modal-footer">
+  <app-button type="primary"
+              text="{{'dossier.reclamation.reponse.buttons.annuler' | translate}}"
+              (click)="back()" [outlined]="true"></app-button>
+  <app-button type="primary"
+              text="{{'dossier.reclamation.reponse.buttons.confirmer' | translate}}"
+              (click)="confirm()" [selected]="true"></app-button>
+</div>

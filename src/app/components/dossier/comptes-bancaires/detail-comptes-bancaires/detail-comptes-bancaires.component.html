@@ -1,0 +1,58 @@
+<div>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4 custom-padding">
+        <h2 class="card-title mb-2">{{ "COMPTE COURANT "}}</h2>
+      <span class="badge-custom mb-2" [ngClass]="getBadgeClass('STP')"> {{ getTranslationKey('STP') + 'STP' | translate }}</span>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-link text-decoration-none" (click)="goBack()">
+          <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> {{ 'utilisateur.precedent' | translate }}
+        </button>
+      </div>
+    </div>
+    <div>
+    <div class="mb-4" >
+      <app-form  [formItems]="infosCompteStp" (formData)="handleFormData($event)"></app-form>
+    </div>
+      <div class="mb-4" >
+        @defer (when compteData?.statusCompte==StatusCompte.NSTP){
+        <app-form  [formItems]="infosCompteNstp" (formData)="handleFormData($event)"></app-form>
+      }
+      </div>
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>{{'deposant.compte.detail.listeContitulaires.title' | translate}}</h5>
+        </div>
+        <hr class="card-separator"/>
+        <div class="table-container">
+          <app-table [columns]="columns" [data]="cotitulaires"></app-table>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>{{'deposant.compte.detail.listeCarteBancaires.title' | translate}}</h5>
+        </div>
+        <hr class="card-separator"/>
+        <div class="table-container">
+          <app-table [columns]="columnsCartesBancaires" [data]="cotitulaires"></app-table>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>{{'deposant.compte.detail.prelevement.title' | translate}}</h5>
+        </div>
+        <hr class="card-separator"/>
+        <div class="table-container">
+          <app-table [columns]="columnsPrelevement"
+                     [data]="cotitulaires"
+                     [pagination]="true"
+          ></app-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

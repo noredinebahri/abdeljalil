@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.motifRejet' | translate }}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<hr class="card-separator" />
+<div class="modal-body">
+  <form [formGroup]="approbation">
+    <div class="row mb-3">
+      <div class="form-floating">
+        <textarea class="text-aria" type="text" [placeholder]="'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.decision' | translate " class="form-control" formControlName="message"></textarea>
+        <label [class.disabled-label]="true" class="ms-2">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.decision' | translate }}</label>
+      </div>
+    </div>
+    <div class="mt-5">
+      <label class="form-label">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.pieceJointe' | translate }}</label>
+      <app-file-upload   (change)="handleFile($event)" ></app-file-upload>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <app-button type="primary" [outlined]="true" text="{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.retour' | translate }}" (click)="retour()"></app-button>
+  <app-button type="primary" text="{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.popup.buttons.envoyer' | translate }}" [selected]="true" (click)="rejter()"></app-button>
+</div>

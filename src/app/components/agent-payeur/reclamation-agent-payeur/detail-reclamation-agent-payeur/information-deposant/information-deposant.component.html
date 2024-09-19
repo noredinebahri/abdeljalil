@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="mb-4">
+      <app-form [formItems]="formItems"></app-form>
+    </div>
+    @defer (when showCentreAppele ){
+    <div class="mb-4">
+      <app-form [formItems]="coordonneesContact"></app-form>
+    </div>
+    <div class="mb-4">
+      <app-form [formItems]="adressePostale"></app-form>
+    </div>
+    }
+  </div>
+</div>

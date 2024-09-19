@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="bg rounded">
+    <div class="title d-flex align-items-center mb-4" style="justify-content: flex-start;">
+      <h3 class="mb-0 mr-5 custom-title">RÔLE R010</h3>
+      <span class="badge-custom mb-0" [ngClass]="getBadgeClass('Activée')">
+        {{ 'Activé' | translate }}
+      </span>
+      <button class="btn btn-link text-decoration-none ml-auto" (click)="goBack()">
+        <img src="assets/images/icone/back-arraw.svg" alt="refresh"> Retour à la liste
+      </button>
+    </div>
+    <ul class="nav nav-tabs fw-bold">
+      <li class="nav-item">
+        <a class="nav-link active nav-link-first" routerLink="/gestion-roles/role" routerLinkActive="active">{{'back-office.tabs.donnesRole' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/gestion-roles/role-trace" routerLinkActive="active">{{'back-office.tabs.suiviActivites' | translate}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="outlet-container">
+  <router-outlet></router-outlet>
+</div>

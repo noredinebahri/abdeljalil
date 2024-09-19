@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="card-titleP card-title">{{'deposant.nouveauRole.title' | translate}}</h2>
+    <button class="btn btn-link text-decoration-none" (click)="goBack()">
+      <img src="../../../../../assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon">
+      {{'deposant.details.releveIndemnite.retourToList' | translate}}
+    </button>
+  </div>
+  <div class="card mb-4" >
+    <div class="card-body">
+      <h5 class="card-title custom-padding">Informations générales</h5>
+      <form [formGroup]="generalInfoForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="roleCode" placeholder="Code rôle" formControlName="roleCode">
+              <label for="roleCode">Code rôle</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="roleTitle" placeholder="Nom rôle" formControlName="roleTitle">
+              <label for="roleTitle">Nom rôle</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card mb-4 ">
+    <div class="card-body ">
+      <h5 class="card-title custom-padding">Gestion d'accès et permissions</h5>
+      <app-role-treeview [data]="data"></app-role-treeview>
+      <div class="button-container">
+        <app-button [outlined]="true" text="Annuler" [selected] class="ml-3" (click)="goBack()"></app-button>
+        <app-button text="Enregistrer" [selected]="true" class="ml-3" (click)="confirmAjoutRole()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>
+

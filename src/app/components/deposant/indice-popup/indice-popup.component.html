@@ -1,0 +1,16 @@
+<div class="popup-container shadow-lg p-3 mb-5 rounded">
+    <div class="arrow-up"></div>
+    <div class="popup-content">
+        <h2 class="h6">{{ steps[currentStep].title }}</h2>
+        <p>{{ steps[currentStep].message }}</p>
+        <div class="popup-footer d-flex justify-content-between align-items-center">
+            <button *ngIf="currentStep >= steps.length - 1" (click)="onRollback()" class="btn btn-transparent">
+                Précédent
+            </button>
+            <span class="mx-auto">{{ currentStep + 1 }} / {{ steps.length }}</span>
+            <button class="btn btn-custom-white"    (click)="onNext()" >
+                {{ currentStep < steps.length - 1 ? 'Suivant' : 'Compris!' }}
+            </button>
+        </div>
+    </div>
+</div>

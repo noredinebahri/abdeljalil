@@ -1,0 +1,18 @@
+<div id="layout">
+  <ng-container *ngIf="showNavbarDeposant">
+    <app-responsive-navbar [navItems]="customNavItemsDeposant" [userDropdownItems]="customUserDropdownItemsDeposant"
+                           [username]="usernameDeposant"></app-responsive-navbar>
+  </ng-container>
+  <ng-container *ngIf="showNavbarAdherent">
+    <app-responsive-navbar [navItems]="customNavItemsAdherent" [username]="usernameAdherent" [userDropdownItems]="customUserDropdownItemsAdherent"></app-responsive-navbar>
+  </ng-container>
+  <ng-container *ngIf="showNavbarAgentPayeur">
+    <app-responsive-navbar  [username]="usernameAgentPayeur" [userDropdownItems]="customUserDropdownItemsAdherent"></app-responsive-navbar>
+  </ng-container>
+  <ng-container *ngIf="showNavbarCentreAppel">
+    <app-responsive-navbar [navItems]="customNavItemsCentreAppel"  [username]="usernameCentreAppel" [userDropdownItems]="customUserDropdownCentreAppel"></app-responsive-navbar>
+  </ng-container>
+  <div [ngClass]="{'container': !showNavbarBackOffice}">
+    <router-outlet></router-outlet>
+  </div>
+</div>

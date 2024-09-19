@@ -1,0 +1,56 @@
+<ng-container *ngIf="!isSubmitted">
+  <div class="modal-header">
+    <h5 class="modal-title">
+      {{ isReactivation ? ('back-office.motifReactivate' | translate) : ('back-office.motifDisable' | translate) }}
+    </h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="modal-body">
+      <div class="form-floating">
+
+
+        <input class="form-control"  />
+        <label  class="ms-2"> </label>
+
+
+
+
+
+        <label class="ms-2">{{ 'back-office.motif' | translate }}</label>
+        <div *ngIf="form.get('Motif')?.invalid && form.get('Motif')?.touched" class="text-danger">
+          {{ 'referentiel.required' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <app-button type="primary" [outlined]="true" text="{{ 'referentiel.cancel' | translate }}"
+                  (click)="cancel()"></app-button>
+      <app-button type="primary" [typeButton]="'submit'" text="{{ 'referentiel.save' | translate }}" [selected]="true"
+                  [disabled]="form.invalid"></app-button>
+    </div>
+  </form>
+</ng-container>
+
+<ng-container *ngIf="isSubmitted">
+  <div class="modal-header w-100">
+    <div class="confirmation-header row">
+      <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+      <div class="col-12">
+        <img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon">
+      </div>
+      <div class="col-12">
+        <h5 class="modal-title" >
+          {{ isReactivation ? ('back-office.reactivateRole' | translate) : ('back-office.disableRole' | translate) }}  {{ ' ' + (form.get('role')?.value || 'R010') }}
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="separator-section"><hr class="card-separator"/></div>
+  <div class="modal-confirmation-body row">
+  </div>
+  <div class="modal-confirm-footer">
+    <app-button type="primary" text="{{ 'referentiel.retour' | translate }}" (click)="back()" [outlined]="true"></app-button>
+    <app-button type="primary" text="{{ isReactivation ? ('referentiel.confirmer' | translate) : ('referentiel.confirmer' | translate) }}" (click)="confirm()" [selected]="true"></app-button>
+  </div>
+</ng-container>

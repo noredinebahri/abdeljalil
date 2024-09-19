@@ -1,0 +1,13 @@
+<div class="card custom-card" [ngClass]="customClass" [class.disabled] = "disabled">
+  <div class="w-100">
+      <div class="row-cols-2 ">
+        <img [src]="iconPath" alt="Icon" class="icon-svg">
+        <div class="toggle-container">
+          <input type="checkbox" class="checkbox-round" id="toggle" [checked]="toggleState" >
+          <label for="toggle"></label>
+        </div>
+      </div>
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">{{ description }}</p>
+    </div>
+</div>

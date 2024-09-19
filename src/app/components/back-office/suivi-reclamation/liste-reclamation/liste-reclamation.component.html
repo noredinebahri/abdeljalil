@@ -1,0 +1,15 @@
+<div class="container">
+    <app-table
+      [titlePage]="'back-office.suivi-reclamation.title' | translate"
+      [columns]="columns"
+      [actions]="actions"
+      (actionClick)="handelActions($event)"
+      [data]="translatedReclamations"
+      [filterFields]="filterFields"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      [filter]="true"
+      [pagination]="true">
+    </app-table>
+
+</div>

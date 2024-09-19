@@ -1,0 +1,47 @@
+<div class="file-upload-wrapper">
+  <ng-container *ngIf="!readonly">
+    <input type="file" id="fileUpload" hidden (change)="onFilesSelected($event)" #fileInput multiple>
+    <div class="upload-area" [ngClass]="{'error': fileTooLarge}" (click)="fileInput.click()" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+      <div class="row">
+        <div class="col-2">
+          <div class="icon-wrapper">
+            <img src="assets/images/svg/upload.svg" alt="Icon">
+          </div>
+        </div>
+        <div class="col-10">
+          <p>{{'tools.fileupload.title' | translate}}</p>
+          <small>{{'tools.fileupload.condition' | translate}}</small><br><br>
+          <app-button class="upload-button" text="{{'tools.fileupload.buttonTitle' | translate}}" type="primary" [outlined]="true"></app-button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+  <div *ngFor="let file of uploadedFiles; let i = index"
+       [ngClass]="{'uploadComplete': file.uploadComplete }"
+       class="progress-bar-container">
+    <div class="file-info">
+      <img  [src]="file.uploadComplete ? 'assets/images/svg/document.svg' : 'assets/images/svg/document-gray.svg'"
+            alt="File Icon" class="file-icon" disabled>
+      <div class="file-details">
+        <div class="name-and-size">
+          <div class="file-name" [ngClass]="{'uploadCompleteText': file.uploadComplete }">{{ file.name }}
+            <span *ngIf="file.uploadComplete" class="middle-dot">•</span>
+            <button *ngIf="file.uploadComplete" (click)="consultFile(file)" class="consult-btn">{{'tools.fileupload.consulter' | translate}}</button>
+          </div>
+          <div class="file-size" [ngClass]="{'uploadCompleteText': file.uploadComplete }">{{ file.size }} MB</div>
+        </div>
+        <div class="progress" *ngIf="!file.uploadComplete">
+          <div class="progress-bar" role="progressbar" [style.width]="file.progress + '%'" [attr.aria-valuenow]="file.progress" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="!readonly">
+      <button class="close" (click)="removeFile(i)" ><img src="assets/images/svg/close-button.svg" alt="close"></button>
+    </ng-container>
+
+  </div>
+
+  <div *ngIf="fileTooLarge" class="error-message float-start"><img src="assets/images/svg/error-upload-icon.svg" alt="Icon">{{'tools.fileupload.error' | translate}}</div>
+</div>

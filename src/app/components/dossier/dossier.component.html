@@ -1,0 +1,42 @@
+
+<div class="container ">
+  <div class="page-header d-flex justify-content-between align-items-center mt-4">
+    <div class="title d-flex align-items-center">
+      <h2  class="mb-4 fw-bold">{{'agentPayeur.title' | translate}} RR/20082004</h2>
+      <span class="badge-custom ms-3" >XXX</span>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-link text-decoration-none " >
+        <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> Retour à la liste
+      </button>
+    </div>
+  </div>
+  <div  class="bg  rounded">
+    <ul  class="nav nav-tabs fw-bold">
+      <li class="nav-item">
+        <a class="nav-link active nav-link-first" aria-current="page" routerLink="/dossier/reclamation" routerLinkActive="active">Réclamation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossier/detail-Indemnisation-deposant" routerLinkActive="active">Détails indemnisation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossier/detail-Indemnisation" routerLinkActive="active">Détails indemnisation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossier/info-deposant" routerLinkActive="active">Infos déposant</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossier/representant" routerLinkActive="active">Représentants légaux</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossier/heritier" routerLinkActive="active">Héritiers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossier/compte-bancaire" routerLinkActive="active">Comptes bancaires</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="outlet-container">
+  <router-outlet></router-outlet>
+</div>

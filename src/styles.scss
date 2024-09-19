@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Import Bootstrap source files from node_modules
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Import ng-select from node_modules
+@import '../node_modules/@ng-select/ng-select/themes/default.theme.css';
+
+//(Required file)
+@import "assets/scss/variables";
+@import "assets/scss/fonts";
+
+//This is for the components (Required file)
+@import "assets/scss/components/index";
+
+//This is for global css (Required file)
+@import 'assets/scss/global.scss';
+@import 'assets/scss/fonts.scss';

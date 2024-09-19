@@ -1,0 +1,112 @@
+<ng-container *ngIf="!isSubmitted">
+  <div class="modal-header">
+    <h5 class="modal-title">{{title | translate }}</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="modal-body">
+      <div class="form-floating" *ngFor="let item of formItems">
+        @if(item.itemType === 'field' ){
+
+        <input class="form-control" [type]="item.type" [formControlName]="item.placeholder!" />
+        <label [class.disabled-label]="item.disabled" class="ms-2"> {{ 'tools.forminput.'+item.placeholder | translate }}
+        </label>
+        @if(item.placeholder==="libelleArabe"){
+          <div *ngIf="form.get(item.placeholder!)?.invalid && form.get(item.placeholder!)?.touched" class="text-danger">
+            {{ 'referentiel.' + 'libelleArabeRequired'| translate }}
+          </div>
+        }@else {
+          <div *ngIf="form.get(item.placeholder!)?.invalid && form.get(item.placeholder!)?.touched" class="text-danger">
+            {{ 'referentiel.' + 'required'| translate }}
+          </div>
+        }
+   
+        }
+
+      @if(item.itemType==='select'){
+        <div class="ms-2">
+          <div class="form-floating mb-3">
+            <label>{{ 'tools.forminput.'+item.placeholder | translate }}</label>
+            <select class="form-select"  [formControlName]="item.placeholder!">
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
+        </div>
+      }
+        @if(item.itemType === 'textarea' && item.type !== 'mobile'){
+        <div class="form-floating">
+          <textarea [placeholder]="'tools.forminput.'+item.placeholder | translate" class="form-control custom-textarea"
+            [formControlName]="'tools.forminput.'+item.placeholder | translate"></textarea>
+          <label>{{ 'Commentaire' }}</label>
+        </div>
+        }
+
+        @if(item.itemType === 'dropfile' && item.type !== 'mobile'){
+        <a>Pièces jointes</a>
+        <app-file-upload [theme]="'dark'"></app-file-upload>
+        <br>
+        }
+      </div>
+    </div>
+    <div class="modal-footer">
+      <app-button type="primary" [outlined]="true" text="{{ 'referentiel.cancel' | translate }}"
+        (click)="cancel()"></app-button>
+      <app-button type="primary" [typeButton]="'submit'" text="{{ 'referentiel.save' | translate }}" [selected]="true"
+        [disabled]="form.invalid"></app-button>
+    </div>
+  </form>
+</ng-container>
+<ng-container *ngIf="isSubmitted">
+  <div class="modal-header w-100">
+    <div class="confirmation-header row">
+      <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+      <div class="col-12"><img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon"></div>
+      <div class="col-12">
+        @if(isReferentiel()){
+          @if(isUpdateMethode()){
+            <h5   class="modal-title">{{'referentiel.updateConfirmationTitle' | translate }}</h5>
+          } @if(!isUpdateMethode()){
+
+        <h5 class="modal-title">{{'referentiel.confirmationTitle' | translate }}  "{{form.get('referentiel')?.value}}"</h5>
+          }
+        }@if(isCompagneIndemnisation()){
+          <h5   class="modal-title">"{{'indemnisation.confirmationTitle' | translate }}"</h5>
+
+        }
+
+
+      </div>
+    </div>
+  </div>
+  <div class="separator-section">
+    <hr class="card-separator" />
+  </div>
+  <div class="modal-confirmataion-body row">
+    <ng-container *ngFor="let item of formItems">
+      @if(item.placeholder! !== 'referentiel'){
+        @if(item.itemType === 'field' || item.itemType === 'textarea' || item.itemType === 'dropfile' || item.itemType === 'select'){
+
+      <div class="col-6 mb-2">
+        <p  class="label">{{ 'tools.forminput.'+item.placeholder | translate }}</p>
+        <p  class="text">{{ form.get(item.placeholder!)?.value}}</p>
+      </div>
+      }
+    }
+
+    </ng-container>
+  </div>
+  <div class="modal-confirm-footer">
+    @if(isSubmitted){
+    <app-button type="primary" text="{{'referentiel.retour' | translate}}" (click)="back()"
+      [outlined]="true"></app-button>
+    }
+    @if(!isSubmitted){
+    <app-button type="primary" text="{{'referentiel.retour' | translate}}" (click)="back()"
+      [outlined]="true"></app-button>
+    }
+    <app-button type="primary" text="{{'referentiel.confirmer' | translate}}" (click)="confirm()"
+      [selected]="true"></app-button>
+  </div>
+</ng-container>

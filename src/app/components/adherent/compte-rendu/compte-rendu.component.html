@@ -1,0 +1,8 @@
+<div class="container">
+
+  <app-table [columns]="columns" [titlePage]="'LES COMPTES RENDUS REÇUS DE LA SGFG'" [titleTotalItems]="'comptes rendus'" [data]="compteRendu"  [pagination]="true"
+             [totalItems]="totalItems"
+             [itemsPerPage]="itemsPerPage" (pageChange)="handlePageChange($event)" [filter]="true" [filterFields]="filterFields"
+             [actions]="actions"
+             (actionClick)="onDownloadFile($event)"></app-table>
+</div>

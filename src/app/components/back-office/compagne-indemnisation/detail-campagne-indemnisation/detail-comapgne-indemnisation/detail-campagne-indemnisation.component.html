@@ -1,0 +1,12 @@
+<div class="container px-5">
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-link text-decoration-none" (click)="goBack()" >
+        <img src="assets/images/icone/back-arraw.svg" alt="refresh"> 
+        <span style="color: #683B8F;">Retour à la liste</span>
+
+      </button>
+    </div>
+    <app-form [formItems]="formItems3"
+      (formData)="handleFormData($event)">
+    </app-form>
+</div>

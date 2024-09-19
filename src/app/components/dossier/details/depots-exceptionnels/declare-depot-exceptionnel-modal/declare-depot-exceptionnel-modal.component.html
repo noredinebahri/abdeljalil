@@ -1,0 +1,109 @@
+<div class="modal-header">
+  <h5 class="modal-title mt-4 w-100">{{'deposant.depotExceptionnel.declarationExceptionnel.title' | translate}}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<hr class="card-separator" />
+<div class="modal-body">
+  <form [formGroup]="depotForm" novalidate>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-floating">
+          <ng-select
+            [items]="nature"
+            bindLabel="libelle"
+            bindValue="code"
+            formControlName="natureDepot"
+            placeholder="Nature du dépot"
+            id="natureDepot"
+            class="form-control"
+            [class.is-invalid]="isInvalid('natureDepot')"
+          >
+          </ng-select>
+          <label>{{'deposant.depotExceptionnel.declarationExceptionnel.natureDepot' | translate}}</label>
+          <div *ngIf="isInvalid('natureDepot')" class="invalid-feedback">
+            {{ 'Ce champ est obligatoire' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <app-date-picker
+            formControlName="dateDeclaration"
+            [class.is-invalid]="isInvalid('dateDeclaration')"
+          ></app-date-picker>
+          <label>{{'deposant.depotExceptionnel.declarationExceptionnel.dateDepot' | translate}}</label>
+          <div *ngIf="isInvalid('dateDeclaration')" class="invalid-feedback">
+            {{ 'Ce champ est obligatoire et doit être au format JJ/MM/AAAA' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input
+            type="text"
+            [placeholder]="'deposant.depotExceptionnel.declarationExceptionnel.montantDepot' | translate"
+            class="form-control"
+            formControlName="montant"
+            [class.is-invalid]="isInvalid('montant')"
+          />
+          <label>{{'deposant.depotExceptionnel.declarationExceptionnel.montantDepot' | translate}}</label>
+          <div *ngIf="isInvalid('montant')" class="invalid-feedback">
+            {{ 'Ce champ est obligatoire et doit être un nombre' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input
+            type="text"
+            [placeholder]="'deposant.depotExceptionnel.declarationExceptionnel.montantReclame' | translate"
+            class="form-control"
+            formControlName="montantReclamation"
+            [class.is-invalid]="isInvalid('montantReclamation')"
+          />
+          <label>{{'deposant.depotExceptionnel.declarationExceptionnel.montantReclame' | translate}}</label>
+          <div *ngIf="isInvalid('montantReclamation')" class="invalid-feedback">
+            {{ 'Ce champ est obligatoire et doit être un nombre' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="form-floating">
+          <ng-select
+            [items]="compteBancaire"
+            bindLabel="libelle"
+            bindValue="code"
+            formControlName="compteBancaire"
+            placeholder="Compte bancaire"
+            id="compteBancaire"
+            class="form-control"
+            [class.is-invalid]="isInvalid('compteBancaire')"
+          >
+          </ng-select>
+          <label>{{'deposant.depotExceptionnel.declarationExceptionnel.compteBancaire' | translate}}</label>
+          <div *ngIf="isInvalid('compteBancaire')" class="invalid-feedback">
+            {{ 'Ce champ est obligatoire' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="card-separator"/>
+    <div class="mt-4">
+      <label class="form-label">{{'deposant.depotExceptionnel.declarationExceptionnel.pieceJointeName' | translate}}</label>
+      <app-file-upload formControlName="pieceJointeName" (fileSelected)="handleFileSelected($event)" [class.is-invalid]="isInvalid('pieceJointeName')"
+      ></app-file-upload>
+      <div *ngIf="isInvalid('pieceJointeName')" class="invalid-feedback">
+        {{ 'Ce champ est obligatoire' | translate }}
+      </div>
+    </div>
+    <app-form [formItems]="formItems"></app-form>
+  </form>
+</div>
+<hr class="separator" />
+<div class="modal-footer">
+  <app-button type="primary" [outlined]="true" text="{{'deposant.depotExceptionnel.declarationExceptionnel.saveButton' | translate}}" (click)="saveDraft()"></app-button>
+  <app-button type="primary" text="{{'deposant.depotExceptionnel.declarationExceptionnel.declarerButton' | translate}}" [selected]="true" (click)="declare()"></app-button>
+</div>

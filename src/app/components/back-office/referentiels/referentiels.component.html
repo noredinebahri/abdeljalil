@@ -1,0 +1,15 @@
+<div class="container px-5">
+    <app-table
+      [titlePage]="'deposant.reference.title' | translate"
+      [columns]="columns"
+      [actions]="actions"
+      [data]="tableData"
+      [filter]="true"
+      [filterFields]="filterFields"
+      [pagination]="true"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      [backgroundFilter]="true"
+      (actionClick)="onActionClick($event)">
+    </app-table>
+  </div>

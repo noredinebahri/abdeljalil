@@ -1,0 +1,74 @@
+.container {
+  font-family: 'Frutiger LT Pro', sans-serif;
+  .bg {
+    background-color: #F6F6F6;
+    padding-left: 10px;
+    .title{
+      padding: 36px 0px 4px;
+      margin:0;
+    }
+    h2 {
+      color: #323232;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .nav-tabs {
+      border-bottom: 0;
+      .nav-item{
+        padding-inline: 1rem;
+      }
+      li:first-child{
+        padding-left: 0!important;
+      }
+      .nav-link {
+        margin-right: 10px;
+        padding-bottom: 0.5rem;
+        padding-inline:0;
+        margin-inline: 0;
+        font-size: 14px;
+        color: #6c757d;
+        border: none;
+
+        &:hover {
+          border: none;
+        }
+
+
+        &.active {
+          background-color:  #F6F6F6;
+          color: var(--Storm-Dust-950, #262626);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 19px;
+          border-bottom: 3px solid #683B8F;
+        }
+      }
+    }
+  }
+}
+.btn-link {
+  color: #683B8F;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.btn-link .img-icon {
+  margin-right: 9px;
+  width: 16px;
+  height: auto;
+}
+:dir(rtl){
+  li:first-child{
+    padding-left: 1.5rem !important;
+    padding-right: 0!important;
+  }
+  .nav-link {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .nav-tabs{
+    padding-right: 8px;
+  }
+}

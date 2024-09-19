@@ -1,0 +1,72 @@
+.arabic-text {
+  font-size: 0.9em;
+  color: #333;
+}
+.card{
+  max-width: 500px; width: 100%;
+}
+.card-separator {
+  border: none;
+  border-top: 2px solid #E7E7E7;
+  width: calc(100% + 3.5rem);
+  margin-left: -2rem;
+  margin-top: 1rem;
+  opacity: 60%;
+}
+.card-title{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  font-weight: bold;
+  font-size: medium;
+
+}
+.custom-radio .form-check-input {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  border: 1px solid lightgrey;
+  background-color: transparent;
+  position: relative;
+}
+.custom-radio .form-check-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(172, 153, 97, 0.25);
+}
+
+
+.custom-radio .form-check-input:checked {
+  background-color: #AC9961; /* Desired background color for checked state */
+  border-color: #AC9961; /* Match the border color with the background color */
+  background-image: none;
+}
+.small-text {
+  font-size: 0.65rem; /* Adjust the size of the text to be smaller */
+  font-family: 'Frutiger LT Pro', sans-serif;
+  color: #6D6D6D;
+}
+.card-text{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  color: #6D6D6D;
+  font-size: 14px;
+
+}
+card-text arabic-text{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  color: #6D6D6D;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  .form-check-inline {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .d-flex.justify-content-end {
+    justify-content: center !important; /* Center the button on smaller screens */
+  }
+}

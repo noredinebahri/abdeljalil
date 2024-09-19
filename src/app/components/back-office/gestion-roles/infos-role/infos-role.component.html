@@ -1,0 +1,21 @@
+<div>
+  <div class="container" >
+      <div class="mb-4 top-padding" >
+        <app-form [formItems]="infosGenrales" [showSeparators]=false ></app-form>
+      </div>
+    <div class="card mb-4 ">
+      <div class="card-body ">
+        <h5 class="card-title custom-padding">Gestion d'accès et permissions</h5>
+        <app-role-treeview [useMonochrome]="monochromeEnabled" [disableToggles]="togglesDisabled" [hideToggles]="togglesHidden" [data]="data"></app-role-treeview>
+        <div class="button-container d-flex justify-content-between">
+          <div>
+            <app-button *ngIf="isEditing" [outlined]="true" text="Annuler" class="ml-3" (click)="cancel()"></app-button>
+          </div>
+          <div>
+            <app-button *ngIf="isEditing" text="Enregistrer" class="ml-3" (click)="save()"></app-button>
+            <app-button *ngIf="!isEditing" text="Modifier" [selected]="true" class="ml-3" (click)="modify()"></app-button>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>

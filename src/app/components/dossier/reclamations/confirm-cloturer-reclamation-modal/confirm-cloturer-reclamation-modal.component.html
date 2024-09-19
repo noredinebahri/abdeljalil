@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <div class="modal-title-container">
+    <img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon">
+    <h5 class="modal-title">{{ 'deposant.reclamation.detail.cloturer.title' | translate}}</h5>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div class="modal-body">
+  <p class="text-center">{{ 'deposant.reclamation.detail.cloturer.text' | translate}}</p>
+</div>
+<hr class="card-separator" />
+<div class="modal-footer">
+  <app-button type="primary" text="{{'deposant.reclamation.detail.cloturer.cancelButton' | translate}}" (click)="back()" [outlined]="true" ></app-button>
+  <app-button type="primary" text="{{'deposant.reclamation.detail.cloturer.confirmButton' | translate}}" (click)="confirm()" [selected]="true"></app-button>
+</div>

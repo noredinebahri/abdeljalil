@@ -1,0 +1,211 @@
+$color-gold: #AC9961;
+
+.card-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.card-header {
+  border-bottom: none;
+}
+
+.btn-link {
+  color: #683B8F;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.card-titleP {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+}
+.btn-link .img-icon {
+  margin-right: 9px;
+  width: 16px;
+  height: auto;
+}
+.card-title {
+  font-weight: bold;
+}
+.card-body{
+  padding: 1px 26px 20px;
+}
+.custom-padding {
+  padding-bottom: 20px;
+}
+.form-control:not(:disabled):hover,
+.form-select:not(:disabled):hover {
+  border-color: $color-gold;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.btn-light:hover {
+  background-color: #e2e6ea;
+}
+.form-check-input {
+  cursor: pointer;
+}
+
+
+.form-switch .form-check-input:checked::after {
+  transform: translateX(16px);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-check-input {
+  flex-shrink: 0;
+}
+
+.form-check-label {
+  flex-grow: 1;
+  margin-right: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.span-status {
+  white-space: nowrap;
+}
+
+.checkbox-span {
+  order: 3;
+  padding-left: 13px;
+  margin-left: auto;
+  text-align: left;
+}
+
+
+
+.form-switch .form-check-input {
+  margin-left: unset !important;
+  height: 22px;
+  width: 36px;
+}
+
+
+.custom-tree-header{
+  background-color:#F3ECFB !important;
+  box-shadow: none !important;
+  padding: 14px 30px 14px 16px;
+  border-radius: 7px;
+}
+.custom-tree-button{
+  color: black;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 16px;
+  height: 24px;
+}
+
+.custom-tree-body{
+  padding-bottom: 0px;
+  text-decoration: none;
+  padding-inline: 0px !important;
+
+}
+.custom-sub-tree-button{
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.custom-tree-card{
+  margin-bottom: 20px;
+}
+
+.abi-flex {
+  display: flex;
+  width: 100% !important;
+  border-block-end: 1px solid #E7E7E7;
+  .label{
+    text-align: start;
+    padding: 14px 16px 14px 18px;
+  }
+  .check{
+    width: 19%;
+    padding:  14px 16px 14px 16px;
+    border-inline-start: 1px solid #E7E7E7 ;
+  }
+}
+
+.custom-sub-tree-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0;
+}
+
+.custom-sub-tree-button .label {
+  flex-grow: 1;
+}
+
+.form-check.form-switch {
+  padding: 14px 16px;
+}
+
+.aut-header{
+  background-color: #FAF7FD;
+  border-radius: 0;
+
+}
+.list-unstyled{
+  margin: 0;
+}
+
+.form-check-input:checked {
+  background-color: #269357;
+  border-color: #269357;
+}
+
+.form-check-input:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem white ;
+}
+.arrow-list {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  margin-right: 25px;
+}
+
+.arrow-list.up {
+  transform: rotate(180deg);
+}
+::ng-deep .form-switch .form-check-input{
+  background-image: url('/src/assets/images/svg/tree-view-toggle.svg');
+  background-size: auto !important;
+  background-repeat: no-repeat;
+  margin-top: 0 !important;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

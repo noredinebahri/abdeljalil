@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div *ngIf="showNavBar" class="bg  rounded">
+    <div class="title">
+      <h2  class="mb-4 fw-bold">{{'deposant.title' | translate}}</h2>
+    </div>
+    <ul  class="nav nav-tabs fw-bold">
+      <li class="nav-item">
+        <a class="nav-link active nav-link-first" aria-current="page" routerLink="/deposant/details" routerLinkActive="active">{{'deposant.tabs.detailsIndemnisation' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deposant/depots" routerLinkActive="active">{{'deposant.tabs.depotsExceptionnels' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deposant/reclamations" routerLinkActive="active">{{'deposant.tabs.reclamation' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deposant/representants" routerLinkActive="active">{{'deposant.tabs.representantsLegaux' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deposant/heritiers" routerLinkActive="active">{{'deposant.tabs.heritiers' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deposant/comptes" routerLinkActive="active">{{'deposant.tabs.comptesBancaires' | translate}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="outlet-container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,32 @@
+@if (isLoggedIn()) {
+  <nav class="sidebar-nav">
+    <ul id="sidebarnav" *appHasAnyAuthority="[ADMIN]" >
+      @for (menu of menus; track $index) {
+        <li>
+          <a ngbDropdownItem
+            *appHasAnyAuthority="menu.authority"
+            class="dropdown-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="openMenu(menu)"
+          >
+            <span>{{'sidebar.menus.' + menu.name + '.title' | translate}}</span>
+          </a>
+          @if (menu.subMenus && menu.subMenus.length > 0) {
+            <ul class="list-unstyled" [ngClass]="{'inStyle': refState===in,'outStyle': refState===out}">
+              @for (subMenu of menu.subMenus; track $index) {
+                <li>
+                  <a  *appHasAnyAuthority="subMenu.authority" class="dropdown-item children" 
+                    [routerLink]="subMenu.path" routerLinkActive="active" 
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    <span>{{'sidebar.menus.' + menu.name + '.' + subMenu.name | translate}}</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+}

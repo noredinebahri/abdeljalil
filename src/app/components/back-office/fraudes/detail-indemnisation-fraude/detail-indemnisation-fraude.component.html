@@ -1,0 +1,78 @@
+
+  
+<div class="container">
+
+    <div class="row">
+        <div class="mb-4">
+          <app-form [formItems]="modeDeregelement"></app-form>
+        </div>
+        <div class="mb-4">
+          <app-form [formItems]="coordonneesContact"></app-form>
+        </div>
+  
+      </div>
+
+    <div class="card p-4 rounded-custom" *ngIf="accountData.length > 0 || settlementData.length > 0; else noDataTemplate">
+        <div class="card-body">
+            <div class="table-responsive">
+                <h2 class="card-title">{{'deposant.details.releveIndemnite.title' | translate}}</h2>
+
+                <table class="table table-bordered table-custom rounded-3 " *ngIf="accountData.length > 0; else noAccountDataTemplate">
+                    <thead>
+                    <tr class="th-title">
+                        <th colspan="4" class="text-left"><b>{{'deposant.details.releveIndemnite.calculBaseIndemnisation' | translate}}</b></th>
+                    </tr>
+                    <tr class="th-fileds">
+                        <th>{{'deposant.details.releveIndemnite.libelleCompte' | translate}}</th>
+                        <th>{{'deposant.details.releveIndemnite.numeroCompte' | translate}}</th>
+                        <th>{{'deposant.details.releveIndemnite.soldeCompte' | translate}}</th>
+                        <th>{{'deposant.details.releveIndemnite.baseIndemnisation' | translate}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of accountData; let last = last" [ngClass]="{'highlight-row': last}">
+                        <td [ngClass]="{'text-center': !item.label}">{{ item.label || '-' }}</td>
+                        <td [ngClass]="{'text-center': !item.accountNumber}">{{ item.accountNumber || '-' }}</td>
+                        <td [ngClass]="{'text-center': !item.balance}">{{ item.balance ? (item.balance | number) : '-' }}</td>
+                        <td [ngClass]="{'text-center': !item.baseIndemnisation}">{{ item.baseIndemnisation ? (item.baseIndemnisation | number) : '-' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-responsive mt-4">
+                <table class="table table-bordered table-custom" *ngIf="settlementData.length > 0; else noSettlementDataTemplate">
+                    <thead>
+                    <tr class="th-title">
+                        <th colspan="3" class="text-left"><b>{{'deposant.details.releveIndemnite.title' | translate}}</b></th>
+                    </tr>
+                    <tr class="th-fileds">
+                        <th></th>
+                        <th>{{'deposant.details.indemnisation.montant' | translate}}</th>
+                        <th>{{'deposant.details.indemnisation.indemnisation' | translate}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of settlementData; let last = last" [ngClass]="{'highlight-row': last}">
+                        <td [ngClass]="{'text-center': !item.description}">{{ item.description || '-' }}</td>
+                        <td [ngClass]="{'text-center': !item.amount}">{{ item.amount ? (item.amount | number) : '-' }}</td>
+                        <td [ngClass]="{'text-center': !item.indemnisation}">{{ item.indemnisation ? (item.indemnisation | number) : '-' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- No Data Template -->
+    <ng-template #noDataTemplate>
+        <div class="alert alert-info text-center">Aucune donnée disponible pour affichage.</div>
+    </ng-template>
+    <!-- No Account Data Template -->
+    <ng-template #noAccountDataTemplate>
+        <div class="alert alert-info text-center">Aucune donnée de compte disponible pour affichage.</div>
+    </ng-template>
+    <!-- No Settlement Data Template -->
+    <ng-template #noSettlementDataTemplate>
+        <div class="alert alert-info text-center">Aucune donnée de règlement disponible pour affichage.</div>
+    </ng-template>
+</div>

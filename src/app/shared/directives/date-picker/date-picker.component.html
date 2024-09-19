@@ -1,0 +1,19 @@
+<!-- date-picker.component.html -->
+<form class="row row-cols-sm-auto">
+  <div class="input-group floating-label-group">
+    <input
+      class="form-control"
+      [placeholder]="placeholder"
+      name="dp"
+      id="dp"
+      [(ngModel)]="model"
+      (ngModelChange)="onDateSelect($event)"
+      ngbDatepicker
+      #d="ngbDatepicker"
+      outsideDays="hidden"
+      navigation="select"
+    />
+    <label class="floating-label" for="dp">{{ placeholder }}</label> <!-- Use placeholder for the label -->
+    <button class="btn btn-calendar" (click)="d.toggle()" type="button"></button>
+  </div>
+</form>

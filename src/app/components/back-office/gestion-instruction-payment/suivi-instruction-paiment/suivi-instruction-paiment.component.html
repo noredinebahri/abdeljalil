@@ -1,0 +1,19 @@
+<div class="container px-5">
+    <app-table
+      [columns]="columns"
+      [actions]="actions"
+      [data]="tableData"
+      [filter]="true"
+      [filterFields]="filterFields"
+      [filterFieldsAvance]="filterFieldsAvance"
+      [pagination]="true"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      [backgroundFilter]="true"
+      [filterFieldsAvance]="filterFieldsAvance"
+      (actionClick)="onActionClick($event)"
+      [isFieldsAvance]="false">
+    </app-table>
+  </div>
+  
+  

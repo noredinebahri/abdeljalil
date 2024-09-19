@@ -1,0 +1,92 @@
+.card {
+  background-color: white;
+  border-radius: 8px;
+  width: 70vw !important; /* Adjust width as necessary */
+}
+.card-separator {
+  border: none;
+  border-top: 2px solid #E7E7E7;
+  width: calc(100% + 3.5rem); /* Extend width to cover the card padding */
+  margin-left: -2rem; /* Negative margin to offset the card's padding */
+  margin-top: 1rem; /* Optional: Add some margin to the top */
+  opacity: 60%;
+}
+.card-title{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  font-weight: bold;
+  font-size: medium;
+
+}
+.card-text{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  color: #6D6D6D;
+  font-size: 14px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.custom-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.description {
+  text-align: center;
+}
+
+.content {
+  padding: 10px;
+  text-align: center;
+}
+
+.text-personne {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.text-block {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.bg-type1 {
+  background-color: #E0E0E0;
+}
+
+.bg-type2 {
+  background-color: #F0E68C;
+}
+
+.bg-type3 {
+  background-color: #D3D3D3;
+}
+
+.bg-default {
+  background-color: #F5F5F5;
+}
+
+.small-text {
+  font-size: 0.75rem; /* Adjust the size of the text to be smaller */
+}

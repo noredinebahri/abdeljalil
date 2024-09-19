@@ -1,0 +1,37 @@
+<div class="toast-container">
+  <ngb-toast
+    *ngFor="let toast of toastService.toasts"
+    [class]="toast.classname"
+    [autohide]="toast.autohide"
+    [delay]="toast.delay || 5000"
+    (hide)="toastService.remove(toast)"
+  >
+    <div class="toast-section">
+      <div class="custom-toast" [ngClass]="{'taost-bg-danger': toast.classname.startsWith('bg-danger'),
+         'toast-bg-warning': toast.classname.startsWith('bg-warning')}">
+        <div class="toast-body">
+          <div class="icon">
+            @if (toast.classname.startsWith("bg-success")) {
+              <img src="assets/images/icone/toast/checked-success.svg"/>
+            } @else if (toast.classname.startsWith("bg-danger")) {
+              <img src="assets/images/icone/toast/error.svg"/>
+            } @else {
+              <img src="assets/images/icone/toast/warning.svg"/>
+            }
+          </div>
+          <div class="text">
+            <span>{{ toast.textOrTpl }}</span>
+          </div>
+          <div class="clos-button" (click)="toastService.remove(toast)">
+            <a><img src="assets/images/icone/toast/close.svg"/></a>
+          </div>
+        </div>
+        <div class="taost-border" [ngClass]="{'toast-border-bg-danger': toast.classname.startsWith('bg-danger'),
+        'toast-border-bg-warning': toast.classname.startsWith('bg-warning')}" [ngStyle]="{ 'width': toast.progressWidth + '%' }"></div>
+      </div>
+    </div>
+  </ngb-toast>
+</div>
+
+
+

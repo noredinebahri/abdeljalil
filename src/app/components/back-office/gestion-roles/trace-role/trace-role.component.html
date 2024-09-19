@@ -1,0 +1,23 @@
+<div>
+  <div class="container">
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>{{'deposant.role.title' | translate}}</h5>
+        </div>
+
+        <div class="time-line-container">
+          <app-status-timeline [statuses]="example1"></app-status-timeline>
+        </div>
+        <div class="button-container">
+          @if (isEnabled) {
+          <app-button text="Désactivation du rôle" [selected]="false" class="ml-3" (click)="confirmDesactiver()"></app-button>
+          }
+          @if (isDisabled){
+          <app-button text="Réeactiver le rôle" [selected]="false" class="ml-3" (click)="confirmReactiver()"></app-button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

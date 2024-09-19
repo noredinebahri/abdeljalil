@@ -1,0 +1,101 @@
+.popup-container {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 1050;
+  background-color: #683B8F;
+  color: white;
+  width: 500px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+
+  @media (max-width: 768px) {
+    right: 10px;
+    left: 10px;
+    top: 10px;
+    width: auto; /* Adjust width for smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+    padding: 15px;
+  }
+  .precedent{
+    background-color: transparent;
+    color: white;
+  }
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #683B8F;
+  position: absolute;
+  top: -13px;
+  right: 60px;
+}
+
+.popup-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-family: 'Frutiger LT Pro', sans-serif;
+
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Frutiger LT Pro', sans-serif;
+  font-weight: bold;
+}
+
+.popup-footer .btn-transparent {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.popup-footer .btn-transparent:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.popup-footer .btn-custom-white {
+  background-color: white;
+  color: #683B8F;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-footer .btn-custom-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-footer button {
+  background-color: white;
+  color: #6c63ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-footer button:hover {
+  background-color: #5753e8;
+  color: white;
+}

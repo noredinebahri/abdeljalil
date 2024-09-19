@@ -1,0 +1,138 @@
+
+.card {
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto;
+  width: 284px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.card:not(.selected):hover {
+  background-color: #F7F6EF;
+  border: 1px solid #AC9961;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.custom-title {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  // Ensure all items are aligned to the start
+}
+
+.description {
+  width: 100%;
+  color: #666;
+  margin-top: 5px;  // Adjust if necessary
+}
+.header-content, .content {
+  padding: 0;  /* Removes padding from the content containers */
+  width: 100%;  /* Ensures these elements also take full width */
+}
+.description hr {
+  width: 200%;
+  border: none;
+  border-top: 0.5px solid #ccc;
+  margin: 5px 0;
+}
+
+
+.description p {
+  margin: 0;
+}
+
+.description hr {
+  width: 80%;
+  border: none;
+  border-top: 0.5px solid #ccc;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-personne {
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
+  padding-inline: 15px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.content-icon {
+  width: 12px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+.text-block {
+  border-radius: 20px;
+  padding-block: 8px;
+  padding-inline: 15px;
+  margin-top: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.bg-type1 {
+  background-color: #F3ECFB;
+}
+
+.bg-type2 {
+  background-color: #A1E3D8;
+}
+
+.bg-default {
+  background-color: #F3ECFB; // Default color
+}
+
+.light {
+  background-color: #ffffff;
+  border: 1px solid #E7E7E7;
+}
+
+.dark {
+  background-color: #F7F6EF;
+  border: 1px solid #AC9961;
+
+}
+
+/***** Arabic SCSS *****/
+:dir(rtl) {
+  .text-personne{
+    padding-right: 0px;
+    .content-icon{
+      margin-left: 10px;
+      margin-right: 0px;
+    }
+  }
+  .text-block{
+    padding-block: 8px;
+    padding-inline: 15px;
+  }
+  .icon{
+    transform: rotate(180deg) scaleY(-1);
+  }
+
+}

@@ -1,0 +1,311 @@
+.modal-content{
+  margin-top: 15vh !important;
+}
+.modal-header {
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+
+  .modal-title-container {
+    text-align: center;
+    width: 100%;
+
+    .icon {
+      width: 190px;
+      height: 190px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .modal-title {
+      color: var(--Storm-Dust-950, #262626);
+      text-align: center;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px; /* 136.364% */
+      letter-spacing: 0.44px;
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+  }
+
+  .btn-close {
+    font-size: 1.25rem;
+    opacity: 1;
+    color: #333;
+    top: 10%;
+  }
+}
+
+.modal-body {
+  text-align: left;
+  padding: 2rem;
+
+  .text-center {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #666;
+  }
+
+  .depot-details {
+    padding: 1.5rem;
+
+    .detail-row {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+
+      .detail-label {
+        color: var(--Storm-Dust-500, #6D6D6D);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        margin-bottom: 0.25rem;
+      }
+
+      .detail-value {
+        overflow: hidden;
+        color: var(--Storm-Dust-950, #262626);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        margin-bottom: 0.5rem;
+
+        .document-icon {
+          width: 20px;
+          height: 20px;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &.double {
+        display: flex;
+        justify-content: space-between;
+
+        .detail-column {
+          flex: 1;
+          &:first-child {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  .btn-outline-primary {
+    color: #6c63ff;
+    border: 1px solid #6c63ff;
+    margin-right: 1rem;
+    &:hover {
+      background-color: #6c63ff;
+      color: #fff;
+    }
+  }
+
+  .btn-primary {
+    background-color: #6c63ff;
+    border: none;
+    &:hover {
+      background-color: #5753e8;
+    }
+  }
+}
+
+.file-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .name-and-size {
+    display: flex;
+    justify-content: space-between; // This spreads the file name and size across the available space
+    width: 100%;
+
+    .file-name {
+      flex-grow: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: var(--Storm-Dust-500, #6D6D6D);
+      font-family: 'Frutiger LT Pro', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    .middle-dot {
+      margin-left: 4px;
+      margin-right: 4px;// Adjust margin to space elements as in the design
+    }
+
+    .consult-btn {
+      background: none;
+      border: none;
+      color: #AC9961; // Style as needed
+      cursor: pointer;
+    }
+    .file-size {
+      color: var(--Storm-Dust-950, #262626);
+      font-family: 'Frutiger LT Pro', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 16px;
+      flex-shrink: 0;
+    }
+  }
+
+  .progress {
+    background-color: #EDEDED;
+    border-radius: 6px;
+    height: 4px;  // Adjusted for more subtle appearance
+    margin: 5px 0;
+
+    .progress-bar {
+      background-color: #AC9961;
+      height: 4px;
+      border-radius: 6px;
+      transition: width 0.3s ease;
+    }
+  }
+
+}
+card {
+  background-color: white;
+  border-radius: 8px;
+  width: 70vw !important; /* Adjust width as necessary */
+}
+.card-separator {
+  border: none;
+  border-top: 2px solid #E7E7E7;
+  margin-top: 1rem; /* Optional: Add some margin to the top */
+  opacity: 60%;
+}
+.card-title{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  font-weight: bold;
+  font-size: medium;
+
+}
+.card-text{
+  font-family: 'Frutiger LT Pro', sans-serif;
+  color: #6D6D6D;
+  font-size: 14px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.custom-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.description {
+  text-align: center;
+}
+
+.content {
+  padding: 10px;
+  text-align: center;
+}
+
+.text-personne {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.text-block {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.bg-type1 {
+  background-color: #E0E0E0;
+}
+
+.bg-type2 {
+  background-color: #F0E68C;
+}
+
+.bg-type3 {
+  background-color: #D3D3D3;
+}
+
+.bg-default {
+  background-color: #F5F5F5;
+}
+
+.small-text {
+  font-size: 0.75rem; /* Adjust the size of the text to be smaller */
+}
+
+/***** Arabic SCSS *****/
+:dir(rtl) {
+  .text-personne{
+    padding-right: 0px;
+    .content-icon{
+      margin-left: 10px;
+      margin-right: 0px;
+    }
+  }
+  .text-block{
+    padding-block: 8px;
+    padding-inline: 15px;
+  }
+  .icon{
+    transform: rotate(180deg) scaleY(-1);
+  }
+  .content-icon {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+  .card-title{
+    text-align: right;
+  }
+  .card-text{
+    text-align: right;
+  }
+  .custom-title {
+    text-align: right !important;
+  }
+  .description{
+    p{
+      text-align: right !important;
+    }
+  }
+}

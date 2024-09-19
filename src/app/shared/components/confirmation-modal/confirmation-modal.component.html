@@ -1,0 +1,19 @@
+
+<div class="modal-header w-100">
+    <div class="confirmation-header row">
+      <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+      <div class="col-12"><img src="assets/images/svg/confirm.svg" alt="Question Icon" class="icon"></div>
+      <div class="col-12">
+        <h5 class="modal-title">{{ title | translate }}
+          @if (value){
+          {{' "' +value+'"'}}
+          }
+        </h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-confirm-footer">
+    <app-button type="primary" text="{{'referentiel.cancel' | translate}}" (click)="cancel()" [outlined]="true"></app-button>
+    <app-button type="primary" text="{{'referentiel.confirmer' | translate}}" (click)="confirm()" [selected]="true"></app-button>
+  </div>

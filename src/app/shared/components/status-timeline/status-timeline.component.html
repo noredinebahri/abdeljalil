@@ -1,0 +1,59 @@
+<!--<div class="container">-->
+<!--  <div class="timeline-container">-->
+<!--    <div  *ngFor="let status of statuses; let i = index" class="row timeline-item custom-flex" [ngClass]="[getStatusClass(i), status.isResponseCard ? 'is-response-card' : '']">-->
+<!--      <div class="col-auto text-right date item-flex-date" [ngClass]="getStatusClass(i)">-->
+<!--        {{ status.date }}-->
+<!--      </div>-->
+<!--      <div class="timeline-line item-flex-line">-->
+<!--        <img class="line-image" src="assets/images/icone/active-state.svg">-->
+<!--        <div class="line">-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col status-text card item-flex-info" [ngClass]="getStatusClass(i)">-->
+<!--        <div *ngIf="!status.isResponseCard" class="card-body p-2">-->
+<!--          <div class="text">{{ status.text | translate }}</div>-->
+<!--        </div>-->
+<!--        <app-response-card *ngIf="status.isResponseCard"-->
+<!--                           [header]="status.responseCardData.header"-->
+<!--                           [iconPath]="status.responseCardData.iconPath"-->
+<!--                           [title]="status.responseCardData.title"-->
+<!--                           [content]="status.responseCardData.content"-->
+<!--                           [theme]="status.responseCardData.theme"-->
+<!--                           [disabled]="status.responseCardData.disabled"-->
+<!--                           [link]="status.responseCardData.link"-->
+<!--                           [linkText]="status.responseCardData.linkText">-->
+<!--        </app-response-card>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container">
+  <div class="timeline-container">
+    <div *ngFor="let status of statuses; let i = index" class="row timeline-item custom-flex" [ngClass]="[getStatusClass(i)]">
+      <div class="col-auto text-right date item-flex-date" [ngClass]="getStatusClass(i)">
+        {{ status.date }}
+      </div>
+      <div class="col status-text card" [ngClass]="[getStatusClass(i), status.isResponseCard ? 'no-padding' : '']"><div *ngIf="!status.isResponseCard" class="card-body p-2">
+        <div class="text">{{ status.text | translate }}</div>
+      </div>
+<app-response-card *ngIf="status.isResponseCard"
+                   [header]="status.responseCardData.header"
+                   [iconPath]="status.responseCardData.iconPath"
+                   [title]="status.responseCardData.title"
+                   [content]="status.responseCardData.content"
+                   [theme]="status.responseCardData.theme"
+                   [disabled]="status.responseCardData.disabled"
+                   [link]="status.responseCardData.link"
+                   [linkText]="status.responseCardData.linkText"
+                   [buttonText]="status.responseCardData.buttonText"
+                   [buttons]="status.responseCardData.buttons"
+                   [buttonBolor]="status.responseCardData.buttons?.buttonBolor">
+</app-response-card>
+
+      </div>
+    </div>
+  </div>
+</div>

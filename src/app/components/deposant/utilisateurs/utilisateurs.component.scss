@@ -1,0 +1,42 @@
+.card-title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 20px 0 0 0;
+  color: #262626;
+  letter-spacing: 0.4px;
+}
+.custom-margin{
+  margin-bottom: 0.6rem !important;
+}
+
+
+.text-muted{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #6D6D6D;
+  padding: 5px 0 0 0;
+}
+.btn-link {
+  color: #683B8F;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+
+.btn-link .img-icon {
+  margin-right: 9px;
+  width: 16px;
+  height: auto;
+}
+
+
+
+:dir(rtl){
+  .img-icon{
+    transform: rotate(180deg) !important;
+    margin-inline: 15px;
+  }
+}

@@ -1,0 +1,87 @@
+<div *ngIf="showModal" class="overlay">
+  <app-indice-popup
+          [steps]="popupSteps"
+          (close)="handleClose()"
+          (finish)="handleFinish()">
+  </app-indice-popup>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+     <!-- <div class="toast">
+        <div class="tost-body">
+          <div class="toast-icon">
+            <img src="/assets/images/svg/orange-icon-info.svg" class="icon-svg">
+          </div>
+          <div class="toast-text">Toast title</div>
+          <div class="toast-close"><img src="/assets/images/svg/confirm.svg" class="icon-svg"></div>
+        </div>
+        <div class="tost-footer"> </div>
+      </div>-->
+    </div>
+    <div class="col-md-8">
+      <div class="indemnity-amount-section mb-4 clearfix">
+        <div class="montant-section">
+          <h4>{{ 'deposant.details.montantIndemnite' | translate}}</h4>
+          <p class="indemnity-amount">{{ '20000' | currencyBank:symbol:'after' }}
+        </div>
+        <hr class="card-separator" />
+        <div class="indemnity-amount-footer justify-content-end">
+          <app-button type="secondary" (click)="navigateToReleveIndemnite()" [outlined]="true" text="{{'deposant.details.consulterIndemniteButton' | translate}}" [class]="'fw-bold'"></app-button>
+        </div>
+      </div>
+      <div class="status-card d-flex flex-column">
+        <div class="card-header">
+          <h2 class="card-title mt-3 ml-2">{{ 'deposant.details.etatDossier' | translate }}</h2>
+        </div>
+        <hr class="card-separator">
+        <div class="card-status-body d-flex align-items-center">
+          <div class="col-md-3">
+            <div class="progress-circle">
+              <div class="circle">
+                <div class="circle-inner">
+                  <div class="progress-value">3/7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="status-text">
+              <p class="status-detail">{{'deposant.details.etatAvancementDossier.status.enAttenteModeReglement' | translate }}</p>
+              <p class="status-step">{{'deposant.details.etatAvancementDossier.status.3emeEtapSure7Completee' | translate }}</p>
+            </div>
+          </div>
+        </div>
+        <hr class="card-separator">
+        <div class="card-footer">
+          <app-button type="primary" (click)="navigateToEtatDossier()" [outlined]="true" text="{{'deposant.details.plusDetailsButton' | translate}}" [class]="'float-end fw-bold'"></app-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="status-card">
+        <div class="card-header">
+          <h2 class="card-title mt-3 ml-2">{{'deposant.details.modeReglements.title' | translate}}</h2>
+        </div>
+        <hr class="card-separator">
+        <div class="card-status-body">
+          <div *ngFor="let card of cards; let i = index">
+            <app-info-card
+              [title]="card.title | translate"
+              [description]="card.description | translate"
+              [toggleState]="card.toggleState"
+              [customClass]="card.customClass"
+              [iconPath]="card.iconPath"
+              (click)="toggleCard(i)">
+            </app-info-card>
+          </div>
+        </div>
+        <hr class="card-separator">
+        <div class="card-footer">
+          <app-button [disabled]="isCardButtonDisabled" text="{{'deposant.details.modeReglements.saveButton' | translate}}" type="primary" (click)="openModal(cards[0].toggleState ? 'virement' : 'mise')" class="w-100"></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

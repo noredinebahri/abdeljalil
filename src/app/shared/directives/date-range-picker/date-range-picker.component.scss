@@ -1,0 +1,142 @@
+::ng-deep th.available.prev
+{
+  background-image: url("../../../../assets/images/icone/prev-month-arrow.svg") !important;
+  border: 1px solid #E7E7E7 !important;
+  border-radius: 6px !important;
+  background-size: initial !important;
+  height: 44px;
+  width: 44px;
+  margin-right: 10px;
+}
+::ng-deep .dropdowns {
+  display: block;
+  height: 44px !important;
+  padding: .375rem 2.25rem .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  margin-right: 10px;
+  width: auto !important;
+  position: relative;
+  background-image: none !important;
+
+  &::ng-deep .monthselect, .yearselect
+  {
+    height: 44px !important;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 10px; // Adjust the margin-right here
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px; // Width of the background image
+    height: 12px; // Height of the background image
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    background-image: url("../../../../assets/images/icone/chevron-dropdown.svg");
+  }
+}
+
+
+::ng-deep th.available.next
+{
+  background-image: url("../../../../assets/images/icone/prev-month-arrow.svg") !important;
+  border: 1px solid #E7E7E7 !important;
+  border-radius: 6px !important;
+  background-size: initial !important;
+  height: 44px;
+  width: 44px;
+}
+
+::ng-deep .calendar
+{
+  max-width: 370px !important;
+ // margin: 40px !important;
+}
+
+::ng-deep .available
+{
+  padding: 10px 16px !important;
+
+  &:hover{
+    border-radius: initial !important;
+  }
+
+  &.active
+  {
+    background-color: #683B8F !important;
+  }
+  &.in-range:not(.end-date) {
+    background-color: #F3ECFB !important;
+  }
+
+  &.off{
+    visibility: hidden;
+    color: #FFFFFF !important;
+  }
+}
+
+::ng-deep .calendar
+{
+  margin-left: 30px !important;
+}
+
+::ng-deep ngx-daterangepicker-bootstrap>.card-body
+{
+  //width: 850px !important;
+}
+
+::ng-deep .start-date
+{
+  border-radius: 6px 0px 0px 6px !important;
+}
+::ng-deep .end-date
+{
+  border-radius: 0px 6px 6px 0px !important;
+}
+
+::ng-deep .card-footer
+{
+  background-color: white !important;
+  border-top: none;
+  span
+  {
+    display: none !important;
+  }
+
+  ::ng-deep .btn{
+    //opacity: initial !important;
+    border-radius: 8px !important;
+    border: 1.5px solid var(--Royal-Purple-800, #683B8F) !important;
+    padding: 12px 22px 12px 20px !important;
+    margin-bottom: 20px;
+
+    &.btn-primary
+    {
+      background-color: #683B8F !important;
+    }
+    &.btn-secondary
+    {
+      background-color: #FFFFFF !important;
+      color: #683B8F !important;
+      float: left !important;
+    }
+  }
+}
+
+
+
+
+
+

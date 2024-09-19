@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-form [formItems]="reclamationItems" [showSeparators]="false" ></app-form>
+    </div>
+  </div>
+
+  @if(true){
+    <div class="card mt-4">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>{{ 'dossier.reclamation.reponse.title' | translate }}</h5>
+        </div>
+        <div class="general-info row cardInfo ">
+          <div class="modal-body">
+            <form [formGroup]="repondreForm">
+              <div class="row mb-3">
+                <div class="form-floating">
+                <textarea class="text-aria" type="text"
+                          [placeholder]="'dossier.reclamation.reponse.reponse' | translate "
+                          class="form-control" formControlName="message"></textarea>
+                  <label [class.disabled-label]="true"
+                         class="ms-2">{{ 'dossier.reclamation.reponse.reponse' | translate }}</label>
+                </div>
+              </div>
+              <div class="mt-5">
+                <label
+                  class="form-label">{{ 'dossier.reclamation.reponse.piecesJointe' | translate }}</label>
+                <app-file-upload (change)="handleFile($event)"></app-file-upload>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-end">
+            <div class="right-button">
+              <app-button type="primary"
+                          text="{{'dossier.reclamation.reponse.buttons.repondre' | translate}}"
+                          (click)="openConfirmationModal()"></app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <div class="card card-margin-bottom mt-4">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 >{{'agentPayeur.reclamation.detail.timeline.title' | translate}}</h5>
+      </div>
+      <div class="timeline cardInfo">
+        <app-status-timeline [statuses]="statusArray"></app-status-timeline>
+      </div>
+    </div>
+  </div>
+</div>

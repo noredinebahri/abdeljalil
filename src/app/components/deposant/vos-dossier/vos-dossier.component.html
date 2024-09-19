@@ -1,0 +1,31 @@
+<div class="card shadow p-2" style="max-width: 1000px; width: 100%;">
+    <div class="card-body">
+        <p class="card-title">{{'demarrage.vosDossier.title' | translate}}</p>
+        <hr class="card-separator">
+        <p class="card-text">{{'demarrage.vosDossier.text' | translate}}</p>
+        <div class="row">
+            <div class="col-md-4 mb-3" *ngFor="let card of cardInfo">
+                <app-dossier-card
+                        [title]="card.title"
+                        [description]="card.description"
+                        [imagePath]="card.imagePath"
+                        [content]="card.content"
+                        [iconPath]="card.iconPath"
+                        [typePersonne]="card.typePersonne"
+                        [backgroundColor]="card.backgroundColor"
+                        [backgroundTypPersonne]="card.backgroundTypPersonne"
+                        [selected]="card === selectedCard"
+                        (selectCard)="onSelectCard(card)">
+                </app-dossier-card>
+            </div>
+        </div>
+        <hr class="card-separator">
+        <div class="d-flex justify-content-between mt-3">
+            <app-button type="secondary" [outlined]="true" text="{{'demarrage.vosDossier.precedentButton' | translate}}" [class]="'fw-bold'" (click)="onGoBack()"></app-button>
+            <div class="text-muted text-center small-text">
+                <span>2 / 2</span>
+            </div>
+            <app-button type="secondary" (click)="onSubmit()" [outlined]="false" text="{{'demarrage.vosDossier.continuerButton' | translate}}" [class]="'fw-bold'"></app-button>
+        </div>
+    </div>
+</div>

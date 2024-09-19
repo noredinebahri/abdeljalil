@@ -1,0 +1,52 @@
+.container {
+
+  .page-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #6c757d;
+    }
+
+    button {
+      color: #6f42c1;
+    }
+  }
+
+  .filter-form {
+    margin-bottom: 2rem;
+
+    .form-control,
+    .form-select {
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      box-shadow: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+
+      &:focus {
+        border-color: #6f42c1;
+        box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+      }
+    }
+
+    .btn-primary {
+      background-color: #6f42c1;
+      border-color: #6f42c1;
+
+      &:hover {
+        background-color: #563d7c;
+        border-color: #563d7c;
+      }
+    }
+  }
+
+  .table-responsive {
+    margin-top: 2rem;
+  }
+}

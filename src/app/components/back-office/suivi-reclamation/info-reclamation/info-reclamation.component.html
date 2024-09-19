@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-form [formItems]="reclamationItems" [showSeparators]="false" ></app-form>
+    </div>
+  </div>
+  <div class="card card-margin-bottom mt-4">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 >{{'agentPayeur.reclamation.detail.timeline.title' | translate}}</h5>
+      </div>
+      <div class="timeline cardInfo">
+        <app-status-timeline [statuses]="statusArray"></app-status-timeline>
+      </div>
+    </div>
+  </div>
+</div>

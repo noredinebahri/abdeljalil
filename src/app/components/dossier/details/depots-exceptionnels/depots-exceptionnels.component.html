@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card card-margin-bottom">
+    <div class="card-body">
+      <h5 class="card-title">{{'deposant.depotExceptionnel.title' | translate}}</h5>
+      <hr class="title-separator mt-4">
+      <p class="card-text mt-4 ">{{'deposant.depotExceptionnel.text' | translate}}</p>
+      <app-table
+        [columns]="columns"
+        [data]="translatedDepots"
+        [actions]="actions"
+        (actionClick)="onActionClick($event)"
+        [filter]="false"
+        [filterFields]="filterFields"
+        [pagination]="false"
+        [totalItems]="translatedDepots.length"
+        [itemsPerPage]="ITEMS_PER_PAGE"
+        >
+      </app-table>
+      <hr class="title-separator">
+      <div class="d-grid gap-2 float-end">
+        <app-button text="{{'deposant.depotExceptionnel.declarerButton' | translate}}" type="primary" class="mt-2" (click)="openDeclareModal()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

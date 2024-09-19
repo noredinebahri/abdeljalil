@@ -1,0 +1,21 @@
+.ng-select
+{
+  padding: 0;
+  .ng-select-container {
+    background: #fff;
+    font-size: 16px;
+    color: #878e9f;
+    height: 58px;
+    padding: 0.375rem 0.75rem;
+    box-shadow: none;
+    .ng-value-container{
+      padding: 0;
+      .ng-placeholder{
+        color: #6c757d;
+      }
+      .ng-value{
+        color: #333333;
+      }
+    }
+  }
+}

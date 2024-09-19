@@ -1,0 +1,14 @@
+.layout-container {
+    display: flex;
+  }
+  
+  app-sidebar-responsive {
+    width: 150px; /* or whatever width you need */
+    background-color: #f8f9fa; /* sidebar background color */
+  }
+  
+  .main-layout {
+    flex: 1; /* take up remaining space */
+    padding: 20px; /* adjust as needed */
+  }
+  

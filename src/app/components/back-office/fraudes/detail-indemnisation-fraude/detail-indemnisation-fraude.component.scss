@@ -1,0 +1,106 @@
+.p-4 {
+    border-radius: 9px!important;
+  }
+  .highlight-row td {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    background-color: #F3ECFB;
+  }
+  
+  .card-title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+  
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  
+  .table-custom {
+    font-family: 'Frutiger LT Pro', sans-serif;
+  
+  }
+  
+  .table-custom th {
+    vertical-align: middle;
+    font-weight: initial;
+    text-align: center;
+    font-family: 'Frutiger LT Pro', sans-serif;
+    color: #6D6D6D;
+  }
+  
+  .rounded-custom table {
+    border-radius: 10px; /* Custom rounded corners */
+  }
+  
+  .btn-link {
+    color: #683B8F;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-link .img-icon {
+    margin-right: 9px;
+    width: 16px;
+    height: auto;
+  }
+  
+  .alert {
+    margin-top: 20px;
+  }
+  
+  .alert-info {
+    background-color: #f8f9fa;
+    color: #333;
+    border-color: #f8f9fa;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .no-data-container {
+    height: 200px;
+  }
+  table{
+    thead{
+      tr{
+        th{
+          padding: 12px 16px !important;
+          &.text-left {
+            text-align: left;
+            color: black;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+          }
+        }
+        &.th-fileds{
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          padding: 12px 16px !important;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  
+  }
+  /************* Arabic CSS ************/
+  :dir(rtl){
+    .img-icon{
+      transform: rotate(180deg) !important;
+      margin-inline: 15px;
+    }
+  }
+  

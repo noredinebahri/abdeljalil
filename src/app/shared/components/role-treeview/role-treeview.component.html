@@ -1,0 +1,52 @@
+<div *ngFor="let node of treeData" class="card custom-tree-card" [ngClass]="{'monochrome': useMonochrome}">
+  <div class="card-header custom-tree-header" id="heading{{node.id}}">
+    <h2 class="mb-0">
+      <button class="btn btn-link btn-block text-left custom-tree-button" type="button"
+              [attr.data-bs-toggle]="node.children && node.children.length ? 'collapse' : null"
+              [attr.data-bs-target]="node.children && node.children.length ? '#collapse' + node.id : null"
+              (click)="node.isExpanded = !node.isExpanded"
+              aria-expanded="false" [attr.aria-controls]="'collapse' + node.id">
+        <img src="assets/images/svg/tree-view-arrow-down.svg" class="arrow-list" [class.up]="node.isExpanded">
+        {{ node.name | translate }}
+      </button>
+    </h2>
+  </div>
+  <div [id]="'collapse' + node.id" class="collapse" [class.show]="node.isExpanded" [attr.aria-labelledby]="'heading' + node.id">
+    <div class="card-body custom-tree-body">
+      <ul class="list-unstyled">
+        <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: node.children}"></ng-container>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #recursiveList let-nodes>
+  <ul class="list-unstyled">
+    <li *ngFor="let node of nodes">
+      <div class="btn btn-link custom-sub-tree-button abi-flex" [ngClass]="{'aut-header':node.children && node.children.length > 0}" (click)="node.isExpanded = !node.isExpanded">
+        <div class="label">
+          <img *ngIf="node.children && node.children.length > 0" src="assets/images/svg/tree-view-arrow-down.svg" class="arrow-list" [class.up]="node.isExpanded">
+          {{ node.name | translate }}
+        </div>
+        <div *ngIf="!node.children || node.children.length === 0" class="form-check form-switch check" [hidden]="hideToggles">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="node.isActive" [id]="'toggle' + node.id" (click)="$event.stopPropagation()" [disabled]="disableToggles">
+          <label class="form-check-label">{{ node.isActive ? 'Activé' : 'Désactivé' }}</label>
+        </div>
+        <div *ngIf="node.children && node.children.length > 0" class="form-check form-switch check" [hidden]="hideToggles">
+          <input class="form-check-input" type="checkbox"
+                 [(ngModel)]="node.isActive"
+                 [id]="'toggle' + node.id"
+                 (click)="$event.stopPropagation()"
+                 (change)="toggleAllChildren(node, node.isActive)"
+                 [disabled]="disableToggles">
+          <label class="form-check-label" [for]="'toggle' + node.id">
+            {{ node.isActive ? 'Tout désactiver' : 'Tout activer' }}
+          </label>
+        </div>
+      </div>
+      <div *ngIf="node.children && node.children.length > 0 && node.isExpanded">
+        <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: node.children}"></ng-container>
+      </div>
+    </li>
+  </ul>
+</ng-template>

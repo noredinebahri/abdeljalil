@@ -1,0 +1,19 @@
+<div class="container">
+    <div *ngIf="showNavBar" class="bg  rounded">
+      <div class="title">
+        <h2  class="mb-4 fw-bold">{{'instructionPaiment.title' | translate}}</h2>
+      </div>
+      <ul  class="nav nav-tabs fw-bold">
+        <li class="nav-item">
+            <a class="nav-link active nav-link-first" routerLink="/back-office/gestion-instruction-payment/suivi-bloc-instruction-paiment" routerLinkActive="active">{{'instructionPaiment.tabs.suiviBlocInstructionPaiment' | translate}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/back-office/gestion-instruction-payment/suivi-instruction-paiment" routerLinkActive="active">{{'instructionPaiment.tabs.suiviInstructionPaiment' | translate}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="outlet-container">
+    <router-outlet></router-outlet>
+  </div>
+  

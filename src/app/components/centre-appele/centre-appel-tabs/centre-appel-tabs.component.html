@@ -1,0 +1,68 @@
+<!--<app-responsive-navbar [navItems]="customNavItems" [username]="username" [userDropdownItems]="customUserDropdownItems"></app-responsive-navbar>-->
+<div class="container">
+  <div class="bg  rounded">
+    <div class="title">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2  class="mb-4 fw-bold">{{'centreAppele.title' | translate}}</h2>
+        <button class="btn btn-link text-decoration-none" (click)="previousState()">
+          <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> {{'deposant.details.releveIndemnite.precedentButton' | translate}}
+        </button>
+      </div>
+    </div>
+    <ul  class="nav nav-tabs fw-bold">
+      <li class="nav-item">
+        <a class="nav-link active nav-link-first"   aria-current="page" [ngClass]="{'active': showTab == 'infos-deposant'}"
+            (click)="showTab = 'infos-deposant'">{{'centreAppele.tabs.infosDeposant' | translate}}</a>
+<!--        routerLink="/centre-appel/details/infos-deposant"-->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': showTab == 'details-indemnisation'}"
+           (click)="showTab = 'details-indemnisation'">{{'centreAppele.tabs.detailIndemnisation' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': showTab == 'reclamation'}"
+           (click)="showTab = 'reclamation'">{{'centreAppele.tabs.reclamation' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': showTab == 'representantsLegaux'}"
+           (click)="showTab = 'representantsLegaux'">{{'deposant.tabs.representantsLegaux' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  [ngClass]="{'active': showTab == 'heritiers'}"
+            (click)="showTab='heritiers'">{{'deposant.tabs.heritiers' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  [ngClass]="{'active': showTab == 'comptesBancaires'}"
+            (click)="showTab='comptesBancaires'">{{'deposant.tabs.comptesBancaires' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  [ngClass]="{'active': showTab == 'suivi-dossier'}"
+            (click)="showTab='suivi-dossier'">{{'centreAppele.tabs.suiviDossier' | translate}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="outlet-container">
+  @if(showTab == 'infos-deposant'){
+    <app-infos-deposant></app-infos-deposant>
+  }
+  @if(showTab == 'details-indemnisation'){
+    <app-detail-indemnisation></app-detail-indemnisation>
+  }
+  @if(showTab == 'reclamation'){
+    <app-reclamations></app-reclamations>
+  }
+  @if(showTab == 'representantsLegaux'){
+    <app-representants></app-representants>
+  }
+  @if(showTab == 'heritiers'){
+    <app-heritiers></app-heritiers>
+  }
+  @if(showTab == 'comptesBancaires'){
+    <app-comptes-bancaires></app-comptes-bancaires>
+  }
+  @if(showTab == 'suivi-dossier'){
+    <app-suivi-dossier></app-suivi-dossier>
+  }
+<!--  <router-outlet></router-outlet>-->
+</div>

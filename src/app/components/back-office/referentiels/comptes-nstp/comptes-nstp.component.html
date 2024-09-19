@@ -1,0 +1,17 @@
+<div class="container px-5">
+  <app-table
+    [titlePage]="'referentiel.comptesNSTPTitle' | translate"
+    [columns]="columns"
+    [actions]="actions"
+    [data]="tableData"
+    [filter]="true"
+    [filterFields]="filterFields"
+    [pagination]="true"
+    [titleTotalItems]="totalItemsTitle"
+    [totalItems]="totalItems"
+    (actionClick)="handelActions($event)"
+    [newRecordBtnLink]="updateButtonAction"
+    (pageChange)="onPageChange($event)"
+    [canBackToList]="true">
+  </app-table>
+</div>

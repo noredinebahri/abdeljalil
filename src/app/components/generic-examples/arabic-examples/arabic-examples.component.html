@@ -1,0 +1,126 @@
+<div class="container">
+
+  <div class="row my-3">
+    <div class="col-3">
+      <app-button text="Arabe" type="primary" (click)="changeToAR()"></app-button>
+    </div>
+    <div class="col-3">
+      <app-button text="French" type="primary" (click)="changeToFR()"></app-button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <app-info-card
+        [iconPath]="'assets/images/svg/virement.svg'"
+        title="تحويل بنكي"
+        description="تلقَّ تعويضك مباشرة في حسابك البنكي."
+        [toggleState]="cardToggle"
+        [customClass]="['light-theme']">
+      </app-info-card>
+    </div>
+    <div class="col-4">
+      <app-info-card
+        [iconPath]="'assets/images/svg/MiseDisposition.svg'"
+        title="توفير"
+        description="اسحب تعويضك من جهاز الصراف الآلي (GAB) في أحد البنوك أو من نقطة خدمة تحويل الأموال التي تختارها."
+        [toggleState]="cardToggle"
+        [disabled]="true">
+      </app-info-card>
+    </div>
+    <div class="col-4">
+      <app-info-card
+        [iconPath]="'assets/images/svg/MiseDisposition.svg'"
+        title="توفير"
+        description="اسحب تعويضك من جهاز الصراف الآلي (GAB) في أحد البنوك أو من نقطة خدمة تحويل الأموال التي تختارها."
+        [toggleState]="cardToggle"
+        [customClass]="['dark-theme']">
+      </app-info-card>
+    </div>
+    <div class="col-4">
+      <app-dossier-card
+        [title]="'بنبرهيم محمد'"
+        [content]="'شخص معنوي'"
+        [backgroundColor]="'light'"
+        [description]="'AB-14022024 '"
+        [iconPath]="'assets/images/icone/icone dossier-card.svg'"
+        [imagePath]="'assets/images/svg/dossier-card.svg'"
+        [typePersonne]="'حامل لقب'">
+      </app-dossier-card>
+    </div>
+    <div class="col-4">
+      <app-dossier-card
+        [title]="'بنبرهيم محمد'"
+        [content]="'شخص معنوي'"
+        [backgroundColor]="'dark'"
+        [description]="'AB-14022024 '"
+        [iconPath]="'assets/images/icone/icone dossier-card.svg'"
+        [imagePath]="'assets/images/svg/dossier-card.svg'"
+        [typePersonne]="'حامل لقب'">
+      </app-dossier-card>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="container mt-5">
+      <h1>نافذة الرد المنبثقة </h1>
+      <div class="row my-5">
+        <div class="col-12 my-2">
+          <app-response-card
+            header="تم معالجة الشكاية."
+            iconPath="assets/images/svg/orange-icon-info.svg"
+            title="عنوان الرد"
+            content="تظهر نافذة الرد المنبثقة لتوفير معلومات فورية حول استفسارك. تحتوي النافذة على عنوان الرد، نص تفصيلي "
+            [theme]="'orange'">
+          </app-response-card>
+        </div>
+        <div class="col-6 my-2">
+          <app-response-card
+            header="تم معالجة الشكاية."
+            iconPath="assets/images/svg/purple-icon-info.svg"
+            title="عنوان الرد"
+            content="تظهر نافذة الرد المنبثقة لتوفير معلومات فورية حول استفسارك. تحتوي النافذة على عنوان الرد، نص تفصيلي "
+            [theme]="'purple'">
+          </app-response-card>
+        </div>
+        <div class="col-6 my-2">
+          <app-response-card
+            header="تم معالجة الشكاية."
+            iconPath="assets/images/svg/orange-icon-info.svg"
+            title="عنوان الرد"
+            content="تظهر نافذة الرد المنبثقة لتوفير معلومات فورية حول استفسارك. تحتوي النافذة على عنوان الرد، نص تفصيلي "
+            [theme]="'orange'">
+          </app-response-card>
+        </div>
+      </div>
+  </div>
+    <div class="container mt-5">
+        <h1>سحب وإدراج المستندات </h1>
+      <div class="my-5">
+        <app-file-upload (fileSelected)="handleFile($event)" [theme]="'dark'"></app-file-upload>
+        <br>
+        <app-file-upload (fileSelected)="handleFile($event)" [theme]="'default'"></app-file-upload>
+        <br>
+      </div>
+      <div class="my-5">
+        <h1>الجدول</h1>
+        <app-table
+          [columns]="columns"
+          [data]="tableData"
+          [actions]="actions"
+          [pagination]="true"
+          [totalItems]="totalItems"
+          [itemsPerPage]="ITEMS_PER_PAGE"
+          [displayItemCount]="true"
+          (actionClick)="handleAction($event)"
+          (pageChange)="handlePageChange($event)">
+        </app-table>
+      </div>
+    </div>
+    <div class="my-5">
+      <app-form [formItems]="formItems"></app-form>
+    </div>
+    <div class="my-5">
+      <app-form [formItems]="formItems1"></app-form>
+    </div>
+
+</div>

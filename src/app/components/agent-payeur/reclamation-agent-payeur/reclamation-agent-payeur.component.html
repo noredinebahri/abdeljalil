@@ -1,0 +1,8 @@
+<div class="container">
+
+  <app-table [columns]="columns" [titlePage]="'LES RÉCLAMATIONS'" [titleTotalItems]="'réclamations'" [data]="translatedReclamations"  [pagination]="true"
+             [totalItems]="totalItems"
+             [itemsPerPage]="itemsPerPage" (pageChange)="handlePageChange($event)" [filter]="true" [filterFields]="filterFields"
+             [noDataFoundMessage]="noDataFoundMessage" [actions]="actions"
+             (actionClick)="onActionClick($event)"></app-table>
+</div>

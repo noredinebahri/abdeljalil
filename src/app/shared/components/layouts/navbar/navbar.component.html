@@ -1,0 +1,70 @@
+<nav  class="navbar navbar-dark navbar-expand-md bg-dark">
+  <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
+    <span class="logo-img"></span>
+    <span class="navbar-title">{{'global.title' | translate}}</span>
+  </a>
+  <a
+    class="navbar-toggler d-lg-none"
+    data-toggle="collapse"
+    data-target="#navbarResponsive"
+    aria-controls="navbarResponsive"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggleNavbar()"
+  >
+  </a>
+  <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+          <span>
+            <span>{{'navbar.home' | translate}}</span>
+          </span>
+        </a>
+      </li>
+      @if (languages && languages.length > 1) {
+        <li ngbDropdown class="nav-item dropdown pointer" display="dynamic">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="languagesnavBarDropdown">
+            <span>
+              <span>{{'navbar.language' | translate}}</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="languagesnavBarDropdown">
+            @for (language of languages; track $index) {
+              <li>
+                <a
+                  class="dropdown-item"
+                  [ngClass]="{'active': isActiveLang(language)}"
+                  (click)="changeLang(language)"
+                  >{{ getLang(language) }}</a
+                >
+              </li>
+            }
+          </ul>
+        </li>
+      }
+      @if (isLoggedIn()) {
+        <li
+          ngbDropdown
+          class="nav-item dropdown pointer"
+          display="dynamic"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="account-menu">
+            <span>
+              <span>{{'navbar.account.title' | translate}}</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="account-menu">
+            <li>
+              <a class="dropdown-item" (click)="logout()" id="logout">
+                <span>{{'navbar.account.logout' | translate}}</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>

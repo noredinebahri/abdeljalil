@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="bg  rounded">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="title">
+        <h2 class="mb-4">{{ 'adherent.depotExceptionnel.details.title' | translate }} <span
+          class="badge-custom  En-cours ms-3">En cours</span></h2>
+      </div>
+      <div class="header-right">
+        <button class="btn btn-link text-decoration-none" routerLink="['/adherent/details']">
+          <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> {{'deposant.reclamation.detail.precedent' | translate}}
+        </button>
+      </div>
+    </div>
+    <ul class="nav nav-tabs fw-bold">
+      <li class="nav-item">
+        <a class="nav-link nav-link-first" [ngClass]="{'active': showTab == 'depot-exceptionnel'}" aria-current="page" routerLink="depots"
+           (click)="showTab = 'depot-exceptionnel'">{{ 'adherent.depotExceptionnel.details.tabs.depotTemporaire.title' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': showTab == 'details-indemnisation'}"
+           (click)="showTab = 'details-indemnisation'" >{{ 'adherent.depotExceptionnel.details.tabs.detailsIndemnisation.title' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': showTab == 'representants'}"
+           (click)="showTab = 'representants'">{{ 'adherent.depotExceptionnel.details.tabs.representantsLegaux.title' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': showTab == 'heritiers'}"
+           (click)="showTab = 'heritiers'">{{ 'adherent.depotExceptionnel.details.tabs.heritiers.title' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="compts-bancaires" [ngClass]="{'active': showTab == 'comptes-bancaires'}"
+           (click)="showTab = 'comptes-bancaires'">{{ 'adherent.depotExceptionnel.details.tabs.comptesBancaires.title' | translate }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="outlet-container">
+  @if(showTab == 'depot-exceptionnel'){
+    <app-depot-exceptionnel></app-depot-exceptionnel>
+  }
+  @if(showTab == 'details-indemnisation'){
+    <app-details-indemnisation></app-details-indemnisation>
+  }
+  @if(showTab == 'representants'){
+    <app-representants></app-representants>
+  }
+  @if(showTab == 'heritiers'){
+    <app-heritiers ></app-heritiers>
+  }
+  @if(showTab == 'comptes-bancaires'){
+    <app-comptes-bancaires></app-comptes-bancaires>
+  }
+
+<!--  <router-outlet></router-outlet>-->
+</div>

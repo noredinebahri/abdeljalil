@@ -1,0 +1,163 @@
+<div class="container">
+  <h1>Buttons</h1>
+  <app-button text="Button" type="primary"></app-button>
+  <app-button text="Button" type="secondary" [selected]="true"></app-button>
+  <app-button text="Button" type="primary" [disabled]="true"></app-button>
+  <h3>Outline buttons</h3>
+  <app-button text="Button" type="primary" [outlined]="true"></app-button>
+  <app-button text="Button" type="secondary" [outlined]="false" [selected]="true"></app-button>
+  <h1>Cards</h1>
+  <div class="row">
+    <div class="col-4">
+      <app-info-card
+        [iconPath]="'assets/images/svg/MiseDisposition.svg'"
+        title="Mise à disposition"
+        description="Retirez votre indemnisation dans un GAB d'une banque ou dans un point de service de transfert d'argent de votre choix."
+        [toggleState]="cardToggle"
+        [disabled]="true">
+      </app-info-card>
+      </div>
+      <div class="col-4">
+        <app-dossier-card
+          [title]="'Benbrahim Mohammed'"
+          [content]="'Personne Phisique'"
+          [backgroundColor]="'light'"
+          [description]="'AB-14022024 '"
+          [iconPath]="'assets/images/icone/icone dossier-card.svg'"
+          [imagePath]="'assets/images/svg/dossier-card.svg'"
+          [typePersonne]="'Titulaire'">
+        </app-dossier-card>
+      </div>
+      <div></div>
+      <div class="col-4">
+        <app-dossier-card
+                [title]="'Benbrahim Mohammed'"
+                [content]="'Personne Phisique'"
+                [backgroundColor]="'light'"
+                [description]="'AB-14022024 '"
+                [iconPath]="'assets/images/icone/icone dossier-card.svg'"
+                [imagePath]="'assets/images/svg/dossier-card.svg'"
+                [typePersonne]="'Titulaire'">
+        </app-dossier-card>
+      </div>
+      <div class="col-4">
+        <app-dossier-card
+          [title]="'Benbrahim Mohammed'"
+          [content]="'Personne Phisique'"
+          [backgroundColor]="'dark'"
+          [description]="'AB-14022024 '"
+          [iconPath]="'assets/images/icone/icone dossier-card.svg'"
+          [imagePath]="'assets/images/svg/dossier-card.svg'"
+          [typePersonne]="'Titulaire'">
+        </app-dossier-card>
+      </div>
+
+
+    <div class="col-4">
+      <app-info-card
+        [iconPath]="'assets/images/svg/virement.svg'"
+        title="Virement bancaire"
+        description="Recevez votre indemnisation directement sur votre compte bancaire."
+        [toggleState]="cardToggle"
+        [customClass]="['light-theme']">
+      </app-info-card>
+    </div>
+
+    <div class="col-4">
+      <app-info-card
+        [iconPath]="'assets/images/svg/MiseDisposition.svg'"
+        title="Mise à disposition"
+        description="Retirez votre indemnisation dans un GAB d'une banque ou dans un point de service de transfert d'argent de votre choix."
+        [toggleState]="cardToggle"
+        [customClass]="['dark-theme']">
+      </app-info-card>
+    </div>
+
+  </div>
+  <div class="container">
+    <h1>Input Examples</h1>
+
+    <!-- Basic Text Input -->
+    <app-input label="Basic Input" placeholder="Enter text"></app-input>
+
+    <!-- Search Input -->
+    <app-search-input label="Search Input" placeholder="Search here"></app-search-input>
+
+    <!-- Dropdown Component -->
+    <app-dropdown label="Dropdown" [options]="['Option 1', 'Option 2', 'Option 3']"></app-dropdown>
+
+    <!-- Password Input -->
+    <app-input label="Password Input" type="password" placeholder="Enter password"></app-input>
+
+    <!-- Text Area -->
+    <app-text-area label="Text Area" [rows]="4"></app-text-area>
+
+    <!-- Verification Code Input -->
+    <app-verification-code [digits]="6"></app-verification-code>
+  </div>
+  <div class="container mt-5">
+    <h1>Response cards</h1>
+
+    <app-response-card
+      header="Réclamation traitée."
+      iconPath="assets/images/svg/orange-icon-info.svg"
+      title="Titre de la réponse"
+      content="Lorem ipsum..."
+      [theme]="'orange'">
+    </app-response-card>
+    <br>
+    <app-response-card
+      header="Réclamation traitée."
+      iconPath="assets/images/svg/purple-icon-info.svg"
+      title="Titre de la réponse"
+      content="Lorem ipsum..."
+      [theme]="'purple'">
+    </app-response-card>
+    <br>
+    <app-response-card
+      header="Réclamation traitée."
+      iconPath="assets/images/svg/purple-icon-info.svg"
+      title="Titre de la réponse"
+      content="Lorem ipsum..."
+      [theme]="'purple'">
+    </app-response-card>
+    <br>
+    <app-response-card
+      header="Réclamation traitée."
+      iconPath="assets/images/svg/orange-icon-info.svg"
+      title="Titre de la réponse"
+      content="Lorem ipsum..."
+      link="https://stackoverflow.com/"
+      linkText="Consulter les documents joints"
+      theme="orange">
+    </app-response-card>
+    <br>
+    <h1>Drag and drop files</h1>
+    <app-file-upload (fileSelected)="handleFile($event)" [theme]="'dark'"></app-file-upload>
+    <br>
+    <app-file-upload (fileSelected)="handleFile($event)" [theme]="'default'"></app-file-upload>
+    <br>
+    <h1>Table</h1>
+    <app-table
+      [columns]="columns"
+      [data]="tableData"
+      [actions]="actions"
+      [pagination]="true"
+      [totalItems]="totalItems"
+      [itemsPerPage]="ITEMS_PER_PAGE"
+      [displayItemCount]="true"
+      (actionClick)="handleAction($event)"
+      (pageChange)="handlePageChange($event)">
+    </app-table>
+
+
+<app-form [formItems]="formItems3"></app-form>
+    <hr>
+<app-form [formItems]="formItems1"></app-form>
+
+    <app-status-timeline [statuses]="statusArray"></app-status-timeline>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,13 @@
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="card-title">{{'deposant.details.etatAvancementDossier.title' | translate}}</h2>
+    <button class="btn btn-link text-decoration-none" (click)="goBack()">
+      <img src="assets/images/icone/back-arraw.svg" alt="Précédent" class="img-icon"> {{'deposant.details.etatAvancementDossier.precedent' | translate}}
+    </button>
+  </div>
+  <div class="card">
+    <app-status-timeline [statuses]="statusArray"></app-status-timeline>
+<!--    <hr>-->
+<!--    <app-status-timeline [statuses]="example1"></app-status-timeline>-->
+<!--  </div>-->
+</div>

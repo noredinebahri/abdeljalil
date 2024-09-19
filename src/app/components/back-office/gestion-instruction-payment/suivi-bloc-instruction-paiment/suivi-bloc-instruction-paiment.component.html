@@ -1,0 +1,22 @@
+<div class="container px-5">
+    <div class="montant-section">
+        <h6>Montant total des blocs d'instructions de paiement <b>En attente de validation</b></h6>
+        <h1>200 000,00 MAD</h1>
+      </div>
+    <app-table
+      [columns]="columns"
+      [actions]="actions"
+      [data]="tableData"
+      [filter]="true"
+      [filterFields]="filterFields"
+      [filterFieldsAvance]="filterFieldsAvance"
+      [pagination]="true"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      [backgroundFilter]="true"
+      (actionClick)="onActionClick($event)"
+      >
+    </app-table>
+  </div>
+  
+  

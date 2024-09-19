@@ -1,0 +1,26 @@
+.toast-section{
+  margin-top: 2.8rem;
+
+}
+.taost-bg-danger{
+  background-color: #FEF3F2;
+  border: 1.5px solid #FFCCC8;
+}
+.toast-bg-warning{
+  background-color: #FFEDD5;
+  border: 1.5px solid #FED8AA;
+
+}
+.taost-border{
+  height: 6px;
+  width: 100%;
+  background: #237B4B;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  transition: width 0.05s linear;
+}
+.toast-border-bg-danger{
+  background-color: #E02B1D;
+}
+.toast-border-bg-warning{
+  background-color: #FA7B1F;
+}

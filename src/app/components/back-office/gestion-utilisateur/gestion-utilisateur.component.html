@@ -1,0 +1,20 @@
+<div class="container px-5">
+    <app-table
+      [titlePage]="'deposant.gestionUtilisateur.title' | translate"
+      [columns]="columns"
+      [actions]="actions"
+      [data]="tableData"
+      [filter]="true"
+      [filterFields]="filterFields"
+      [filterFieldsAvance]="filterFieldsAvance"
+      [pagination]="true"
+      [titleTotalItems]="totalItemsTitle"
+      [totalItems]="totalItems"
+      [backgroundFilter]="true"
+      (actionClick)="onActionClick($event)"
+      [newRecordBtnLink]="updateButtonAction"
+      [isFieldsAvance]="false">
+    </app-table>
+  </div>
+  
+  
