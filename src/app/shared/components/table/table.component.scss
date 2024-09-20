@@ -694,3 +694,14 @@ app-date-picker .dropdown-menu.show {
     max-width: 100%; /* Ensure it doesn't exceed the container width */
 }
 
+// modal 
+.modal-content {
+ 
+  width: 150% !important;
+}
+.button.outlined-primary {
+  height: 4rem !important;
+}
+.button.primary {
+  height: 4rem !important;
+}

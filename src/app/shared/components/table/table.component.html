@@ -6,7 +6,7 @@
   </div>
   <div class="total-items d-flex justify-content-between align-items-center">
     <p *ngIf="filter && titleTotalItems && titleTotalItems.length>0">{{ totalItems }} {{ titleTotalItems }}</p>
-    <button *ngIf="filter" class="btn btn-link text-decoration-none" [ngClass]="{'remove-padding': newRecordBtnLink}">
+    <button *ngIf="filter" class="btn btn-link text-decoration-none" [ngClass]="{'remove-padding': newRecordBtnLink}" (click)="resetForm()">
       <img src="assets/images/icone/refresh.svg" alt="refresh"> Réinitialiser le filtre
     </button>
   </div>
@@ -33,7 +33,7 @@
 </div>
 
 <div class="filter-container" [ngClass]="{'background-filter': backgroundFilter}" *ngIf="filter">
-  <form [formGroup]="filterForm!" (ngSubmit)="onFilter()">
+  <form [formGroup]="filterForm!" (ngSubmit)="applyFilter(filterForm?.value)">
     <div class="flex-filter">
       <div class="flex-filter-item" *ngFor="let field of filterFields" style="{{field.style}}">
         <ng-container [ngSwitch]="field.type">
@@ -73,52 +73,11 @@
       <div class="">
         <button type="submit" class="btn btn-primary filter-btn">Filtrer</button>
       </div>
+      <!-- modal -->
+    
       <div  *ngIf="!isFieldsAvance" class="">
-        <div class="dropdown">
-          <app-button data-bs-toggle="dropdown" aria-expanded="false" type="primary" [outlined]="true"
-            text=" Plus de filters"></app-button>
-          <ul class="dropdown-menu">
-            <div class="filter-container" *ngIf="filter">
-              <form [formGroup]="filterForm!" (ngSubmit)="applyFilter()">
-                <div class="flex-filter">
-                  <div class="flex-filter-item" *ngFor="let field of filterFieldsAvance" style="{{field.style}}">
-                    <ng-container [ngSwitch]="field.type">
-                      <div *ngSwitchCase="'text'" class="form-floating">
-                        <input type="text" class="form-control" [placeholder]="field.placeholder | translate"
-                          formControlName="{{field.name}}">
-                        <label>{{ field.placeholder | translate }}</label>
-                      </div>
-
-                      <div *ngSwitchCase="'select'" class="form-floating">
-                        <ng-select [items]="getOptions(field.options)" bindLabel="label" bindValue="value"
-                          [formControlName]="field.name" [clearable]="true" appendTo="body" id="floatingSelect"
-                          class="form-control">
-                        </ng-select>
-                        <label>{{ field.placeholder | translate }}</label>
-                      </div>
-
-                      <div *ngSwitchCase="'date-range'">
-                        <app-date-range-picker [placeholder]="field.placeholder | translate">
-                        </app-date-range-picker>
-                      </div>
-                    </ng-container>
-                  </div>
-                </div><br>
-                <div class="row">
-                  <div class="col d-flex align-items-start justify-content-start">
-                    <app-button type="primary" [outlined]="true" text="{{ 'referentiel.cancel' | translate }}"></app-button>
-                  </div>
-                  <div class="col d-flex align-items-end justify-content-end">
-                    <app-button type="primary" [outlined]="false" text="Appliquer filtres"></app-button>
-                  </div>
-                </div>
-
-              </form>
-            </div>
-
-
-          </ul>
-        </div>
+        <app-button data-bs-toggle="dropdown" aria-expanded="false" type="primary" [outlined]="true"
+            text=" Plus de filters" (click)="open(content)"></app-button>
       </div>
     </div>
   </form>
@@ -231,3 +190,55 @@
   </div>
 </div>
 }
+
+
+
+
+
+<hr />
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="filterFormAdviced!" (ngSubmit)="applyFilter(filterFormAdviced?.value)">
+      <div class="flex-filter">
+        <div class="flex-filter-item" *ngFor="let field of filterFieldsAvance" >
+          <ng-container [ngSwitch]="field.type">
+            <div *ngSwitchCase="'text'" class="form-floating">
+              <input type="text" class="form-control" [placeholder]="field.placeholder | translate"
+                formControlName="{{field.name}}">
+              <label>{{ field.placeholder | translate }}</label>
+            </div>
+            <div *ngSwitchCase="'select'" class="form-floating {{field}}" >
+              <select class="form-select"   name="" id="" [formControlName]="field.name">
+                <ng-container *ngFor="let item of getOptions(field.options); let i = index">
+                  <option value="{{item.value}}">{{item.label }}</option>
+                </ng-container>
+              </select>
+              <label>{{ field.placeholder | translate }}</label>
+            </div>
+
+            <div *ngSwitchCase="'date-range'">
+              <app-date-range-picker [placeholder]="field.placeholder | translate">
+              </app-date-range-picker>
+            </div>
+          </ng-container>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col d-flex align-items-start justify-content-start">
+          <app-button type="primary" [outlined]="true" text="{{ 'referentiel.cancel' | translate }}"></app-button>
+          
+        </div>
+        <div class="col d-flex align-items-end justify-content-end">
+          <app-button type="primary" (click)="modal.close('Save click')"  [outlined]="false" text="Appliquer le filtre"></app-button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  
+</ng-template>
+<pre>{{ closeResult }}</pre>

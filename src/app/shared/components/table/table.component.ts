@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { StatusDossier } from "../../../enums/status-dossier";
 import { CriticiteDossier } from "../../../enums/criticite-dossier";
 import { ActionClickEvent, ActionConfig, ColumnConfig, FilterField } from "./table.config";
@@ -6,6 +6,7 @@ import { ITEMS_PER_PAGE } from "../../constants/shared.constant";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { StatusCompte } from "../../../enums/status-compte";
 import { StatusRole } from "../../../enums/role-statut";
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -47,15 +48,53 @@ export class TableComponent<T extends { [key: string]: any }> {
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
   @Input() isFieldsAvance?: boolean = true;
 
+	closeResult = '';
 
   filterForm?: FormGroup;
+  filterFormAdviced?: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private modalService: NgbModal) {
   }
+  resetForm = () => {
+    this.filterForm?.reset();
+    this.filterFormAdviced?.reset();
+  }
+  open(content: TemplateRef<any>) {
+    if (this.filterForm?.value !== null) {
+      this.filterFormAdviced?.patchValue({
+        ...this.filterForm?.value
+      })
+      
+    }
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+			(result) => {
+        console.log(result);
+        
+				this.closeResult = `Closed with: ${result}`;
+			},
+			(reason) => {
+				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+			},
+		);
+	}
 
+  applyFilterAdviced = (paylaod: any) => {
+    console.log("applyFilter2", paylaod);
+  }
+	private getDismissReason(reason: any): string {
+		switch (reason) {
+			case ModalDismissReasons.ESC:
+				return 'by pressing ESC';
+			case ModalDismissReasons.BACKDROP_CLICK:
+				return 'by clicking on a backdrop';
+			default:
+				return `with: ${reason}`;
+		}
+	}
   ngOnInit() {
     if (this.filter) {
       this.createFilterForm();
+      this.createAdvanceFilterForm();
     //  this.createFilterFormAdvance();
     }
   }
@@ -67,13 +106,17 @@ export class TableComponent<T extends { [key: string]: any }> {
     }, {});
     this.filterForm = this.formBuilder.group(group);
   }
-
-  private createAdvanceFilterForm() {
+  selectFromList() :boolean {
+    console.log("selectFromList");
+    
+    return true
+  }
+  createAdvanceFilterForm() {
     const group = this.filterFieldsAvance.reduce((acc: { [key: string]: any }, field) => {
       acc[field.name] = [''];
       return acc;
     }, {});
-    this.filterForm = this.formBuilder.group(group);
+    this.filterFormAdviced = this.formBuilder.group(group);
   }
 
   changePage(newPage: number): void {
@@ -181,8 +224,12 @@ export class TableComponent<T extends { [key: string]: any }> {
     }
   }
 
-  applyFilter() {
-    const filters = this.filterForm?.value;
+  applyFilter(payload: any) {
+    console.log(payload);
+    this.filterForm?.patchValue({
+      ...payload
+    })
+    const filters = payload;
     this.data = this.data.filter(item => {
       return Object.keys(filters).every(key => {
         return item[key].toString().toLowerCase().includes(filters[key].toString().toLowerCase());

@@ -23,7 +23,7 @@ import { IndicePopupComponent } from './components/deposant/indice-popup/indice-
 import { ReleveIndemniteComponent } from './components/deposant/releve-indemnite/releve-indemnite.component';
 import { EtatDossierComponent } from './components/deposant/etat-dossier/etat-dossier.component';
 import { DeclareDepotExceptionnelModalComponent } from './components/dossier/details/depots-exceptionnels/declare-depot-exceptionnel-modal/declare-depot-exceptionnel-modal.component';
-import {NgbDatepicker, NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbDatepicker, NgbDatepickerModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 import { ConfirmDepotModalComponent } from './components/dossier/details/depots-exceptionnels/confirm-depot-modal/confirm-depot-modal.component';
 import { DetailDepotComponent } from './components/dossier/details/depots-exceptionnels/detail-depot/detail-depot.component';
@@ -130,7 +130,8 @@ import { LoginComponent } from './components/connexion/login/login.component';
     FormsModule,
     HttpClientModule,
     AdherentModule,
-    BackOfficeModule
+    BackOfficeModule,
+    NgbDatepickerModule
 
   ],
   providers: [

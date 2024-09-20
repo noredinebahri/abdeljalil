@@ -12,6 +12,7 @@ export interface FilterField {
   type: 'text' | 'select' | 'date' | 'number'|'date-range';
   placeholder: string;
   style?: string;
+  col?: string;
   options?: { label: string, value: any }[];
 }
 

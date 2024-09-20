@@ -48,10 +48,11 @@ export class GestionUtilisateurComponent {
     { name: 'prenom', placeholder: 'Prénom', type: 'text', style: 'width: 10%;' },
     { name: 'telephone', placeholder: 'N Téléphone', type: 'text', style: 'width: 50%;'},
     { name: 'email', placeholder: 'Email', type: 'text', style: 'width: 20%;'},
-     { name: 'role', placeholder: 'Role', type: 'select' , options:[{ value: 'true', label: 'role 1'}, { value: 'false', label: "role 2"},{ value: 'true', label: 'role 3'}], style: 'width: 30%' },
-    { name: 'statut', placeholder: 'Statut', type: 'select' , options:[{ value: 'true', label: StatusDossier.ACTIVER}, { value: 'false', label: StatusDossier.DESACTIVER}], style: 'width: 20%',  },
-    { name: 'entite', placeholder: 'Service/ Banque', type: 'select' , options:[{ value: 'true', label: 'E1'}, { value: 'false', label: "E2"},{ value: 'true', label: 'E3'}], style: 'width: 20%' },
-    { name: 'typeEntite', placeholder: 'Unité organisationnelle', type: 'select' , options:[{ value: 'true', label: 'SGFG'}, { value: 'false', label: "Centre d'appel"},{ value: 'true', label: 'Adhérent'}], style: 'width: 30%' },
+     { name: 'role', placeholder: 'Role', type: 'select' , 
+     options:[{ value: 'true', label: 'role 1'}, { value: 'false', label: "role 2"},{ value: 'true', label: 'role 3'}], style: 'width: 30%', col: 'col-6' },
+    { name: 'statut', placeholder: 'Statut', type: 'select' , options:[{ value: 'true', label: StatusDossier.ACTIVER}, { value: 'false', label: StatusDossier.DESACTIVER}], style: 'width: 20%' , col: 'col-6' },
+    { name: 'entite', placeholder: 'Service/ Banque', type: 'select' , options:[{ value: 'true', label: 'E1'}, { value: 'false', label: "E2"},{ value: 'true', label: 'E3'}], style: 'width: 20%', col: 'col-6'},
+    { name: 'typeEntite', placeholder: 'Unité organisationnelle', type: 'select' , options:[{ value: 'true', label: 'SGFG'}, { value: 'false', label: "Centre d'appel"},{ value: 'true', label: 'Adhérent'}], style: 'width: 30%', col: 'col-6' },
   ];
 
   
